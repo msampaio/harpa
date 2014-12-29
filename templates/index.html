@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+    {% trans "Home" %}
+{% endblock %}
+
+{% block body %}
+<p>{% blocktrans %}This application returns the Harp's pedals combinations.{% endblocktrans %}</p>
+<p>{% trans "Developed by" %} <a href="http://marcos.sampaio.me" target="_blank">Marcos da Silva Sampaio</a>
+    {% trans "and" %} <a href="http://musica.ufma.br/bordini/" target="_blank">Ricardo Mazzini Bordini</a>.</p>
+<p>{% trans "Under" %} <a href="{% static "LICENSE.txt" %}">{% trans "MIT license" %}</a>, 2014</p>
+{% endblock %}

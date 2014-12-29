@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Get by prime form
+{% endblock %}
+
+{% block body %}
+
+<form action="/prime" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

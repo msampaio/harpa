@@ -1,0 +1,4 @@
+ipython
+django
+pandas
+django-bootstrap-themes

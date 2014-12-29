@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Harp\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-29 19:29+0000\n"
+"PO-Revision-Date: 2014-12-29 16:33-0300\n"
+"Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
+"Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: combinations/forms.py:7
+#, python-format
+msgid "%s is not a number between 1 and 2187"
+msgstr "%s não é um número entre 1 e 2187"
+
+#: combinations/forms.py:17
+#, python-format
+msgid "%s is not in prime form format"
+msgstr "%s não está no formato de forma prima"
+
+#: combinations/forms.py:21
+msgid "Combination number"
+msgstr "Número de combinação"
+
+#: combinations/forms.py:23
+msgid "Insert a number between 1 and 2187"
+msgstr "Insira um número entre 1 e 2187"
+
+#: combinations/forms.py:27
+msgid "Combination Prime Form"
+msgstr "Forma prima da combinação"
+
+#: combinations/forms.py:30
+msgid "Insert a pcset prime form such as 02468A"
+msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A"
+
+#: templates/index.html:6
+msgid "Home"
+msgstr "Página Principal"
+
+#: templates/index.html:10
+msgid "This application returns the Harp's pedals combinations."
+msgstr "Este aplicativo retorna as combinações de pedais da harpa."
+
+#: templates/index.html:11
+msgid "Developed by"
+msgstr "Desenvolvido por "
+
+#: templates/index.html:12
+msgid "and"
+msgstr "e"
+
+#: templates/index.html:13
+msgid "Under"
+msgstr "Sob"
+
+#: templates/index.html:13
+msgid "MIT license"
+msgstr "licença MIT"
+
+#: templates/show_combinations.html:10
+msgid "pedals combinations"
+msgstr "combinações de pedais"
+
+#: templates/show_combinations.html:16
+msgid "Code"
+msgstr "Código"
+
+#: templates/show_combinations.html:17
+msgid "Notes"
+msgstr "Notas"
+
+#: templates/show_combinations.html:18
+msgid "PC Set"
+msgstr "Conjunto de classe de notas"
+
+#: templates/show_combinations.html:19
+msgid "Prime Form"
+msgstr "Forma prima"
+
+#: templates/show_combinations.html:20
+msgid "Pedals combination"
+msgstr "Combinação de pedais"

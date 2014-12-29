@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    {% if combinations %}
+    <p>{{ combinations }} {% trans "pedals combinations" %}</p>
+    {% endif %}
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>{% trans "Code" %}</th>
+                    <th>{% trans "Notes" %}</th>
+                    <th>{% trans "PC Set" %}</th>
+                    <th>{% trans "Prime Form" %}</th>
+                    <th>{% trans "Pedals combination" %}</th>
+                </tr>
+                {% for row in df.values %}
+                <tr>
+                    {% for cell in row %}
+                    <td>{{ cell }}</td>
+                    {% endfor %}
+                    <td><img src="{{ STATIC_URL }}img/{{ row.0 }}.png"></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+{% endblock %}
