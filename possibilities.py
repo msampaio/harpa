@@ -110,8 +110,10 @@ def make_table():
     df.index = list(range(1, len(df) + 1))
     return df
 
+
 def save_to_csv(filename='harp.csv'):
     make_table().to_csv(os.path.join('csv', filename))
+
 
 def load_csv(filename='harp.csv'):
     hostname = socket.gethostname()
