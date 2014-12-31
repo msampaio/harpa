@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-29 19:29+0000\n"
+"POT-Creation-Date: 2014-12-31 10:15-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,30 +17,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: combinations/forms.py:7
+#: dispositions/forms.py:7
 #, python-format
 msgid "%s is not a number between 1 and 2187"
 msgstr ""
 
-#: combinations/forms.py:17
+#: dispositions/forms.py:17
 #, python-format
 msgid "%s is not in prime form format"
 msgstr ""
 
-#: combinations/forms.py:21
-msgid "Combination number"
+#: dispositions/forms.py:21
+msgid "Disposition number"
 msgstr ""
 
-#: combinations/forms.py:23
+#: dispositions/forms.py:23
 msgid "Insert a number between 1 and 2187"
 msgstr ""
 
-#: combinations/forms.py:27
-msgid "Combination Prime Form"
+#: dispositions/forms.py:27
+msgid "Disposition Prime Form"
 msgstr ""
 
-#: combinations/forms.py:30
+#: dispositions/forms.py:30
 msgid "Insert a pcset prime form such as 02468A"
+msgstr ""
+
+#: templates/base.html:47
+msgid "All dispositions"
+msgstr ""
+
+#: templates/base.html:48
+msgid "Get by number"
+msgstr ""
+
+#: templates/base.html:49
+msgid "Get by prime form"
+msgstr ""
+
+#: templates/base.html:50
+msgid "Get by accidents"
 msgstr ""
 
 #: templates/index.html:6
@@ -48,7 +64,7 @@ msgid "Home"
 msgstr ""
 
 #: templates/index.html:10
-msgid "This application returns the Harp's pedals combinations."
+msgid "This application returns the Harp's pedals dispositions."
 msgstr ""
 
 #: templates/index.html:11
@@ -67,26 +83,26 @@ msgstr ""
 msgid "MIT license"
 msgstr ""
 
-#: templates/show_combinations.html:10
-msgid "pedals combinations"
+#: templates/show_dispositions.html:10
+msgid "pedals dispositions"
 msgstr ""
 
-#: templates/show_combinations.html:16
-msgid "Code"
+#: templates/show_dispositions.html:16
+msgid "Number"
 msgstr ""
 
-#: templates/show_combinations.html:17
+#: templates/show_dispositions.html:17
 msgid "Notes"
 msgstr ""
 
-#: templates/show_combinations.html:18
+#: templates/show_dispositions.html:18
 msgid "PC Set"
 msgstr ""
 
-#: templates/show_combinations.html:19
+#: templates/show_dispositions.html:19
 msgid "Prime Form"
 msgstr ""
 
-#: templates/show_combinations.html:20
-msgid "Pedals combination"
+#: templates/show_dispositions.html:20
+msgid "Pedals disposition"
 msgstr ""

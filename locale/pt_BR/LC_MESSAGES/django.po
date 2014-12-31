@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 10:06-0300\n"
-"PO-Revision-Date: 2014-12-31 10:07-0300\n"
+"POT-Creation-Date: 2014-12-31 10:14-0300\n"
+"PO-Revision-Date: 2014-12-31 10:15-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -43,6 +43,22 @@ msgstr "Forma prima da disposição"
 #: dispositions/forms.py:30
 msgid "Insert a pcset prime form such as 02468A"
 msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A"
+
+#: templates/base.html:47
+msgid "All dispositions"
+msgstr "Todas as disposições"
+
+#: templates/base.html:48
+msgid "Get by number"
+msgstr "Obter pelo número"
+
+#: templates/base.html:49
+msgid "Get by prime form"
+msgstr "Obter pela forma prima"
+
+#: templates/base.html:50
+msgid "Get by accidents"
+msgstr "Obter pelos acidentes"
 
 #: templates/index.html:6
 msgid "Home"
