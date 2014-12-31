@@ -1,13 +1,13 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from combinations import views
+from dispositions import views
 
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'harp.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', views.home, name='home'),
-    url(r'^list/', views.show_complete_list, name='show_complete_list'),
+    url(r'^all/', views.show_all_dispositions, name='show_all_dispositions'),
     url(r'^number$', views.get_number, name='get_number'),
     url(r'^prime$', views.get_prime, name='get_prime'),
     url(r'^accidents$', views.get_accidents, name='get_accidents'),

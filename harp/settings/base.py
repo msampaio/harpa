@@ -94,7 +94,7 @@ DJANGO_APPS = (
 )
 
 LOCAL_APPS = (
-    'combinations',
+    'dispositions',
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS

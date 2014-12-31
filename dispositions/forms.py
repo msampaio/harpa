@@ -18,13 +18,13 @@ def validate_prime(seq):
 
 
 class NumberForm(forms.Form):
-    combination_number = forms.CharField(label=_('Combination number'),
+    disposition_number = forms.CharField(label=_('Disposition number'),
                                          max_length=4,
                                          help_text=_('Insert a number between 1 and 2187'),
                                          validators=[validate_number])
 
 class PrimeForm(forms.Form):
-    combination_prime = forms.CharField(label=_('Combination Prime Form'),
+    disposition_prime = forms.CharField(label=_('Disposition Prime Form'),
                                         min_length=4,
                                         max_length=12,
                                         help_text=_('Insert a pcset prime form such as 02468A'),

@@ -1,14 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from combinations.forms import NumberForm, PrimeForm, AccidentsForm
+from dispositions.forms import NumberForm, PrimeForm, AccidentsForm
 
 import possibilities
 
 # Create your views here.
 
-def select_filter(name, item, arguments, template='music_data__%s'):
-    if item != "all":
-        arguments[template % name] = item
 
 def home(request):
     return render(request, "index.html")
@@ -25,7 +22,7 @@ def show_combination_by_number(request, pedal_number):
         'title': 'Combination number {}'.format(pedal_number),
         'df': df,
     }
-    return render(request, "show_combinations.html", args)
+    return render(request, "show_dispositions.html", args)
 
 
 def show_combination_by_prime(request, pedal_prime):
@@ -37,10 +34,10 @@ def show_combination_by_prime(request, pedal_prime):
 
     args = {
         'title': 'Combinations with PC Prime Form {}'.format(pedal_prime),
-        'combinations': len(df),
+        'dispositions': len(df),
         'df': df,
     }
-    return render(request, "show_combinations.html", args)
+    return render(request, "show_dispositions.html", args)
 
 
 def show_combination_by_accidents(request, accidents):
@@ -52,31 +49,31 @@ def show_combination_by_accidents(request, accidents):
 
     args = {
         'title': 'Combinations with PC Prime Form {}'.format(accidents),
-        'combinations': len(df),
+        'dispositions': len(df),
         'df': df,
     }
-    return render(request, "show_combinations.html", args)
+    return render(request, "show_dispositions.html", args)
 
 
-def show_complete_list(request):
+def show_all_dispositions(request):
 
     df = possibilities.load_csv()
 
     del df['Accidents']
 
     args = {
-        'title': 'All combinations',
-        'combinations': len(df),
+        'title': 'All dispositions',
+        'dispositions': len(df),
         'df': df,
         }
-    return render(request, 'show_combinations.html', args)
+    return render(request, 'show_dispositions.html', args)
 
 
 def get_number(request):
     if request.method == 'POST':
         form = NumberForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/number/' + form.cleaned_data['combination_number'])
+            return HttpResponseRedirect('/number/' + form.cleaned_data['disposition_number'])
 
     else:
         form = NumberForm()
@@ -87,7 +84,7 @@ def get_prime(request):
     if request.method == 'POST':
         form = PrimeForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/prime/' + form.cleaned_data['combination_prime'])
+            return HttpResponseRedirect('/prime/' + form.cleaned_data['disposition_prime'])
 
     else:
         form = PrimeForm()
