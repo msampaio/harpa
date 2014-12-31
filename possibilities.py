@@ -3,6 +3,7 @@
 import itertools
 import pandas
 import os
+import socket
 
 
 # prime form
@@ -112,5 +113,10 @@ def save_to_csv(filename='harp.csv'):
     make_table().to_csv(os.path.join('csv', filename))
 
 def load_csv(filename='harp.csv'):
-    f = os.path.join('csv', filename)
+    hostname = socket.gethostname()
+    if "webfaction.com" in hostname:
+        f = os.path.join('/home/genos/webapps/harp/harp', 'csv', filename)
+
+    else:
+        f = os.path.join('csv', filename)
     return pandas.DataFrame.from_csv(f)
