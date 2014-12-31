@@ -107,6 +107,7 @@ def make_table():
         r.append([n, ' '.join(ns), pretty_print(pcset), pretty_print(prime), seq])
         n += 1
     df = pandas.DataFrame(r, columns=['Code', 'Notes', 'PC Set', 'Prime Form', 'Accidents'])
+    df.index = list(range(1, len(df) + 1))
     return df
 
 def save_to_csv(filename='harp.csv'):
