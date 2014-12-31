@@ -4,8 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from dispositions.forms import NumberForm, PrimeForm, AccidentsForm
-
-import possibilities
+import core
 
 # Create your views here.
 
@@ -15,7 +14,7 @@ def home(request):
 
 
 def show_combination_by_number(request, pedal_number):
-    df = possibilities.load_csv()
+    df = core.load_csv()
 
     df = df[df['Code'] == int(pedal_number)]
 
@@ -29,7 +28,7 @@ def show_combination_by_number(request, pedal_number):
 
 
 def show_combination_by_prime(request, pedal_prime):
-    df = possibilities.load_csv()
+    df = core.load_csv()
 
     df = df[df['Prime Form'] == pedal_prime]
 
@@ -44,7 +43,7 @@ def show_combination_by_prime(request, pedal_prime):
 
 
 def show_combination_by_accidents(request, accidents):
-    df = possibilities.load_csv()
+    df = core.load_csv()
 
     df = df[df['Accidents'] == accidents]
 
@@ -60,7 +59,7 @@ def show_combination_by_accidents(request, accidents):
 
 def show_all_dispositions(request):
 
-    df = possibilities.load_csv()
+    df = core.load_csv()
 
     del df['Accidents']
 
@@ -99,7 +98,7 @@ def get_accidents(request):
         form = AccidentsForm(request.POST)
         if form.is_valid():
             accidents = tuple([int(form.cleaned_data[c]) for c in list('cdefgab')])
-            df = possibilities.load_csv()
+            df = core.load_csv()
             code = str(df[df['Accidents'] == str(accidents)].iloc[0]['Code'])
             print(code, str(accidents))
             return HttpResponseRedirect('/number/' + code)
@@ -108,8 +107,9 @@ def get_accidents(request):
         form = AccidentsForm()
     return render(request, 'filter_accidents.html', {'form': form})
 
+
 def download_all_dispositions(request):
-    df = possibilities.load_csv()
+    df = core.load_csv()
     buff = BytesIO()
 
     del df['Code']
