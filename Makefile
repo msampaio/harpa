@@ -32,5 +32,9 @@ update-static-files:
 	./manage-production.py collectstatic -v0 --noinput
 
 
+internationalization:
+	./manage.py makemessages -l en_US
+	./manage.py makemessages -l pt_BR
+
 restart-server:
 	../apache2/bin/restart
