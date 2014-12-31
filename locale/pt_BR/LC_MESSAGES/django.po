@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 10:14-0300\n"
-"PO-Revision-Date: 2014-12-31 10:15-0300\n"
+"POT-Creation-Date: 2014-12-31 10:45-0300\n"
+"PO-Revision-Date: 2014-12-31 10:46-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -59,6 +59,10 @@ msgstr "Obter pela forma prima"
 #: templates/base.html:50
 msgid "Get by accidents"
 msgstr "Obter pelos acidentes"
+
+#: templates/base.html:51
+msgid "Get TXT file"
+msgstr "Obter arquivo TXT"
 
 #: templates/index.html:6
 msgid "Home"
