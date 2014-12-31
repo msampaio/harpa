@@ -1,5 +1,8 @@
+from io import BytesIO
+import zipfile
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from dispositions.forms import NumberForm, PrimeForm, AccidentsForm
 
 import possibilities
@@ -104,3 +107,18 @@ def get_accidents(request):
     else:
         form = AccidentsForm()
     return render(request, 'filter_accidents.html', {'form': form})
+
+def download_all_dispositions(request):
+    df = possibilities.load_csv()
+    buff = BytesIO()
+
+    del df['Code']
+    del df['Accidents']
+
+    zip_archive = zipfile.ZipFile(buff, mode='w')
+    zip_archive.writestr('harp_dispositions.txt', df.to_string())
+    zip_archive.close()
+
+    response = HttpResponse(buff.getvalue(), content_type="application/x-zip-compressed")
+    response['Content-Disposition'] = 'attachment; filename=harp_dispositions.zip'
+    return response
