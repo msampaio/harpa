@@ -16,6 +16,8 @@ clean:
 deploy: push
 	ssh $(SERVER) "cd ~/webapps/$(APPNAME)/$(APPNAME) && git pull && make deploy-server"
 
+push:
+	git push
 
 deploy-server:
 	$(MAKE) migrate
