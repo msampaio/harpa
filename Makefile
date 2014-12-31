@@ -5,7 +5,6 @@ TODAY = $(shell date '+%Y-%m-%d')
 runserver:
 	./manage.py runserver
 
-
 install:
 	pip install -r requirements.txt
 
