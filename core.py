@@ -16,6 +16,7 @@ def diff(a, b):
 def rotate(s, ind):
     return s[ind:] + s[:ind]
 
+
 def intervals(s, reverse=False):
     if reverse:
         return [diff(a, b) for a, b in zip(s, s[1:])]
@@ -78,13 +79,15 @@ def parse_pcset(s):
         r.append(c)
     return r
 
-# pedals
 
+# pedals
 def add_int(a, b):
     return (a + b) % 12
 
+
 def add_str(a, b):
     return a + list('bn#')[b + 1]
+
 
 def make_table():
     base = [0, 2, 4, 5, 7, 9, 11]
