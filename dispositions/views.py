@@ -75,7 +75,7 @@ def get_by_index(request):
     if request.method == 'POST':
         form = IndexForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/number/' + form.cleaned_data['settings_index'])
+            return HttpResponseRedirect('/index/' + form.cleaned_data['settings_index'])
 
     else:
         form = IndexForm()
@@ -101,7 +101,7 @@ def get_by_accidents(request):
             df = core.load_csv()
             code = str(df[df['Accidents'] == str(accidents)].iloc[0]['Code'])
             print(code, str(accidents))
-            return HttpResponseRedirect('/number/' + code)
+            return HttpResponseRedirect('/index/' + code)
 
     else:
         init_dic = {}
