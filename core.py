@@ -22,11 +22,6 @@ def intervals(s, reverse=False):
     else:
         return [diff(b, a) for a, b in zip(s, s[1:])]
 
-def get_max_ind(s):
-    r = add_last(s)
-    inv = intervals(r)
-    m = max(inv)
-    return (inv.index(m) + 1) % len(s)
 
 def renumerate(s):
     r = [0]
@@ -34,25 +29,24 @@ def renumerate(s):
         r.append((r[-1] + i) % 12)
     return r
 
-def renumerate2(s):
-    r = [0]
-    for i in s:
-        r.append(r[-1] + i)
-    return r
-
-# FIXME: 027B
-
 
 def get_prime_form(s):
-    s1 = sorted(list(set(s)))
-    ind = get_max_ind(s1)
-    r1 = rotate(s1, ind)
-    r2 = list(r1)
-    r2.reverse()
-    inv1 = intervals(r1, False)
-    inv2 = intervals(r2, True)
-    prime_inv = sorted([inv1, inv2])[0]
-    return renumerate(prime_inv)
+    def aux(intervals_seq, dic):
+        distance = sum(intervals_seq)
+        if distance not in dic:
+            dic[distance] = []
+        dic[distance].append(intervals_seq)
+
+    seq = sorted(list(set(s)))
+    d = {}
+    for i in range(len(seq)):
+        r = rotate(seq, i)
+        aux(intervals(r, False), d)
+        aux(intervals(r, True), d)
+
+    lowest_distance = sorted(d.keys())[0]
+    more_compact = sorted(d[lowest_distance])[0]
+    return renumerate(more_compact)
 
 
 def pretty_print(s):
