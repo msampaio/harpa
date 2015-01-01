@@ -41,7 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href='{% url "home" %}'>Harp</a>
+          <a class="navbar-brand" href='{% url "home" %}'>{% trans "Harp" %}</a>
         </div>
       </div>
     </div>
@@ -51,11 +51,11 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li id="all_dispositions"><a href="{% url "show_all_dispositions" %}">{% trans "All dispositions" %}</a></li>
-            <li id="get_number"><a href="{% url "get_number" %}">{% trans "Get by number" %}</a></li>
-            <li id="get_prime"><a href="{% url "get_prime" %}">{% trans "Get by prime form" %}</a></li>
-            <li id="get_accidents"><a href="{% url "get_accidents" %}">{% trans "Get by accidents" %}</a></li>
-            <li id="download_dispositions"><a href="{% url "download_all_dispositions" %}">{% trans "Get TXT file" %}</a></li>
+            <li id="all_settings"><a href="{% url "show_all_settings" %}">{% trans "All settings" %}</a></li>
+            <li id="get_by_index"><a href="{% url "get_by_index" %}">{% trans "Get by index" %}</a></li>
+            <li id="get_by_prime"><a href="{% url "get_by_prime" %}">{% trans "Get by prime form" %}</a></li>
+            <li id="get_by_accidents"><a href="{% url "get_by_accidents" %}">{% trans "Get by accidents" %}</a></li>
+            <li id="download_all_settings"><a href="{% url "download_all_settings" %}">{% trans "Get TXT file" %}</a></li>
           </ul>
         </div>
 

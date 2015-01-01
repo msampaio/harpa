@@ -17,14 +17,14 @@ def validate_prime(seq):
         raise ValidationError(_(u'%s is not in prime form format') % seq)
 
 
-class NumberForm(forms.Form):
-    disposition_number = forms.CharField(label=_('Disposition number'),
+class IndexForm(forms.Form):
+    settings_index = forms.CharField(label=_('Settings index'),
                                          max_length=4,
                                          help_text=_('Insert a number between 1 and 2187'),
                                          validators=[validate_number])
 
 class PrimeForm(forms.Form):
-    disposition_prime = forms.CharField(label=_('Disposition Prime Form'),
+    settings_prime = forms.CharField(label=_('Settings Prime Form'),
                                         min_length=4,
                                         max_length=12,
                                         help_text=_('Insert a pcset prime form such as 02468A'),

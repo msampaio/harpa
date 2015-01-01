@@ -3,7 +3,7 @@ import zipfile
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
-from dispositions.forms import NumberForm, PrimeForm, AccidentsForm
+from dispositions.forms import IndexForm, PrimeForm, AccidentsForm
 import core
 
 # Create your views here.
@@ -21,10 +21,10 @@ def show_combination_by_number(request, pedal_number):
     del df['Accidents']
 
     args = {
-        'title': 'Combination number {}'.format(pedal_number),
+        'title': 'Settings number {}'.format(pedal_number),
         'df': df,
     }
-    return render(request, "show_dispositions.html", args)
+    return render(request, "show_settings.html", args)
 
 
 def show_combination_by_prime(request, pedal_prime):
@@ -35,11 +35,11 @@ def show_combination_by_prime(request, pedal_prime):
     del df['Accidents']
 
     args = {
-        'title': 'Combinations with PC Prime Form {}'.format(pedal_prime),
-        'dispositions': len(df),
+        'title': 'Settings with PC Prime Form {}'.format(pedal_prime),
+        'settings': len(df),
         'df': df,
     }
-    return render(request, "show_dispositions.html", args)
+    return render(request, "show_settings.html", args)
 
 
 def show_combination_by_accidents(request, accidents):
@@ -50,50 +50,50 @@ def show_combination_by_accidents(request, accidents):
     del df['Accidents']
 
     args = {
-        'title': 'Combinations with PC Prime Form {}'.format(accidents),
-        'dispositions': len(df),
+        'title': 'Settings with PC Prime Form {}'.format(accidents),
+        'settings': len(df),
         'df': df,
     }
-    return render(request, "show_dispositions.html", args)
+    return render(request, "show_settings.html", args)
 
 
-def show_all_dispositions(request):
+def show_all_settings(request):
 
     df = core.load_csv()
 
     del df['Accidents']
 
     args = {
-        'title': 'All dispositions',
-        'dispositions': len(df),
+        'title': 'All settings',
+        'settings': len(df),
         'df': df,
         }
-    return render(request, 'show_dispositions.html', args)
+    return render(request, 'show_settings.html', args)
 
 
-def get_number(request):
+def get_by_index(request):
     if request.method == 'POST':
-        form = NumberForm(request.POST)
+        form = IndexForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/number/' + form.cleaned_data['disposition_number'])
+            return HttpResponseRedirect('/number/' + form.cleaned_data['settings_index'])
 
     else:
-        form = NumberForm()
+        form = IndexForm()
     return render(request, 'filter_number.html', {'form': form})
 
 
-def get_prime(request):
+def get_by_prime(request):
     if request.method == 'POST':
         form = PrimeForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/prime/' + form.cleaned_data['disposition_prime'])
+            return HttpResponseRedirect('/prime/' + form.cleaned_data['settings_prime'])
 
     else:
         form = PrimeForm()
     return render(request, 'filter_prime_form.html', {'form': form})
 
 
-def get_accidents(request):
+def get_by_accidents(request):
     if request.method == 'POST':
         form = AccidentsForm(request.POST)
         if form.is_valid():
@@ -104,11 +104,14 @@ def get_accidents(request):
             return HttpResponseRedirect('/number/' + code)
 
     else:
-        form = AccidentsForm()
+        init_dic = {}
+        for a in list('abcdefg'):
+            init_dic[a] = 0
+        form = AccidentsForm(init_dic)
     return render(request, 'filter_accidents.html', {'form': form})
 
 
-def download_all_dispositions(request):
+def download_all_settings(request):
     df = core.load_csv()
     buff = BytesIO()
 
@@ -116,9 +119,9 @@ def download_all_dispositions(request):
     del df['Accidents']
 
     zip_archive = zipfile.ZipFile(buff, mode='w')
-    zip_archive.writestr('harp_dispositions.txt', df.to_string())
+    zip_archive.writestr('harp_settings.txt', df.to_string())
     zip_archive.close()
 
     response = HttpResponse(buff.getvalue(), content_type="application/x-zip-compressed")
-    response['Content-Disposition'] = 'attachment; filename=harp_dispositions.zip'
+    response['Content-Disposition'] = 'attachment; filename=harp_settings.zip'
     return response

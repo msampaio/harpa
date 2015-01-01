@@ -7,17 +7,17 @@
 
 {% block body %}
     {% if dispositions %}
-    <p>{{ dispositions }} {% trans "pedals dispositions" %}</p>
+    <p>{{ dispositions }} {% trans "pedals settings" %}</p>
     {% endif %}
 
           <div class="table-responsive">
             <table class="table table-striped">
                 <tr>
-                    <th>{% trans "Number" %}</th>
+                    <th>{% trans "Index" %}</th>
                     <th>{% trans "Notes" %}</th>
                     <th>{% trans "PC Set" %}</th>
                     <th>{% trans "Prime Form" %}</th>
-                    <th>{% trans "Pedals disposition" %}</th>
+                    <th>{% trans "Pedals settings" %}</th>
                 </tr>
                 {% for row in df.values %}
                 <tr>
