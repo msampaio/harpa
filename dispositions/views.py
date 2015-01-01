@@ -13,15 +13,15 @@ def home(request):
     return render(request, "index.html")
 
 
-def show_combination_by_number(request, pedal_number):
+def show_combination_by_index(request, pedal_index):
     df = core.load_csv()
 
-    df = df[df['Code'] == int(pedal_number)]
+    df = df[df['Code'] == int(pedal_index)]
 
     del df['Accidents']
 
     args = {
-        'title': 'Settings number {}'.format(pedal_number),
+        'title': 'Settings index {}'.format(pedal_index),
         'df': df,
     }
     return render(request, "show_settings.html", args)
@@ -79,7 +79,7 @@ def get_by_index(request):
 
     else:
         form = IndexForm()
-    return render(request, 'filter_number.html', {'form': form})
+    return render(request, 'filter_index.html', {'form': form})
 
 
 def get_by_prime(request):
