@@ -20,17 +20,11 @@ push:
 	git push
 
 deploy-server:
-	$(MAKE) migrate
 	$(MAKE) update-static-files
 	$(MAKE) restart-server
 
-migrate:
-	./manage-production.py migrate analysis
-
-
 update-static-files:
-	./manage-production.py collectstatic -v0 --noinput
-
+	/usr/local/bin/python3.4 ./manage-production.py collectstatic -v0 --noinput
 
 internationalization:
 	./manage.py makemessages -l en_US
