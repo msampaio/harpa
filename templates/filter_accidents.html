@@ -7,7 +7,7 @@
 
 {% block body %}
 
-<form class="form-inline" action="/accidents" method="post">
+<form class="form-inline" action="{% url 'get_by_accidents' %}" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit" />
