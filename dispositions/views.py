@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from dispositions.forms import IndexForm, PrimeForm, AccidentsForm
+from django.utils.translation import get_language
 import core
 
 # Create your views here.
@@ -63,10 +64,17 @@ def show_all_settings(request):
 
     del df['Accidents']
 
+    # ugly javascript localization
+    if get_language() == 'pt-br':
+        language_url = "http://cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Portuguese-Brasil.json"
+    else:
+        language_url = "http://cdn.datatables.net/plug-ins/3cfcc339e89/i18n/English.json"
+
     args = {
         'title': 'All settings',
         'settings': len(df),
         'df': df,
+        'language_url': language_url,
         }
     return render(request, 'show_settings.html', args)
 

@@ -40,7 +40,11 @@
     <script src="{% static "js/jquery.dataTables.min.js" %}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#pedals_table').DataTable();
+            $('#pedals_table').DataTable({
+                "language": {
+                    "url": "{{ language_url }}"
+                }
+            });
         } );
 </script>
 {% endblock %}
