@@ -4,6 +4,8 @@ import itertools
 import pandas
 import os
 import socket
+import subprocess
+import argparse
 
 
 # prime form
@@ -120,3 +122,63 @@ def load_csv(filename='harp.csv'):
     else:
         f = os.path.join('csv', filename)
     return pandas.DataFrame.from_csv(f)
+
+
+# FIXME: adapt to pandas and improve
+# make figs
+def make_lily_code(int_tup):
+    dic = {
+        'b': 'v',
+        'n': '-',
+        '#': '^',
+        }
+
+    pre = '\paper {\n\ttagline= ##f\n}\n\markup \harp-pedal #'
+    left = ''.join(map(str, [int_tup[1], int_tup[0], int_tup[6]]))
+    right = ''.join(map(str, int_tup[2:-1]))
+    post = '"{}|{}"'.format(left, right)
+    return pre + post
+
+
+def run_lilypond(int_tup, n):
+    lily = '/Applications/LilyPond.app/Contents/Resources/bin/lilypond'
+    conv = '/usr/local/bin/convert'
+    static = 'static'
+    filename = os.path.join(static, 'tmp.ly')
+    in_png = 'tmp.png'
+
+    out = os.path.join(static, 'img', str(n) + '.png')
+    with open(filename, 'w') as f:
+        f.write(make_lily_code(int_tup))
+
+    subprocess.call([lily, '--png', filename])
+    subprocess.call([conv, '-trim', in_png, out])
+
+    for f in filename, in_png:
+        os.remove(f)
+
+
+def make_figs(df):
+    series = df['Accidents']
+    for i, tup in series.to_dict().items():
+        print('Processing {} ...'.format(i))
+        run_lilypond(tup, i)
+
+
+def arguments():
+    parser = argparse.ArgumentParser(description='Create auxiliary files for Harp app.')
+    parser.add_argument("-i", "--make_images", help="Create Lilypond images",
+                        action="store_true")
+    parser.add_argument("-s", "--save_csv", help="Save csv file with data",
+                        action="store_true")
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    args = arguments()
+
+    if args.make_images:
+        df = make_table()
+        make_figs(df)
+    if args.save_csv:
+        make_table().to_csv(os.path.join('csv', 'harp.csv'))
