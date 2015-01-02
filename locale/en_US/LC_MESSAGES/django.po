@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 08:28-0300\n"
+"POT-Creation-Date: 2015-01-02 10:06-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,59 +43,72 @@ msgstr ""
 msgid "Insert a pcset prime form such as 02468A"
 msgstr ""
 
-#: harp/urls.py:11
+#: harp/urls.py:16
 msgid "^all/"
 msgstr ""
 
-#: harp/urls.py:13
+#: harp/urls.py:18
 msgid "^index$"
 msgstr ""
 
-#: harp/urls.py:14
+#: harp/urls.py:19
 msgid "^prime$"
 msgstr ""
 
-#: harp/urls.py:15
+#: harp/urls.py:20
 msgid "^accidents$"
 msgstr ""
 
-#: harp/urls.py:16
+#: harp/urls.py:21
 msgid "^index/(?P<pedal_index>\\d+)/$"
 msgstr ""
 
-#: harp/urls.py:17
+#: harp/urls.py:22
 msgid "^prime/(?P<pedal_prime>\\w+)/$"
 msgstr ""
 
-#: harp/urls.py:18
+#: harp/urls.py:23
 msgid "^accidents/(?P<accidents>\\w+)/$"
+msgstr ""
+
+#: templates/404.html:5 templates/404.html.py:9 templates/500.html:5
+#: templates/500.html.py:9
+msgid "Error"
+msgstr ""
+
+#: templates/404.html:9
+msgid "Page not found."
+msgstr ""
+
+#: templates/500.html:9
+msgid "Internal Server Error"
 msgstr ""
 
 #: templates/base.html:9
 msgid "Harp | "
 msgstr ""
 
-#: templates/base.html:44
+#: templates/base.html:45
 msgid "Harp"
 msgstr ""
 
-#: templates/base.html:54
+#: templates/base.html:55
 msgid "All settings"
 msgstr ""
 
-#: templates/base.html:55 templates/filter_index.html:5
+#: templates/base.html:56 templates/filter_index.html:5
 msgid "Get by index"
 msgstr ""
 
-#: templates/base.html:56 templates/filter_prime_form.html:5
+#: templates/base.html:57 templates/filter_prime_form.html:5
 msgid "Get by prime form"
 msgstr ""
 
-#: templates/base.html:57 templates/filter_accidents.html:5
+#: templates/base.html:58 templates/filter_accidents.html:5
 msgid "Get by accidents"
 msgstr ""
 
-#: templates/base.html:58
+#: templates/base.html:59
 msgid "Get TXT file"
 msgstr ""
 
@@ -123,26 +136,26 @@ msgstr ""
 msgid "MIT license"
 msgstr ""
 
-#: templates/show_settings.html:10
+#: templates/show_settings.html:11
 msgid "pedals settings"
 msgstr ""
 
-#: templates/show_settings.html:16
+#: templates/show_settings.html:17
 msgid "Index"
 msgstr ""
 
-#: templates/show_settings.html:17
+#: templates/show_settings.html:18
 msgid "Notes"
 msgstr ""
 
-#: templates/show_settings.html:18
+#: templates/show_settings.html:19
 msgid "PC Set"
 msgstr ""
 
-#: templates/show_settings.html:19
+#: templates/show_settings.html:20
 msgid "Prime Form"
 msgstr ""
 
-#: templates/show_settings.html:20
+#: templates/show_settings.html:21
 msgid "Pedals settings"
 msgstr ""

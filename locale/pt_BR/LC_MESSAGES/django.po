@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 08:24-0300\n"
-"PO-Revision-Date: 2015-01-02 08:29-0300\n"
+"POT-Creation-Date: 2015-01-02 10:06-0300\n"
+"PO-Revision-Date: 2015-01-02 10:06-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -44,55 +44,72 @@ msgstr "Forma prima da disposição"
 msgid "Insert a pcset prime form such as 02468A"
 msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A"
 
-#: harp/urls.py:11
+#: harp/urls.py:16
 msgid "^all/"
 msgstr "^todas/"
 
-#: harp/urls.py:13
+#: harp/urls.py:18
 msgid "^index$"
 msgstr "^indice$"
 
-#: harp/urls.py:14
+#: harp/urls.py:19
 msgid "^prime$"
 msgstr "^formaprima$"
 
-#: harp/urls.py:15
+#: harp/urls.py:20
 msgid "^accidents$"
 msgstr "^acidentes$"
 
-#: harp/urls.py:16
+#: harp/urls.py:21
 msgid "^index/(?P<pedal_index>\\d+)/$"
 msgstr "^indice/(?P<pedal_index>\\d+)/$"
 
-#: harp/urls.py:17
+#: harp/urls.py:22
 msgid "^prime/(?P<pedal_prime>\\w+)/$"
 msgstr "^formaprima/(?P<pedal_prime>\\w+)/$"
 
-#: harp/urls.py:18
+#: harp/urls.py:23
 msgid "^accidents/(?P<accidents>\\w+)/$"
 msgstr "^acidentes/(?P<accidents>\\w+)/$"
 
-#: templates/base.html:44
+#: templates/404.html:5 templates/404.html.py:9 templates/500.html:5
+#: templates/500.html.py:9
+msgid "Error"
+msgstr "Erro"
+
+#: templates/404.html:9
+msgid "Page not found."
+msgstr "Página não encontrada."
+
+#: templates/500.html:9
+msgid "Internal Server Error"
+msgstr "Erro Interno do Servidor"
+
+#: templates/base.html:9
+msgid "Harp | "
+msgstr "Harpa |"
+
+#: templates/base.html:45
 msgid "Harp"
 msgstr "Harpa"
 
-#: templates/base.html:54
+#: templates/base.html:55
 msgid "All settings"
 msgstr "Todas as disposições"
 
-#: templates/base.html:55
+#: templates/base.html:56 templates/filter_index.html:5
 msgid "Get by index"
 msgstr "Obter por índice"
 
-#: templates/base.html:56
+#: templates/base.html:57 templates/filter_prime_form.html:5
 msgid "Get by prime form"
 msgstr "Obter por forma prima"
 
-#: templates/base.html:57
+#: templates/base.html:58 templates/filter_accidents.html:5
 msgid "Get by accidents"
 msgstr "Obter por acidentes"
 
-#: templates/base.html:58
+#: templates/base.html:59
 msgid "Get TXT file"
 msgstr "Obter arquivo TXT"
 
@@ -120,27 +137,27 @@ msgstr "Sob"
 msgid "MIT license"
 msgstr "licença MIT"
 
-#: templates/show_settings.html:10
+#: templates/show_settings.html:11
 msgid "pedals settings"
 msgstr "disposições de pedais"
 
-#: templates/show_settings.html:16
+#: templates/show_settings.html:17
 msgid "Index"
 msgstr "Índice"
 
-#: templates/show_settings.html:17
+#: templates/show_settings.html:18
 msgid "Notes"
 msgstr "Notas"
 
-#: templates/show_settings.html:18
+#: templates/show_settings.html:19
 msgid "PC Set"
 msgstr "Conjunto de classe de notas"
 
-#: templates/show_settings.html:19
+#: templates/show_settings.html:20
 msgid "Prime Form"
 msgstr "Forma prima"
 
-#: templates/show_settings.html:20
+#: templates/show_settings.html:21
 msgid "Pedals settings"
 msgstr "Disposição de pedais"
 
