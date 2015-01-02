@@ -23,7 +23,7 @@ def home(request):
     return render(request, "index.html")
 
 
-def show_combination_by_index(request, pedal_index):
+def show_settings_by_index(request, pedal_index):
     df = core.load_csv()
 
     df = df[df['Code'] == int(pedal_index)]
@@ -37,7 +37,7 @@ def show_combination_by_index(request, pedal_index):
     return render(request, "show_settings.html", args)
 
 
-def show_combination_by_prime(request, pedal_prime):
+def show_settings_by_prime(request, pedal_prime):
     df = core.load_csv()
 
     df = df[df['Prime Form'] == pedal_prime]
@@ -52,7 +52,7 @@ def show_combination_by_prime(request, pedal_prime):
     return render(request, "show_settings.html", args)
 
 
-def show_combination_by_accidents(request, accidents):
+def show_settings_by_accidents(request, accidents):
     df = core.load_csv()
 
     df = df[df['Accidents'] == accidents]
@@ -93,7 +93,7 @@ def get_by_index(request):
         form = IndexForm(request.POST)
         if form.is_valid():
             ind = form.cleaned_data['settings_index']
-            return HttpResponseRedirect(reverse('dispositions.views.show_combination_by_index', args={ind,}))
+            return HttpResponseRedirect(reverse('dispositions.views.show_settings_by_index', args={ind,}))
 
     else:
         form = IndexForm()
@@ -105,7 +105,7 @@ def get_by_prime(request):
         form = PrimeForm(request.POST)
         if form.is_valid():
             prime = form.cleaned_data['settings_prime']
-            return HttpResponseRedirect(reverse('dispositions.views.show_combination_by_prime', args={prime,}))
+            return HttpResponseRedirect(reverse('dispositions.views.show_settings_by_prime', args={prime,}))
 
     else:
         form = PrimeForm()
@@ -119,7 +119,7 @@ def get_by_accidents(request):
             accidents = tuple([int(form.cleaned_data[c]) for c in list('cdefgab')])
             df = core.load_csv()
             index = str(df[df['Accidents'] == str(accidents)].iloc[0]['Code'])
-            return HttpResponseRedirect(reverse('dispositions.views.show_combination_by_index', args={index,}))
+            return HttpResponseRedirect(reverse('dispositions.views.show_settings_by_index', args={index,}))
 
     else:
         init_dic = {}
