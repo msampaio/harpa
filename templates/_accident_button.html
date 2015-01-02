@@ -1,0 +1,15 @@
+    <div class="controls">
+        {{ item.errors }}
+        <label>{{ item.name | title }}</label>
+        {% for choice in item.field.choices %}
+            <div class="radio">
+                <input name='{{ item.name }}'
+                    id='{{ item.auto_id }}_{{ forloop.counter0 }}' type='radio' value='{{ choice.0 }}'
+                    {% if not form.is_bound %}
+                        {% ifequal item.field.initial choice.0 %} checked='checked' {% endifequal %}
+                        {% else %}{% ifequal item.data choice.0 %} checked='checked' {% endifequal %}
+                    {% endif %}/>
+                <label for='{{ item.auto_id }}_{{ forloop.counter0 }}'>{{ choice.1 }}</label>
+            </div>
+        {% endfor %}
+    </div>

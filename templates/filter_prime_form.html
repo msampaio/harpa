@@ -9,8 +9,15 @@
 
 <form action="{% url 'get_by_prime' %}" method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
+     <div class="col-lg-6">
+        <div class="input-group">
+            <input id="id_settings_prime" maxlength="4" name="settings_prime" type="text"
+                   class="form-control" placeholder="{% trans "Insert a prime form such as 02468A..." %}">
+            <span class="input-group-btn">
+                <input class="btn btn-default" type="submit" value={% trans "Submit" %} />
+            </span>
+        </div>
+     </div>
 </form>
 
 {% endblock %}
