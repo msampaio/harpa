@@ -7,7 +7,7 @@
 
 {% block body %}
 
-<p>{% trans "Set pedals settings:" %}</p>
+<p>{% trans "Set the pedals settings:" %}</p>
 <form class="form-inline" action="{% url 'get_by_accidents' %}" method="post">
     {% csrf_token %}
     {% for pedal in form %}
