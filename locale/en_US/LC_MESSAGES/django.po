@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 13:12-0300\n"
+"POT-Creation-Date: 2015-01-02 16:59-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgid "Settings index"
 msgstr ""
 
 #: dispositions/forms.py:23
-msgid "Insert a number between 1 and 2187"
+msgid "Insert an index number between 1 and 2187"
 msgstr ""
 
 #: dispositions/forms.py:27
@@ -122,11 +122,11 @@ msgid "Submit"
 msgstr ""
 
 #: templates/filter_index.html:15
-msgid "Insert a number between 1 and 2187..."
+msgid "Insert an index number between 1 and 2187..."
 msgstr ""
 
 #: templates/filter_prime_form.html:15
-msgid "Insert a prime form such as 02468A..."
+msgid "Insert a pcset prime form such as 02468A..."
 msgstr ""
 
 #: templates/index.html:6
