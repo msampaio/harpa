@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load staticfiles %}
 
 {% block title %}
-    {% trans "Error 404" %}
+    {% trans "Error" %} 404
 {% endblock %}
 
 {% block body %}
-    <p>{% trans "Error 404" %}</p>
+    <p>{% trans "Error" %} 404: {% trans "Page not fount" %}</p>
 {% endblock %}

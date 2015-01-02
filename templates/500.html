@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Error" %} 500
+{% endblock %}
+
+{% block body %}
+    <p>{% trans "Error" %} 500: {% trans "Internal Server Error" %}</p>
+{% endblock %
