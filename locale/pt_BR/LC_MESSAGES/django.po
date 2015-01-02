@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-01 15:03-0300\n"
-"PO-Revision-Date: 2015-01-01 15:28-0300\n"
+"POT-Creation-Date: 2015-01-02 08:24-0300\n"
+"PO-Revision-Date: 2015-01-02 08:29-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -43,6 +43,34 @@ msgstr "Forma prima da disposição"
 #: dispositions/forms.py:30
 msgid "Insert a pcset prime form such as 02468A"
 msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A"
+
+#: harp/urls.py:11
+msgid "^all/"
+msgstr "^todas/"
+
+#: harp/urls.py:13
+msgid "^index$"
+msgstr "^indice$"
+
+#: harp/urls.py:14
+msgid "^prime$"
+msgstr "^formaprima$"
+
+#: harp/urls.py:15
+msgid "^accidents$"
+msgstr "^acidentes$"
+
+#: harp/urls.py:16
+msgid "^index/(?P<pedal_index>\\d+)/$"
+msgstr "^indice/(?P<pedal_index>\\d+)/$"
+
+#: harp/urls.py:17
+msgid "^prime/(?P<pedal_prime>\\w+)/$"
+msgstr "^formaprima/(?P<pedal_prime>\\w+)/$"
+
+#: harp/urls.py:18
+msgid "^accidents/(?P<accidents>\\w+)/$"
+msgstr "^acidentes/(?P<accidents>\\w+)/$"
 
 #: templates/base.html:44
 msgid "Harp"
