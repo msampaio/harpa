@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from dispositions.forms import IndexForm, PrimeForm, AccidentsForm
 from django.utils.translation import get_language
+from django.core.urlresolvers import reverse
 import core
 
 # Create your views here.
@@ -91,7 +92,8 @@ def get_by_index(request):
     if request.method == 'POST':
         form = IndexForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/index/' + form.cleaned_data['settings_index'])
+            ind = form.cleaned_data['settings_index']
+            return HttpResponseRedirect(reverse('dispositions.views.show_combination_by_index', args={ind,}))
 
     else:
         form = IndexForm()
@@ -102,7 +104,8 @@ def get_by_prime(request):
     if request.method == 'POST':
         form = PrimeForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/prime/' + form.cleaned_data['settings_prime'])
+            prime = form.cleaned_data['settings_prime']
+            return HttpResponseRedirect(reverse('dispositions.views.show_combination_by_prime', args={prime,}))
 
     else:
         form = PrimeForm()
@@ -115,9 +118,8 @@ def get_by_accidents(request):
         if form.is_valid():
             accidents = tuple([int(form.cleaned_data[c]) for c in list('cdefgab')])
             df = core.load_csv()
-            code = str(df[df['Accidents'] == str(accidents)].iloc[0]['Code'])
-            print(code, str(accidents))
-            return HttpResponseRedirect('/index/' + code)
+            index = str(df[df['Accidents'] == str(accidents)].iloc[0]['Code'])
+            return HttpResponseRedirect(reverse('dispositions.views.show_combination_by_index', args={index,}))
 
     else:
         init_dic = {}
