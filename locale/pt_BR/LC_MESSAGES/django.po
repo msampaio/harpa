@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 10:06-0300\n"
-"PO-Revision-Date: 2015-01-02 10:06-0300\n"
+"POT-Creation-Date: 2015-01-02 13:12-0300\n"
+"PO-Revision-Date: 2015-01-02 13:12-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -112,6 +112,23 @@ msgstr "Obter por acidentes"
 #: templates/base.html:59
 msgid "Get TXT file"
 msgstr "Obter arquivo TXT"
+
+#: templates/filter_accidents.html:10
+msgid "Set the pedals settings:"
+msgstr "Defina as posições dos pedais:"
+
+#: templates/filter_accidents.html:16 templates/filter_index.html:17
+#: templates/filter_prime_form.html:17
+msgid "Submit"
+msgstr "Enviar"
+
+#: templates/filter_index.html:15
+msgid "Insert a number between 1 and 2187..."
+msgstr "Insira um número entre 1 e 2187..."
+
+#: templates/filter_prime_form.html:15
+msgid "Insert a prime form such as 02468A..."
+msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A..."
 
 #: templates/index.html:6
 msgid "Home"
