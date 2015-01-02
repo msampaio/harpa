@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}{% endblock %}</title>
-
-    {% load staticfiles %}
     {% load i18n %}
+    <title>{% trans "Harp | " %}{% block title %}{% endblock %}</title>
+    {% load staticfiles %}
+
 
     <!-- Bootstrap -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
