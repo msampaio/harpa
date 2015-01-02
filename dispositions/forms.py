@@ -20,7 +20,7 @@ def validate_prime(seq):
 class IndexForm(forms.Form):
     settings_index = forms.CharField(label=_('Settings index'),
                                          max_length=4,
-                                         help_text=_('Insert a number between 1 and 2187'),
+                                         help_text=_('Insert an index number between 1 and 2187'),
                                          validators=[validate_number])
 
 class PrimeForm(forms.Form):
