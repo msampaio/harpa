@@ -11,6 +11,14 @@ import core
 # Create your views here.
 
 
+def get_language_url():
+    # ugly javascript localization
+    if get_language() == 'pt-br':
+        return "http://cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Portuguese-Brasil.json"
+    else:
+        return "http://cdn.datatables.net/plug-ins/3cfcc339e89/i18n/English.json"
+
+
 def error404(request):
     return render(request, "404.html")
 
@@ -33,6 +41,7 @@ def show_settings_by_index(request, pedal_index):
     args = {
         'title': 'Settings index {}'.format(pedal_index),
         'df': df,
+        'language_url': get_language_url(),
     }
     return render(request, "show_settings.html", args)
 
@@ -48,6 +57,7 @@ def show_settings_by_prime(request, pedal_prime):
         'title': 'Settings with PC Prime Form {}'.format(pedal_prime),
         'settings': len(df),
         'df': df,
+        'language_url': get_language_url(),
     }
     return render(request, "show_settings.html", args)
 
@@ -63,6 +73,7 @@ def show_settings_by_accidents(request, accidents):
         'title': 'Settings with PC Prime Form {}'.format(accidents),
         'settings': len(df),
         'df': df,
+        'language_url': get_language_url(),
     }
     return render(request, "show_settings.html", args)
 
@@ -73,17 +84,11 @@ def show_all_settings(request):
 
     del df['Accidents']
 
-    # ugly javascript localization
-    if get_language() == 'pt-br':
-        language_url = "http://cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Portuguese-Brasil.json"
-    else:
-        language_url = "http://cdn.datatables.net/plug-ins/3cfcc339e89/i18n/English.json"
-
     args = {
         'title': 'All settings',
         'settings': len(df),
         'df': df,
-        'language_url': language_url,
+        'language_url': get_language_url(),
         }
     return render(request, 'show_settings.html', args)
 
