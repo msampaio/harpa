@@ -10,6 +10,10 @@ import core
 # Create your views here.
 
 
+def error404(request):
+    return render(request, "404.html")
+
+
 def home(request):
     return render(request, "index.html")
 

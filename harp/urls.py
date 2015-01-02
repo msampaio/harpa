@@ -2,6 +2,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from dispositions import views
 from django.utils.translation import ugettext_lazy as _
+handler404 = views.error404
+
 
 urlpatterns = patterns('',
     # Examples:
