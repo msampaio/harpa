@@ -100,8 +100,7 @@ def make_table():
     n = 1
     for seq in p:
         pcset = [add_int(a, b) for a, b in zip(seq, base)]
-        pcset = list(set(pcset))
-        prime = get_prime_form(pcset)
+        prime = get_prime_form(list(set(pcset)))
         ns = [add_str(a, b) for a, b in zip(notes, seq)]
         r.append([n, ' '.join(ns), pretty_print(pcset), pretty_print(prime), seq])
         n += 1
