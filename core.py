@@ -34,18 +34,18 @@ def renumerate(s):
 
 
 def get_prime_form(s):
-    def aux(intervals_seq, dic):
-        distance = sum(intervals_seq)
-        if distance not in dic:
-            dic[distance] = []
-        dic[distance].append(intervals_seq)
-
     seq = sorted(list(set(s)))
     d = {}
     for i in range(len(seq)):
         r = rotate(seq, i)
-        aux(intervals(r, False), d)
-        aux(intervals(r, True), d)
+        intervals_seq = intervals(r, False)
+        distance = sum(intervals_seq)
+        if distance not in d:
+            d[distance] = []
+        ret_int_seq = intervals_seq[:]
+        ret_int_seq.reverse()
+        d[distance].append(intervals_seq)
+        d[distance].append(ret_int_seq)
 
     lowest_distance = sorted(d.keys())[0]
     more_compact = sorted(d[lowest_distance])[0]
