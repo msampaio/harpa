@@ -12,18 +12,17 @@ import argparse
 def add_last(s):
     return s + [s[0]]
 
+
 def diff(a, b):
     return (a - b) % 12
+
 
 def rotate(s, ind):
     return s[ind:] + s[:ind]
 
 
-def intervals(s, reverse=False):
-    if reverse:
-        return [diff(a, b) for a, b in zip(s, s[1:])]
-    else:
-        return [diff(b, a) for a, b in zip(s, s[1:])]
+def intervals(s):
+    return [diff(b, a) for a, b in zip(s, s[1:])]
 
 
 def renumerate(s):
@@ -31,6 +30,7 @@ def renumerate(s):
     for i in s:
         r.append((r[-1] + i) % 12)
     return r
+
 
 def invert(s):
     return [(12 - i) % 12 for i in s]
@@ -43,16 +43,17 @@ def get_prime_form(s):
         r = rotate(seq, i)
         ordinal = r
         inverted = invert(r)
-        retrograde = r[:]
-        retrograde.reverse()
-        r_inverted = invert(retrograde)
 
-        for current_s in [ordinal, inverted, retrograde, r_inverted]:
-            intervals_seq = intervals(current_s, False)
-            distance = sum(intervals_seq)
-            if distance not in d:
-                d[distance] = []
-            d[distance].append(intervals_seq)
+        for current_s in [ordinal, inverted]:
+            intervals_seq = intervals(current_s)
+            ret_intervals_seq = intervals_seq[:]
+            ret_intervals_seq.reverse()
+
+            for current_i_seq in [intervals_seq, ret_intervals_seq]:
+                distance = sum(current_i_seq)
+                if distance not in d:
+                    d[distance] = []
+                d[distance].append(current_i_seq)
 
     lowest_distance = sorted(d.keys())[0]
     more_compact = sorted(d[lowest_distance])[0]
