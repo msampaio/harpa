@@ -32,20 +32,27 @@ def renumerate(s):
         r.append((r[-1] + i) % 12)
     return r
 
+def invert(s):
+    return [(12 - i) % 12 for i in s]
+
 
 def get_prime_form(s):
     seq = sorted(list(set(s)))
     d = {}
     for i in range(len(seq)):
         r = rotate(seq, i)
-        intervals_seq = intervals(r, False)
-        distance = sum(intervals_seq)
-        if distance not in d:
-            d[distance] = []
-        ret_int_seq = intervals_seq[:]
-        ret_int_seq.reverse()
-        d[distance].append(intervals_seq)
-        d[distance].append(ret_int_seq)
+        ordinal = r
+        inverted = invert(r)
+        retrograde = r[:]
+        retrograde.reverse()
+        r_inverted = invert(retrograde)
+
+        for current_s in [ordinal, inverted, retrograde, r_inverted]:
+            intervals_seq = intervals(current_s, False)
+            distance = sum(intervals_seq)
+            if distance not in d:
+                d[distance] = []
+            d[distance].append(intervals_seq)
 
     lowest_distance = sorted(d.keys())[0]
     more_compact = sorted(d[lowest_distance])[0]
