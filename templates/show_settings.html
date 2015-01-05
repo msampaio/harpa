@@ -18,7 +18,9 @@
                     <th>{% trans "Notes" %}</th>
                     <th>{% trans "PC Set" %}</th>
                     <th>{% trans "Prime Form" %}</th>
-                    <th>{% trans "Pedals settings" %}</th>
+                    <th>{% trans "Forte Class" %}</th>
+                    <th>{% trans "Pedals Settings" %}</th>
+                    <th>{% trans "MIDI file" %}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,6 +30,7 @@
                     <td>{{ cell }}</td>
                     {% endfor %}
                     <td><img src="{{ STATIC_URL }}img/{{ row.0 }}.png"></td>
+                    <td><a href="{{ STATIC_URL }}midi/{{ row.0 }}.mid">{{ row.0 }}.mid</a></td>
                 </tr>
                 {% endfor %}
                 </tbody>

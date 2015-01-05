@@ -34,7 +34,7 @@ def home(request):
 def show_settings_by_index(request, pedal_index):
     df = core.load_csv()
 
-    df = df[df['Code'] == int(pedal_index)]
+    df = df[df['Index'] == int(pedal_index)]
 
     del df['Accidents']
 
@@ -123,7 +123,7 @@ def get_by_accidents(request):
         if form.is_valid():
             accidents = tuple([int(form.cleaned_data[c]) for c in list('cdefgab')])
             df = core.load_csv()
-            index = str(df[df['Accidents'] == str(accidents)].iloc[0]['Code'])
+            index = str(df[df['Accidents'] == str(accidents)].iloc[0]['Index'])
             return HttpResponseRedirect(reverse('dispositions.views.show_settings_by_index', args={index,}))
 
     else:
@@ -138,7 +138,7 @@ def download_all_settings(request):
     df = core.load_csv()
     buff = BytesIO()
 
-    del df['Code']
+    del df['Index']
     del df['Accidents']
 
     zip_archive = zipfile.ZipFile(buff, mode='w')
