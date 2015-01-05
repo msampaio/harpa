@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 16:59-0300\n"
-"PO-Revision-Date: 2015-01-02 17:00-0300\n"
+"POT-Creation-Date: 2015-01-05 10:59-0300\n"
+"PO-Revision-Date: 2015-01-05 11:00-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -89,27 +89,27 @@ msgstr "Erro Interno do Servidor"
 msgid "Harp | "
 msgstr "Harpa |"
 
-#: templates/base.html:45
+#: templates/base.html:48
 msgid "Harp"
 msgstr "Harpa"
 
-#: templates/base.html:55
+#: templates/base.html:58
 msgid "All settings"
 msgstr "Todas as disposições"
 
-#: templates/base.html:56 templates/filter_index.html:5
+#: templates/base.html:59 templates/filter_index.html:5
 msgid "Get by index"
 msgstr "Obter por índice"
 
-#: templates/base.html:57 templates/filter_prime_form.html:5
+#: templates/base.html:60 templates/filter_prime_form.html:5
 msgid "Get by prime form"
 msgstr "Obter por forma prima"
 
-#: templates/base.html:58 templates/filter_accidents.html:5
+#: templates/base.html:61 templates/filter_accidents.html:5
 msgid "Get by accidents"
 msgstr "Obter por acidentes"
 
-#: templates/base.html:59
+#: templates/base.html:62
 msgid "Get TXT file"
 msgstr "Obter arquivo TXT"
 
@@ -175,8 +175,16 @@ msgid "Prime Form"
 msgstr "Forma prima"
 
 #: templates/show_settings.html:21
-msgid "Pedals settings"
+msgid "Forte Class"
+msgstr "Classe de Forte"
+
+#: templates/show_settings.html:22
+msgid "Pedals Settings"
 msgstr "Disposição de pedais"
+
+#: templates/show_settings.html:23
+msgid "MIDI file"
+msgstr "Arquivo MIDI"
 
 #~ msgid "Insert a prime form such as 02468A..."
 #~ msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A..."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-02 16:59-0300\n"
+"POT-Creation-Date: 2015-01-05 10:59-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,27 +88,27 @@ msgstr ""
 msgid "Harp | "
 msgstr ""
 
-#: templates/base.html:45
+#: templates/base.html:48
 msgid "Harp"
 msgstr ""
 
-#: templates/base.html:55
+#: templates/base.html:58
 msgid "All settings"
 msgstr ""
 
-#: templates/base.html:56 templates/filter_index.html:5
+#: templates/base.html:59 templates/filter_index.html:5
 msgid "Get by index"
 msgstr ""
 
-#: templates/base.html:57 templates/filter_prime_form.html:5
+#: templates/base.html:60 templates/filter_prime_form.html:5
 msgid "Get by prime form"
 msgstr ""
 
-#: templates/base.html:58 templates/filter_accidents.html:5
+#: templates/base.html:61 templates/filter_accidents.html:5
 msgid "Get by accidents"
 msgstr ""
 
-#: templates/base.html:59
+#: templates/base.html:62
 msgid "Get TXT file"
 msgstr ""
 
@@ -174,5 +174,13 @@ msgid "Prime Form"
 msgstr ""
 
 #: templates/show_settings.html:21
-msgid "Pedals settings"
+msgid "Forte Class"
+msgstr ""
+
+#: templates/show_settings.html:22
+msgid "Pedals Settings"
+msgstr ""
+
+#: templates/show_settings.html:23
+msgid "MIDI file"
 msgstr ""
