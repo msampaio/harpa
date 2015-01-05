@@ -20,7 +20,6 @@ def get_secret():
 
 SERVER_CONF = get_secret()
 ALLOWED_HOSTS = ["harp.genosmus.com"]
-SECRET_KEY = SERVER_CONF['secret-key']
 STATIC_ROOT = '/home/genos/webapps/harp_static/'
 
 EMAIL_HOST = 'smtp.webfaction.com'

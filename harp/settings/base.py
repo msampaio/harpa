@@ -1,5 +1,13 @@
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
+from django.utils.crypto import get_random_string
+
+def make_secret_key():
+    chars = '0123456789!@#$%^&*(-_=+).,/\|:;[]{}'
+    letters = 'abcdefghijklmnopqrstuvwxyz'
+    chars += letters
+    chars += letters.upper()
+    return get_random_string(100, chars)
 
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 SITE_ROOT = dirname(DJANGO_ROOT)
@@ -44,7 +52,7 @@ STATICFILES_FINDERS = (
 )
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7(t&jyu#rt-0-7is$cpkyu$#y0&v_y=x1vuvyfh&p98n(5_f!8'
+SECRET_KEY = make_secret_key()
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
