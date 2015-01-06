@@ -93,11 +93,11 @@ def make_midi(pc_set=[0,2,4,5,7,9,11], filename='example'):
     pattern = midi.Pattern()
     track = midi.Track()
     pattern.append(track)
-    span = 2
-    current_note = midi.C_1
+    span = 1
+    current_note = midi.C_4
     current_tick = 100
     tempo = midi.SetTempoEvent()
-    tempo.set_bpm(1000)
+    tempo.set_bpm(600)
     events = [
         midi.ProgramNameEvent(tick=0, text='1\x00', data=[49, 0]),
         midi.ProgramChangeEvent(tick=0, channel=0, data=[46]),
@@ -107,12 +107,12 @@ def make_midi(pc_set=[0,2,4,5,7,9,11], filename='example'):
     for event in events:
         track.append(event)
 
-    while current_note < midi.A_7:
+    while current_note < midi.A_6:
         for i in intervals_seq:
             aux(track, current_tick, current_note)
             current_note += i
 
-    while current_note > midi.B_0:
+    while current_note > midi.Bb_3:
         for j in ret_intevals_seq:
             aux(track, current_tick, current_note)
             current_note -= j
