@@ -67,7 +67,7 @@ def make_dataframe():
 
         chord = music21.chord.Chord(music21_notes)
         prime = chord.primeForm
-        forte = chord.forteClass
+        forte = chord.forteClassTnI
         r.append([index_counter, ' '.join(harp_notes), pretty_print(pcset), pretty_print(prime), forte, seq])
         index_counter += 1
 
