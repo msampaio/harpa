@@ -164,7 +164,7 @@ def show_statistics(request):
     count_df.index.name = _('Number of Pitch Classes')
     count_df = count_df.T
 
-    count_items = count_df.T['Amount'].to_dict().items()
+    count_items = count_df.T[_('Amount')].to_dict().items()
     chart_data = list(map(lambda x: [str(x[0]), x[1]], count_items))
     chart_data.insert(0, list(count_df.index))
 
