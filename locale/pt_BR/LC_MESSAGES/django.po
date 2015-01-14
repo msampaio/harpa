@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-14 12:55-0300\n"
-"PO-Revision-Date: 2015-01-14 12:56-0300\n"
+"POT-Creation-Date: 2015-01-14 17:31-0300\n"
+"PO-Revision-Date: 2015-01-14 17:32-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -55,6 +55,14 @@ msgstr "Proporção"
 #: dispositions/views.py:164
 msgid "Number of Pitch Classes"
 msgstr "Número de classes de altura"
+
+#: dispositions/views.py:173
+msgid "Forte class"
+msgstr "Classe de Forte"
+
+#: dispositions/views.py:173
+msgid "Number of pedal settings"
+msgstr "Número de disposições de pedais"
 
 #: harp/urls.py:16
 msgid "^all/"
@@ -220,9 +228,13 @@ msgstr "Tipo de acorde"
 msgid "chord"
 msgstr "corde"
 
-#: templates/statistics.html:50
+#: templates/statistics.html:58
 msgid "Pedal settings by number of pitch classes"
 msgstr "Configurações de pedais por número de classes de altura"
+
+#: templates/statistics.html:71
+msgid "Pedal settings grouped by Prime Form - Histogram"
+msgstr "Disposições dos pedais agrupadas pela forma prima - Histograma"
 
 #~ msgid "Insert a prime form such as 02468A..."
 #~ msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A..."

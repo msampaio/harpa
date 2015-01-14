@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-14 12:55-0300\n"
+"POT-Creation-Date: 2015-01-14 17:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,14 @@ msgstr ""
 
 #: dispositions/views.py:164
 msgid "Number of Pitch Classes"
+msgstr ""
+
+#: dispositions/views.py:173
+msgid "Forte class"
+msgstr ""
+
+#: dispositions/views.py:173
+msgid "Number of pedal settings"
 msgstr ""
 
 #: harp/urls.py:16
@@ -219,6 +227,10 @@ msgstr ""
 msgid "chord"
 msgstr ""
 
-#: templates/statistics.html:50
+#: templates/statistics.html:58
 msgid "Pedal settings by number of pitch classes"
+msgstr ""
+
+#: templates/statistics.html:71
+msgid "Pedal settings grouped by Prime Form - Histogram"
 msgstr ""
