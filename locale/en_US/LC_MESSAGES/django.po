@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-05 10:59-0300\n"
+"POT-Creation-Date: 2015-01-14 12:49-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,18 @@ msgstr ""
 msgid "Insert a pcset prime form such as 02468A"
 msgstr ""
 
+#: dispositions/views.py:163
+msgid "Amount"
+msgstr ""
+
+#: dispositions/views.py:163
+msgid "Proportion"
+msgstr ""
+
+#: dispositions/views.py:164
+msgid "Number of Pitch Classes"
+msgstr ""
+
 #: harp/urls.py:16
 msgid "^all/"
 msgstr ""
@@ -69,6 +81,10 @@ msgstr ""
 
 #: harp/urls.py:23
 msgid "^accidents/(?P<accidents>\\w+)/$"
+msgstr ""
+
+#: harp/urls.py:24
+msgid "^statistics/$"
 msgstr ""
 
 #: templates/404.html:5 templates/404.html.py:9 templates/500.html:5
@@ -110,6 +126,11 @@ msgstr ""
 
 #: templates/base.html:62
 msgid "Get TXT file"
+msgstr ""
+
+#: templates/base.html:63 templates/statistics.html:7
+#: templates/statistics.html.py:11
+msgid "Statistics"
 msgstr ""
 
 #: templates/filter_accidents.html:10
@@ -183,4 +204,17 @@ msgstr ""
 
 #: templates/show_settings.html:23
 msgid "MIDI file"
+msgstr ""
+
+#: templates/statistics.html:12
+msgid "Pedal settings by type of chords (tetrachord, pentachord, etc)"
+msgstr ""
+
+#: templates/statistics.html:18
+msgid "Chord type"
+msgstr ""
+
+#. Translators: This chord is used in context of 4-chord, 5-chord, etc.
+#: templates/statistics.html:28
+msgid "chord"
 msgstr ""
