@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block title %}
+    {% trans "Statistics" %}
+{% endblock %}
+
+{% block body %}
+    <h2>{% trans "Statistics" %}</h2>
+    <p>{% trans "Pedal settings by type of chords (tetrachord, pentachord, etc)" %}</p>
+    <div class="row">
+        <div class="col-xs-6">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{% trans "Chord type" %}</th>
+                    {% for index in df.index %}
+                    <th>{{ index }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for key, vector in df.items %}
+                <tr>
+                    {% comment %}Translators: This chord is used in context of 4-chord, 5-chord, etc.{% endcomment %}
+                    <td>{{ key }}-{% trans "chord" %}</td>
+                    <td>{{ vector.0 | floatformat:0 | intcomma }}</td>
+                    <td>{{ vector.1 | floatformat:2 }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="piechart" class="col-xs-6" style="width: 400px; height: 400px;"></div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable({{ chart_data | safe }});
+
+            var options = {
+              title: 'Pedal settings by number of pitch classes',
+              legend: {position: 'bottom'},
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+          }
+    </script>
+{% endblock %}

@@ -1,11 +1,14 @@
 from io import BytesIO
 import zipfile
+import pandas
+from collections import Counter
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from dispositions.forms import IndexForm, PrimeForm, AccidentsForm
 from django.utils.translation import get_language
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _
 import core
 
 # Create your views here.
@@ -148,3 +151,25 @@ def download_all_settings(request):
     response = HttpResponse(buff.getvalue(), content_type="application/x-zip-compressed")
     response['Content-Disposition'] = 'attachment; filename=harp_settings.zip'
     return response
+
+def show_statistics(request):
+    df = core.load_csv()
+    pf_series = df['Prime Form']
+
+    t_series = pandas.Series(map(len, pf_series), index=pf_series.index)
+    t_count_simple = t_series.value_counts(sort=True)
+    t_count_normalized = t_series.value_counts(normalize=True, sort=True)
+    count_df = pandas.DataFrame([t_count_simple, t_count_normalized]).T
+    count_df.columns = [_('Amount'), _('Proportion')]
+    count_df.index.name = _('Number of Pitch Classes')
+    count_df = count_df.T
+
+    count_items = count_df.T['Amount'].to_dict().items()
+    chart_data = list(map(lambda x: [str(x[0]), x[1]], count_items))
+    chart_data.insert(0, list(count_df.index))
+
+    args = {'df': count_df,
+            'chart_data': chart_data}
+
+
+    return render(request, 'statistics.html', args)

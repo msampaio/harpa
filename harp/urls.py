@@ -21,5 +21,6 @@ urlpatterns = patterns('',
     url(_(r'^index/(?P<pedal_index>\d+)/$'), views.show_settings_by_index, name='show_settings_by_number'),
     url(_(r'^prime/(?P<pedal_prime>\w+)/$'), views.show_settings_by_prime, name='show_settings_by_prime'),
     url(_(r'^accidents/(?P<accidents>\w+)/$'), views.show_settings_by_accidents, name='show_settings_by_accidents'),
+    url(_(r'^statistics/$'), views.show_statistics, name='show_statistics'),
     url(r'^admin/', include(admin.site.urls)),
 )
