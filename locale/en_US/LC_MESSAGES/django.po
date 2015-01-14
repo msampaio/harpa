@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-14 12:49-0300\n"
+"POT-Creation-Date: 2015-01-14 12:55-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Insert a pcset prime form such as 02468A"
 msgstr ""
 
-#: dispositions/views.py:163
+#: dispositions/views.py:163 dispositions/views.py:167
 msgid "Amount"
 msgstr ""
 
@@ -217,4 +217,8 @@ msgstr ""
 #. Translators: This chord is used in context of 4-chord, 5-chord, etc.
 #: templates/statistics.html:28
 msgid "chord"
+msgstr ""
+
+#: templates/statistics.html:50
+msgid "Pedal settings by number of pitch classes"
 msgstr ""

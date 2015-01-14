@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-14 12:49-0300\n"
-"PO-Revision-Date: 2015-01-14 12:51-0300\n"
+"POT-Creation-Date: 2015-01-14 12:55-0300\n"
+"PO-Revision-Date: 2015-01-14 12:56-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -44,7 +44,7 @@ msgstr "Forma prima da disposição"
 msgid "Insert a pcset prime form such as 02468A"
 msgstr "Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
 
-#: dispositions/views.py:163
+#: dispositions/views.py:163 dispositions/views.py:167
 msgid "Amount"
 msgstr "Quantidade"
 
@@ -209,7 +209,7 @@ msgstr "Arquivo MIDI"
 
 #: templates/statistics.html:12
 msgid "Pedal settings by type of chords (tetrachord, pentachord, etc)"
-msgstr "Configurações de pedal por tipo de acorde (tetracorde, pentacorde, etc)"
+msgstr "Configurações de pedais por tipo de acorde (tetracorde, pentacorde, etc)"
 
 #: templates/statistics.html:18
 msgid "Chord type"
@@ -219,6 +219,10 @@ msgstr "Tipo de acorde"
 #: templates/statistics.html:28
 msgid "chord"
 msgstr "corde"
+
+#: templates/statistics.html:50
+msgid "Pedal settings by number of pitch classes"
+msgstr "Configurações de pedais por número de classes de altura"
 
 #~ msgid "Insert a prime form such as 02468A..."
 #~ msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A..."
