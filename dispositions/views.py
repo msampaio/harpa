@@ -156,20 +156,27 @@ def show_statistics(request):
     df = core.load_csv()
     pf_series = df['Prime Form']
 
-    t_series = pandas.Series(map(len, pf_series), index=pf_series.index)
-    t_count_simple = t_series.value_counts(sort=True)
-    t_count_normalized = t_series.value_counts(normalize=True, sort=True)
-    count_df = pandas.DataFrame([t_count_simple, t_count_normalized]).T
-    count_df.columns = [_('Amount'), _('Proportion')]
-    count_df.index.name = _('Number of Pitch Classes')
-    count_df = count_df.T
+    type_series = pandas.Series(map(len, pf_series), index=pf_series.index)
+    type_count_simple = type_series.value_counts(sort=True)
+    type_count_normalized = type_series.value_counts(normalize=True, sort=True)
+    type_count_df = pandas.DataFrame([type_count_simple, type_count_normalized]).T
+    type_count_df.columns = [_('Amount'), _('Proportion')]
+    type_count_df.index.name = _('Number of Pitch Classes')
+    type_count_df = type_count_df.T
 
-    count_items = count_df.T[_('Amount')].to_dict().items()
-    chart_data = list(map(lambda x: [str(x[0]), x[1]], count_items))
-    chart_data.insert(0, list(count_df.index))
+    count_items = type_count_df.T[_('Amount')].to_dict().items()
+    chord_type_pie_data = list(map(lambda x: [str(x[0]), x[1]], count_items))
+    chord_type_pie_data.insert(0, list(type_count_df.index))
 
-    args = {'df': count_df,
-            'chart_data': chart_data}
+    pf_histogram_data = pf_series.value_counts().to_dict().items()
+    pf_histogram_data = list(map(list, pf_histogram_data))
+    pf_histogram_data.insert(0, [_('Forte class'), _('Number of pedal settings')])
+
+    args = {
+        'df': type_count_df,
+        'chord_type_pie_data': chord_type_pie_data,
+        'pf_histogram_data': pf_histogram_data,
+    }
 
 
     return render(request, 'statistics.html', args)

@@ -33,27 +33,47 @@
                 </tbody>
             </table>
         </div>
-        <div id="piechart" class="col-xs-6" style="width: 400px; height: 400px;"></div>
+        <div id="chord_type_pie" class="col-xs-6" style="width: 400px; height: 400px;"></div>
     </div>
+
+    <div id="pf_histogram" style="width: 900px; height: 500px;"></div>
 {% endblock %}
 
 {% block javascript %}
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
         google.load("visualization", "1", {packages:["corechart"]});
-        google.setOnLoadCallback(drawChart);
-        function drawChart() {
+        google.setOnLoadCallback(init);
 
-            var data = google.visualization.arrayToDataTable({{ chart_data | safe }});
+        function init() {
+            drawChart1();
+            drawChart2();
+        }
+
+        function drawChart1() {
+
+            var data = google.visualization.arrayToDataTable({{ chord_type_pie_data | safe }});
 
             var options = {
               title: '{% trans "Pedal settings by number of pitch classes"%}',
               legend: {position: 'bottom'},
             };
 
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            var chart = new google.visualization.PieChart(document.getElementById('chord_type_pie'));
 
             chart.draw(data, options);
           }
+
+        function drawChart2() {
+                var data = google.visualization.arrayToDataTable({{ pf_histogram_data | safe }});
+
+                var options = {
+                  title: '{% trans "Pedal settings grouped by Prime Form - Histogram" %}',
+                  legend: { position: 'none' },
+                }
+
+                var chart = new google.visualization.Histogram(document.getElementById('pf_histogram'));
+                chart.draw(data, options);
+              }
     </script>
 {% endblock %}
