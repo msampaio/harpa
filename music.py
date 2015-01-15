@@ -68,10 +68,18 @@ def make_dataframe():
         chord = music21.chord.Chord(music21_notes)
         prime = chord.primeForm
         forte = chord.forteClassTnI
-        r.append([index_counter, ' '.join(harp_notes), pretty_print(pcset), pretty_print(prime), forte, seq])
+        interval_vector = chord.intervalVector
+        row = [index_counter, ' '.join(harp_notes), pretty_print(pcset), pretty_print(prime), forte, seq]
+        for iv in interval_vector:
+            row.append(iv)
+        r.append(row)
         index_counter += 1
 
-    df = pandas.DataFrame(r, columns=['Index', 'Notes', 'PC Set', 'Prime Form', 'Forte class', 'Accidents'])
+    columns = ['Index', 'Notes', 'PC Set', 'Prime Form', 'Forte class', 'Accidents']
+    for i in range(1, 7):
+        columns.append(str(i))
+
+    df = pandas.DataFrame(r, columns=columns)
     df.index = list(range(1, len(df) + 1))
     return df
 
