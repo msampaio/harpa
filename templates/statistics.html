@@ -105,7 +105,7 @@
             var data = google.visualization.arrayToDataTable({{ interval_vector_line_data | safe }});
 
             var options = {
-              title: '{% trans "Intervals amount distribution" %}',
+              title: '{% trans "Intervals amount central tendency" %}',
               legend: { position: 'bottom' },
               vAxis: {
                 title: '{% trans "Distance from the mean (normalized by standard deviation)" %}',
