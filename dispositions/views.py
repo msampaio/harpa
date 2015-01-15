@@ -174,7 +174,7 @@ def show_statistics(request):
     pf_histogram_data.insert(0, [_('Forte class'), _('Number of pedal settings')])
 
     args = {
-        'df': type_count_df,
+        'type_table_data': type_count_df,
         'chord_type_pie_data': chord_type_pie_data,
         'pf_histogram_data': pf_histogram_data,
     }

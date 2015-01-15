@@ -9,20 +9,21 @@
 
 {% block body %}
     <h2>{% trans "Statistics" %}</h2>
-    <p>{% trans "Pedal settings by type of chords (tetrachord, pentachord, etc)" %}</p>
+
+    <h3>{% trans "Pedal settings by type of chords (tetrachord, pentachord, etc)" %}</h3>
     <div class="row">
         <div class="col-xs-6">
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th>{% trans "Chord type" %}</th>
-                    {% for index in df.index %}
+                    {% for index in type_table_data.index %}
                     <th>{{ index }}</th>
                     {% endfor %}
                 </tr>
                 </thead>
                 <tbody>
-                {% for key, vector in df.items %}
+                {% for key, vector in type_table_data.items %}
                 <tr>
                     {% comment %}Translators: This chord is used in context of 4-chord, 5-chord, etc.{% endcomment %}
                     <td>{{ key }}-{% trans "chord" %}</td>
