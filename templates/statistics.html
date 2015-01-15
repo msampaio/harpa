@@ -106,9 +106,9 @@
 
             var options = {
               title: '{% trans "Intervals amount distribution" %}',
-              legend: 'none',
+              legend: { position: 'bottom' },
               vAxis: {
-                title: '{% trans "Amount (normalized by standard deviation)" %}',
+                title: '{% trans "Distance from the mean (normalized by standard deviation)" %}',
               },
               hAxis: {
                 title: '{% trans "Interval (semitones)" %}',
