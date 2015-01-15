@@ -13,6 +13,7 @@ import core
 
 # Create your views here.
 
+COLUMNS = ['Index', 'Notes', 'PC Set', 'Prime Form', 'Forte class']
 
 def get_language_url():
     # ugly javascript localization
@@ -39,7 +40,7 @@ def show_settings_by_index(request, pedal_index):
 
     df = df[df['Index'] == int(pedal_index)]
 
-    del df['Accidents']
+    df = df[COLUMNS]
 
     args = {
         'title': 'Settings index {}'.format(pedal_index),
@@ -54,7 +55,7 @@ def show_settings_by_prime(request, pedal_prime):
 
     df = df[df['Prime Form'] == pedal_prime]
 
-    del df['Accidents']
+    df = df[COLUMNS]
 
     args = {
         'title': 'Settings with PC Prime Form {}'.format(pedal_prime),
@@ -70,7 +71,7 @@ def show_settings_by_accidents(request, accidents):
 
     df = df[df['Accidents'] == accidents]
 
-    del df['Accidents']
+    df = df[COLUMNS]
 
     args = {
         'title': 'Settings with PC Prime Form {}'.format(accidents),
@@ -85,7 +86,7 @@ def show_all_settings(request):
 
     df = core.load_csv()
 
-    del df['Accidents']
+    df = df[COLUMNS]
 
     args = {
         'title': 'All settings',
@@ -142,7 +143,7 @@ def download_all_settings(request):
     buff = BytesIO()
 
     del df['Index']
-    del df['Accidents']
+    df = df[COLUMNS]
 
     zip_archive = zipfile.ZipFile(buff, mode='w')
     zip_archive.writestr('harp_settings.txt', df.to_string())
