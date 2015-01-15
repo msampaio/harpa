@@ -37,7 +37,31 @@
         <div id="chord_type_pie" class="col-xs-6" style="width: 400px; height: 400px;"></div>
     </div>
 
+    <h3>{% trans "Pedal settings by prime form" %}</h3>
     <div id="pf_histogram" style="width: 900px; height: 500px;"></div>
+
+    <h3>{% trans "Interval vector summation" %}</h3>
+    <div class="row">
+        <div class="col-xs-6">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{% trans "Interval (semitones)" %}</th>
+                    <th>{% trans "Sum" %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key, vector in interval_vector_data.items %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ vector }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="interval_vector_line_data" class="col-xs-6" style="width: 400px; height: 400px;"></div>
+    </div>
 {% endblock %}
 
 {% block javascript %}
@@ -49,6 +73,7 @@
         function init() {
             drawChart1();
             drawChart2();
+            drawChart3();
         }
 
         function drawChart1() {
@@ -75,5 +100,25 @@
                 var chart = new google.visualization.Histogram(document.getElementById('pf_histogram'));
                 chart.draw(data, options);
         }
+
+        function drawChart3() {
+            var data = google.visualization.arrayToDataTable({{ interval_vector_line_data | safe }});
+
+            var options = {
+              title: '{% trans "Intervals amount distribution" %}',
+              legend: 'none',
+              vAxis: {
+                title: '{% trans "Amount (normalized by standard deviation)" %}',
+              },
+              hAxis: {
+                title: '{% trans "Interval (semitones)" %}',
+              },
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('interval_vector_line_data'));
+
+            chart.draw(data, options);
+        }
+
     </script>
 {% endblock %}

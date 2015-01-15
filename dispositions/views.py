@@ -173,10 +173,24 @@ def show_statistics(request):
     pf_histogram_data = list(map(list, pf_histogram_data))
     pf_histogram_data.insert(0, [_('Forte class'), _('Number of pedal settings')])
 
+    # interval vector
+    iv_string_list = [str(i) for i in range(1,7)]
+    iv_columns = COLUMNS[:]
+    iv_columns.extend(iv_string_list)
+
+    # global interval_vector
+    iv_sum_series = df[iv_string_list].sum()
+    iv_sum_distribution_series = (iv_sum_series - iv_sum_series.mean()) / iv_sum_series.std()
+    iv_sum_distribution_series = iv_sum_distribution_series.to_dict().items()
+    iv_sum_distribution_series = list(map(list, sorted(iv_sum_distribution_series)))
+    iv_sum_distribution_series.insert(0, [_('Interval'), _('Amount')])
+
     args = {
         'type_table_data': type_count_df,
         'chord_type_pie_data': chord_type_pie_data,
         'pf_histogram_data': pf_histogram_data,
+        'interval_vector_data': iv_sum_series,
+        'interval_vector_line_data': iv_sum_distribution_series,
     }
 
 
