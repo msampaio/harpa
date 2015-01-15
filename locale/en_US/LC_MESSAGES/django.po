@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-15 18:44-0300\n"
+"POT-Creation-Date: 2015-01-15 18:49-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -257,7 +257,7 @@ msgid "Pedal settings grouped by Prime Form - Histogram"
 msgstr ""
 
 #: templates/statistics.html:108
-msgid "Intervals amount distribution"
+msgid "Intervals amount central tendency"
 msgstr ""
 
 #: templates/statistics.html:111

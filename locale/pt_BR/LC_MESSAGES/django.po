@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-15 18:44-0300\n"
-"PO-Revision-Date: 2015-01-15 18:45-0300\n"
+"POT-Creation-Date: 2015-01-15 18:49-0300\n"
+"PO-Revision-Date: 2015-01-15 18:49-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -258,8 +258,8 @@ msgid "Pedal settings grouped by Prime Form - Histogram"
 msgstr "Disposições dos pedais agrupadas pela forma prima - Histograma"
 
 #: templates/statistics.html:108
-msgid "Intervals amount distribution"
-msgstr "Distribuição de quantidade de intervalos"
+msgid "Intervals amount central tendency"
+msgstr "Tendência central de quantidade de intervalos"
 
 #: templates/statistics.html:111
 msgid "Distance from the mean (normalized by standard deviation)"
