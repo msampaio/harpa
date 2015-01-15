@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-14 17:31-0300\n"
+"POT-Creation-Date: 2015-01-15 18:35-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,24 +43,29 @@ msgstr ""
 msgid "Insert a pcset prime form such as 02468A"
 msgstr ""
 
-#: dispositions/views.py:163 dispositions/views.py:167
+#: dispositions/views.py:164 dispositions/views.py:168
+#: dispositions/views.py:186
 msgid "Amount"
 msgstr ""
 
-#: dispositions/views.py:163
+#: dispositions/views.py:164
 msgid "Proportion"
 msgstr ""
 
-#: dispositions/views.py:164
+#: dispositions/views.py:165
 msgid "Number of Pitch Classes"
 msgstr ""
 
-#: dispositions/views.py:173
+#: dispositions/views.py:174
 msgid "Forte class"
 msgstr ""
 
-#: dispositions/views.py:173
+#: dispositions/views.py:174
 msgid "Number of pedal settings"
+msgstr ""
+
+#: dispositions/views.py:186
+msgid "Interval"
 msgstr ""
 
 #: harp/urls.py:16
@@ -214,23 +219,47 @@ msgstr ""
 msgid "MIDI file"
 msgstr ""
 
-#: templates/statistics.html:12
+#: templates/statistics.html:13
 msgid "Pedal settings by type of chords (tetrachord, pentachord, etc)"
 msgstr ""
 
-#: templates/statistics.html:18
+#: templates/statistics.html:19
 msgid "Chord type"
 msgstr ""
 
 #. Translators: This chord is used in context of 4-chord, 5-chord, etc.
-#: templates/statistics.html:28
+#: templates/statistics.html:29
 msgid "chord"
 msgstr ""
 
-#: templates/statistics.html:58
-msgid "Pedal settings by number of pitch classes"
+#: templates/statistics.html:40
+msgid "Pedal settings by prime form"
 msgstr ""
 
-#: templates/statistics.html:71
+#: templates/statistics.html:43
+msgid "Interval vector summation"
+msgstr ""
+
+#: templates/statistics.html:49 templates/statistics.html.py:114
+msgid "Interval (semitones)"
+msgstr ""
+
+#: templates/statistics.html:50
+msgid "Sum"
+msgstr ""
+
+#: templates/statistics.html:83
+msgid "Pedal settings by chord type"
+msgstr ""
+
+#: templates/statistics.html:96
 msgid "Pedal settings grouped by Prime Form - Histogram"
+msgstr ""
+
+#: templates/statistics.html:108
+msgid "Intervals amount distribution"
+msgstr ""
+
+#: templates/statistics.html:111
+msgid "Amount (normalized by standard deviation)"
 msgstr ""

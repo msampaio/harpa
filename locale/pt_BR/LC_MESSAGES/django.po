@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-14 17:31-0300\n"
-"PO-Revision-Date: 2015-01-14 17:32-0300\n"
+"POT-Creation-Date: 2015-01-15 18:35-0300\n"
+"PO-Revision-Date: 2015-01-15 18:36-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.7.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: dispositions/forms.py:7
@@ -44,25 +44,30 @@ msgstr "Forma prima da disposição"
 msgid "Insert a pcset prime form such as 02468A"
 msgstr "Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
 
-#: dispositions/views.py:163 dispositions/views.py:167
+#: dispositions/views.py:164 dispositions/views.py:168
+#: dispositions/views.py:186
 msgid "Amount"
 msgstr "Quantidade"
 
-#: dispositions/views.py:163
+#: dispositions/views.py:164
 msgid "Proportion"
 msgstr "Proporção"
 
-#: dispositions/views.py:164
+#: dispositions/views.py:165
 msgid "Number of Pitch Classes"
 msgstr "Número de classes de altura"
 
-#: dispositions/views.py:173
+#: dispositions/views.py:174
 msgid "Forte class"
 msgstr "Classe de Forte"
 
-#: dispositions/views.py:173
+#: dispositions/views.py:174
 msgid "Number of pedal settings"
 msgstr "Número de disposições de pedais"
+
+#: dispositions/views.py:186
+msgid "Interval"
+msgstr "Intervalo"
 
 #: harp/urls.py:16
 msgid "^all/"
@@ -215,26 +220,50 @@ msgstr "Disposição de pedais"
 msgid "MIDI file"
 msgstr "Arquivo MIDI"
 
-#: templates/statistics.html:12
+#: templates/statistics.html:13
 msgid "Pedal settings by type of chords (tetrachord, pentachord, etc)"
-msgstr "Configurações de pedais por tipo de acorde (tetracorde, pentacorde, etc)"
+msgstr "Disposições de pedais por tipo de acorde (tetracorde, pentacorde, etc)"
 
-#: templates/statistics.html:18
+#: templates/statistics.html:19
 msgid "Chord type"
 msgstr "Tipo de acorde"
 
 #. Translators: This chord is used in context of 4-chord, 5-chord, etc.
-#: templates/statistics.html:28
+#: templates/statistics.html:29
 msgid "chord"
 msgstr "corde"
 
-#: templates/statistics.html:58
-msgid "Pedal settings by number of pitch classes"
-msgstr "Configurações de pedais por número de classes de altura"
+#: templates/statistics.html:40
+msgid "Pedal settings by prime form"
+msgstr "Configurações de pedais por forma prima"
 
-#: templates/statistics.html:71
+#: templates/statistics.html:43
+msgid "Interval vector summation"
+msgstr "Soma de vetor intervalar"
+
+#: templates/statistics.html:49 templates/statistics.html.py:114
+msgid "Interval (semitones)"
+msgstr "Intervalo (semitons)"
+
+#: templates/statistics.html:50
+msgid "Sum"
+msgstr "Soma"
+
+#: templates/statistics.html:83
+msgid "Pedal settings by chord type"
+msgstr "Configurações de pedais por tipo de acorde"
+
+#: templates/statistics.html:96
 msgid "Pedal settings grouped by Prime Form - Histogram"
 msgstr "Disposições dos pedais agrupadas pela forma prima - Histograma"
+
+#: templates/statistics.html:108
+msgid "Intervals amount distribution"
+msgstr "Distribuição de quantidade de intervalos"
+
+#: templates/statistics.html:111
+msgid "Amount (normalized by standard deviation)"
+msgstr "Quantidade (normalizada por desvio padrão)"
 
 #~ msgid "Insert a prime form such as 02468A..."
 #~ msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A..."
