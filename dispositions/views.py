@@ -142,8 +142,8 @@ def download_all_settings(request):
     df = core.load_csv()
     buff = BytesIO()
 
-    del df['Index']
     df = df[COLUMNS]
+    del df['Index']
 
     zip_archive = zipfile.ZipFile(buff, mode='w')
     zip_archive.writestr('harp_settings.txt', df.to_string())
