@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-16 09:25-0300\n"
-"PO-Revision-Date: 2015-01-16 09:36-0300\n"
+"POT-Creation-Date: 2015-01-16 09:37-0300\n"
+"PO-Revision-Date: 2015-01-16 09:40-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -337,34 +337,29 @@ msgstr ""
 "média de intervalos.\n"
 "Seu eixo Y contém a variação a partir da média, normalizada pelo desvio "
 "padrão.\n"
-
-#: templates/statistics.html:82
-msgid ""
-"\n"
 "        "
-msgstr ""
 
-#: templates/statistics.html:91 templates/statistics.html.py:156
+#: templates/statistics.html:88 templates/statistics.html.py:153
 msgid "Interval (semitones)"
 msgstr "Intervalo (semitons)"
 
-#: templates/statistics.html:92
+#: templates/statistics.html:89
 msgid "Sum"
 msgstr "Soma"
 
-#: templates/statistics.html:125
+#: templates/statistics.html:122
 msgid "Pedal settings by chord type"
 msgstr "Configurações de pedais por tipo de acorde"
 
-#: templates/statistics.html:138
+#: templates/statistics.html:135
 msgid "Pedal settings grouped by Prime Form - Histogram"
 msgstr "Disposições dos pedais agrupadas pela forma prima - Histograma"
 
-#: templates/statistics.html:150
+#: templates/statistics.html:147
 msgid "Intervals amount central tendency"
 msgstr "Tendência central de quantidade de intervalos"
 
-#: templates/statistics.html:153
+#: templates/statistics.html:150
 msgid "Distance from the mean (normalized by standard deviation)"
 msgstr "Distância da média (normalizada por desvio padrão)"
 
