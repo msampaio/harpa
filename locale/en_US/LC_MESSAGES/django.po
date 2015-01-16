@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-15 18:49-0300\n"
+"POT-Creation-Date: 2015-01-16 09:25-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -219,47 +219,113 @@ msgstr ""
 msgid "MIDI file"
 msgstr ""
 
-#: templates/statistics.html:13
-msgid "Pedal settings by type of chords (tetrachord, pentachord, etc)"
+#: templates/statistics.html:14
+msgid "Pedal settings by type of chord"
 msgstr ""
 
-#: templates/statistics.html:19
+#: templates/statistics.html:16
+msgid ""
+"\n"
+"        Each pedal setting can have enarmonies such as C# and Db.\n"
+"        A pedal setting without enarmonies will result in a heptachord, with "
+"one\n"
+"        enarmony will resul in a hexachord and so on.\n"
+"        "
+msgstr ""
+
+#: templates/statistics.html:22
+msgid ""
+"\n"
+"        The table and pie chart below contain the number of pedal settings "
+"by chord type (tetrachord, pentacord, etc.).\n"
+"        "
+msgstr ""
+
+#: templates/statistics.html:32
 msgid "Chord type"
 msgstr ""
 
 #. Translators: This chord is used in context of 4-chord, 5-chord, etc.
-#: templates/statistics.html:29
+#: templates/statistics.html:42
 msgid "chord"
 msgstr ""
 
-#: templates/statistics.html:40
+#: templates/statistics.html:54
 msgid "Pedal settings by prime form"
 msgstr ""
 
-#: templates/statistics.html:43
+#: templates/statistics.html:56
+msgid ""
+"\n"
+"        Each pedal setting results in a specific pitch class set, belonged "
+"to a pitch set class, represented by a prime form.\n"
+"        Some pitch set classes can be obtained from multiple pedal settings, "
+"in a \"one to many\" relation type.\n"
+"        "
+msgstr ""
+
+#: templates/statistics.html:61
+msgid ""
+"\n"
+"        The histogram below contains the distribution of the pedal settings "
+"around the pitch set classes.\n"
+"        Each square represents a pitch set class, each column represents a "
+"range of pedal settings.\n"
+"        For instance, the first column contains all the set classes that can "
+"be obtained from 1 to 10 pedal settings.\n"
+"        "
+msgstr ""
+
+#: templates/statistics.html:70
 msgid "Interval vector summation"
 msgstr ""
 
-#: templates/statistics.html:49 templates/statistics.html.py:114
+#: templates/statistics.html:72
+msgid ""
+"\n"
+"        Each pedal setting has a interval vector, related to its pitch set "
+"class.\n"
+"        "
+msgstr ""
+
+#: templates/statistics.html:76
+msgid ""
+"\n"
+"        The table below contains the sum of the all pedal settings' the "
+"interval vectors.\n"
+"        The bar chart below contains the central tendency study, around "
+"intervals mean.\n"
+"        Its Y axis contains the variation from the mean normalized by "
+"standard deviation.\n"
+"        "
+msgstr ""
+
+#: templates/statistics.html:82
+msgid ""
+"\n"
+"        "
+msgstr ""
+
+#: templates/statistics.html:91 templates/statistics.html.py:156
 msgid "Interval (semitones)"
 msgstr ""
 
-#: templates/statistics.html:50
+#: templates/statistics.html:92
 msgid "Sum"
 msgstr ""
 
-#: templates/statistics.html:83
+#: templates/statistics.html:125
 msgid "Pedal settings by chord type"
 msgstr ""
 
-#: templates/statistics.html:96
+#: templates/statistics.html:138
 msgid "Pedal settings grouped by Prime Form - Histogram"
 msgstr ""
 
-#: templates/statistics.html:108
+#: templates/statistics.html:150
 msgid "Intervals amount central tendency"
 msgstr ""
 
-#: templates/statistics.html:111
+#: templates/statistics.html:153
 msgid "Distance from the mean (normalized by standard deviation)"
 msgstr ""

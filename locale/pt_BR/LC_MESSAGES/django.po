@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-15 18:49-0300\n"
-"PO-Revision-Date: 2015-01-15 18:49-0300\n"
+"POT-Creation-Date: 2015-01-16 09:25-0300\n"
+"PO-Revision-Date: 2015-01-16 09:36-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -42,7 +42,8 @@ msgstr "Forma prima da disposição"
 
 #: dispositions/forms.py:30
 msgid "Insert a pcset prime form such as 02468A"
-msgstr "Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
+msgstr ""
+"Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
 
 #: dispositions/views.py:164 dispositions/views.py:168
 #: dispositions/views.py:186
@@ -162,7 +163,8 @@ msgstr "Insira um número de índice entre 1 e 2187..."
 
 #: templates/filter_prime_form.html:15
 msgid "Insert a pcset prime form such as 02468A..."
-msgstr "Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
+msgstr ""
+"Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
 
 #: templates/index.html:6
 msgid "Home"
@@ -220,53 +222,159 @@ msgstr "Disposição de pedais"
 msgid "MIDI file"
 msgstr "Arquivo MIDI"
 
-#: templates/statistics.html:13
-msgid "Pedal settings by type of chords (tetrachord, pentachord, etc)"
-msgstr "Disposições de pedais por tipo de acorde (tetracorde, pentacorde, etc)"
+#: templates/statistics.html:14
+msgid "Pedal settings by type of chord"
+msgstr "Configurações de pedais por tipo de acorde"
 
-#: templates/statistics.html:19
+#: templates/statistics.html:16
+msgid ""
+"\n"
+"        Each pedal setting can have enarmonies such as C# and Db.\n"
+"        A pedal setting without enarmonies will result in a heptachord, with "
+"one\n"
+"        enarmony will resul in a hexachord and so on.\n"
+"        "
+msgstr ""
+"\n"
+"Cada disposição de pedal pode ter enarmonias tais como C# e Db.\n"
+"Uma disposição de pedal sem enarmonias resultará em um heptacorde, com uma\n"
+"enarmonia, resultará em um hexacorde, e assim por diante.\n"
+"        "
+
+#: templates/statistics.html:22
+msgid ""
+"\n"
+"        The table and pie chart below contain the number of pedal settings "
+"by chord type (tetrachord, pentacord, etc.).\n"
+"        "
+msgstr ""
+"\n"
+"A tabela e o gráfico de torta abaixo contêm o número de disposições de "
+"pedais por tipo de acorde (tetracorde, pentacorde, etc.).\n"
+"        "
+
+#: templates/statistics.html:32
 msgid "Chord type"
 msgstr "Tipo de acorde"
 
 #. Translators: This chord is used in context of 4-chord, 5-chord, etc.
-#: templates/statistics.html:29
+#: templates/statistics.html:42
 msgid "chord"
 msgstr "corde"
 
-#: templates/statistics.html:40
+#: templates/statistics.html:54
 msgid "Pedal settings by prime form"
 msgstr "Configurações de pedais por forma prima"
 
-#: templates/statistics.html:43
+#: templates/statistics.html:56
+msgid ""
+"\n"
+"        Each pedal setting results in a specific pitch class set, belonged "
+"to a pitch set class, represented by a prime form.\n"
+"        Some pitch set classes can be obtained from multiple pedal settings, "
+"in a \"one to many\" relation type.\n"
+"        "
+msgstr ""
+"\n"
+"Cada disposição de pedal resulta em um conjunto de classe de notas "
+"específico, pertencente a uma classe de conjunto de notas, representada por "
+"uma forma prima.\n"
+"Algumas classes de conjunto de notas podem ser obtidas a partir de múltiplas "
+"disposições de pedais, em um tipo de relação \"um para muitos\".\n"
+"        "
+
+#: templates/statistics.html:61
+msgid ""
+"\n"
+"        The histogram below contains the distribution of the pedal settings "
+"around the pitch set classes.\n"
+"        Each square represents a pitch set class, each column represents a "
+"range of pedal settings.\n"
+"        For instance, the first column contains all the set classes that can "
+"be obtained from 1 to 10 pedal settings.\n"
+"        "
+msgstr ""
+"\n"
+"O histograma abaixo contém a distribuição das disposições de pedais em torno "
+"de classes de conjuntos de notas.\n"
+"Cada quadro representa uma classe de conjunto de notas, cada coluna "
+"representa uma faixa de número de disposições de pedais.\n"
+"Por exemplo, a primeira coluna contém todas as classes de conjuntos de notas "
+"que podem ser obtidas de 1 a 10 configurações de pedais.\n"
+"        "
+
+#: templates/statistics.html:70
 msgid "Interval vector summation"
 msgstr "Soma de vetor intervalar"
 
-#: templates/statistics.html:49 templates/statistics.html.py:114
+#: templates/statistics.html:72
+msgid ""
+"\n"
+"        Each pedal setting has a interval vector, related to its pitch set "
+"class.\n"
+"        "
+msgstr ""
+"\n"
+"Cada configuração de pedal tem um vetor intervalar, relacionado à sua classe "
+"de conjunto de notas.\n"
+"        "
+
+#: templates/statistics.html:76
+msgid ""
+"\n"
+"        The table below contains the sum of the all pedal settings' the "
+"interval vectors.\n"
+"        The bar chart below contains the central tendency study, around "
+"intervals mean.\n"
+"        Its Y axis contains the variation from the mean normalized by "
+"standard deviation.\n"
+"        "
+msgstr ""
+"\n"
+"A tabela abaixo contém a soma dos vetores intervalares de todas as "
+"disposições de pedais.\n"
+"O gráfico de barras abaixo contém o estudo de tendência central, em torno da "
+"média de intervalos.\n"
+"Seu eixo Y contém a variação a partir da média, normalizada pelo desvio "
+"padrão.\n"
+
+#: templates/statistics.html:82
+msgid ""
+"\n"
+"        "
+msgstr ""
+
+#: templates/statistics.html:91 templates/statistics.html.py:156
 msgid "Interval (semitones)"
 msgstr "Intervalo (semitons)"
 
-#: templates/statistics.html:50
+#: templates/statistics.html:92
 msgid "Sum"
 msgstr "Soma"
 
-#: templates/statistics.html:83
+#: templates/statistics.html:125
 msgid "Pedal settings by chord type"
 msgstr "Configurações de pedais por tipo de acorde"
 
-#: templates/statistics.html:96
+#: templates/statistics.html:138
 msgid "Pedal settings grouped by Prime Form - Histogram"
 msgstr "Disposições dos pedais agrupadas pela forma prima - Histograma"
 
-#: templates/statistics.html:108
+#: templates/statistics.html:150
 msgid "Intervals amount central tendency"
 msgstr "Tendência central de quantidade de intervalos"
 
-#: templates/statistics.html:111
+#: templates/statistics.html:153
 msgid "Distance from the mean (normalized by standard deviation)"
 msgstr "Distância da média (normalizada por desvio padrão)"
 
+#~ msgid "Pedal settings by type of chords (tetrachord, pentachord, etc)"
+#~ msgstr ""
+#~ "Disposições de pedais por tipo de acorde (tetracorde, pentacorde, etc)"
+
 #~ msgid "Insert a prime form such as 02468A..."
-#~ msgstr "Insira a forma prima do conjunto de classes de notas, tal como 02468A..."
+#~ msgstr ""
+#~ "Insira a forma prima do conjunto de classes de notas, tal como 02468A..."
 
 #~ msgid "Disposition number"
 #~ msgstr "Número de disposição"
