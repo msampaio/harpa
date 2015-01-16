@@ -10,7 +10,20 @@
 {% block body %}
     <h2>{% trans "Statistics" %}</h2>
 
-    <h3>{% trans "Pedal settings by type of chords (tetrachord, pentachord, etc)" %}</h3>
+    <hr>
+    <h3>{% trans "Pedal settings by type of chord" %}</h3>
+    <hr>
+    <p>{% blocktrans %}
+        Each pedal setting can have enarmonies such as C# and Db.
+        A pedal setting without enarmonies will result in a heptachord, with one
+        enarmony will resul in a hexachord and so on.
+        {% endblocktrans %}
+    </p>
+    <p>{% blocktrans %}
+        The table and pie chart below contain the number of pedal settings by chord type (tetrachord, pentacord, etc.).
+        {% endblocktrans %}
+    </p>
+
     <div class="row">
         <div class="col-xs-6">
             <table class="table table-striped">
@@ -37,10 +50,36 @@
         <div id="chord_type_pie" class="col-xs-6" style="width: 400px; height: 400px;"></div>
     </div>
 
+    <hr>
     <h3>{% trans "Pedal settings by prime form" %}</h3>
+    <hr>
+    <p>{% blocktrans %}
+        Each pedal setting results in a specific pitch class set, belonged to a pitch set class, represented by a prime form.
+        Some pitch set classes can be obtained from multiple pedal settings, in a "one to many" relation type.
+        {% endblocktrans %}
+    </p>
+    <p>{% blocktrans %}
+        The histogram below contains the distribution of the pedal settings around the pitch set classes.
+        Each square represents a pitch set class, each column represents a range of pedal settings.
+        For instance, the first column contains all the set classes that can be obtained from 1 to 10 pedal settings.
+        {% endblocktrans %}
+    </p>
     <div id="pf_histogram" style="width: 900px; height: 500px;"></div>
 
+    <hr>
     <h3>{% trans "Interval vector summation" %}</h3>
+    <hr>
+    <p>{% blocktrans %}
+        Each pedal setting has a interval vector, related to its pitch set class.
+        {% endblocktrans %}
+    </p>
+    <p>{% blocktrans %}
+        The table below contains the sum of the all pedal settings' the interval vectors.
+        The bar chart below contains the central tendency study, around intervals mean.
+        Its Y axis contains the variation from the mean normalized by standard deviation.
+        {% endblocktrans %}
+    </p>
+
     <div class="row">
         <div class="col-xs-6">
             <table class="table table-striped">
