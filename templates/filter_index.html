@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block body %}
+<h1>{% trans "Get by index" %}</h1>
 
 <form action="{% url 'get_by_index' %}" method="post">
     {% csrf_token %}

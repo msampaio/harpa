@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block body %}
+<h1>{% trans "Get by prime form" %}</h1>
 
 <form action="{% url 'get_by_prime' %}" method="post">
     {% csrf_token %}
