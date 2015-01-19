@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-17 09:09-0300\n"
-"PO-Revision-Date: 2015-01-17 09:12-0300\n"
+"POT-Creation-Date: 2015-01-19 15:22-0300\n"
+"PO-Revision-Date: 2015-01-19 15:22-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -45,62 +45,70 @@ msgid "Insert a pcset prime form such as 02468A"
 msgstr ""
 "Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
 
-#: dispositions/views.py:164 dispositions/views.py:168
-#: dispositions/views.py:186
+#: dispositions/views.py:169 dispositions/views.py:173
+#: dispositions/views.py:191
 msgid "Amount"
 msgstr "Quantidade"
 
-#: dispositions/views.py:164
+#: dispositions/views.py:169
 msgid "Proportion"
 msgstr "Proporção"
 
-#: dispositions/views.py:165
+#: dispositions/views.py:170
 msgid "Number of Pitch Classes"
 msgstr "Número de classes de altura"
 
-#: dispositions/views.py:174
+#: dispositions/views.py:179
 msgid "Forte class"
 msgstr "Classe de Forte"
 
-#: dispositions/views.py:174
+#: dispositions/views.py:179
 msgid "Number of pedal settings"
 msgstr "Número de disposições de pedais"
 
-#: dispositions/views.py:186
+#: dispositions/views.py:191
 msgid "Interval"
 msgstr "Intervalo"
 
 #: harp/urls.py:16
-msgid "^all/"
-msgstr "^todas/"
+msgid "^about/$"
+msgstr "^sobre/$"
+
+#: harp/urls.py:17
+msgid "^dashboard/$"
+msgstr "^painel/$"
 
 #: harp/urls.py:18
-msgid "^index$"
-msgstr "^indice$"
-
-#: harp/urls.py:19
-msgid "^prime$"
-msgstr "^formaprima$"
+msgid "^dashboard/all/$"
+msgstr "^painel/todas/$"
 
 #: harp/urls.py:20
-msgid "^accidents$"
-msgstr "^acidentes$"
+msgid "^dashboard/index$"
+msgstr "^painel/indice$"
 
 #: harp/urls.py:21
-msgid "^index/(?P<pedal_index>\\d+)/$"
-msgstr "^indice/(?P<pedal_index>\\d+)/$"
+msgid "^dashboard/prime$"
+msgstr "^painel/formaprima$"
 
 #: harp/urls.py:22
-msgid "^prime/(?P<pedal_prime>\\w+)/$"
-msgstr "^formaprima/(?P<pedal_prime>\\w+)/$"
+msgid "^dashboard/accidents$"
+msgstr "^painel/acidentes$"
 
 #: harp/urls.py:23
-msgid "^accidents/(?P<accidents>\\w+)/$"
-msgstr "^acidentes/(?P<accidents>\\w+)/$"
+msgid "^dashboard/index/(?P<pedal_index>\\d+)/$"
+msgstr "^painel/indice/(?P<pedal_index>\\d+)/$"
 
 #: harp/urls.py:24
-msgid "^statistics/$"
-msgstr "^estatisticas/$"
+msgid "^dashboard/prime/(?P<pedal_prime>\\w+)/$"
+msgstr "^painel/formaprima/(?P<pedal_prime>\\w+)/$"
+
+#: harp/urls.py:25
+msgid "^dashboard/accidents/(?P<accidents>\\w+)/$"
+msgstr "^painel/acidentes/(?P<accidents>\\w+)/$"
+
+#: harp/urls.py:26
+msgid "^dashboard/statistics/$"
+msgstr "^painel/estatisticas/$"
 
 #: templates/404.html:5 templates/404.html.py:9 templates/500.html:5
 #: templates/500.html.py:9
@@ -115,80 +123,188 @@ msgstr "Página não encontrada."
 msgid "Internal Server Error"
 msgstr "Erro Interno do Servidor"
 
-#: templates/base.html:9
+#: templates/_top_nav.html:2 templates/dashboard.html:6
+msgid "Home"
+msgstr "Página Principal"
+
+#: templates/_top_nav.html:3 templates/dashboard.html:10
+msgid "Dashboard"
+msgstr "Painel"
+
+#: templates/_top_nav.html:4 templates/about.html:59
+msgid "About"
+msgstr "Sobre"
+
+#: templates/about.html:9 templates/base.html:9 templates/index.html:9
 msgid "Harp | "
 msgstr "Harpa |"
 
-#: templates/base.html:48
+#: templates/about.html:47 templates/base.html:47
 msgid "Harp"
 msgstr "Harpa"
 
-#: templates/base.html:58
+#: templates/about.html:61
+msgid ""
+"\n"
+"                This Webapp is part of a broader combinatorial and statistic "
+"study about the orchestral harp pedals,\n"
+"                developed by Ricardo Bordini, Jamary Oliveira and Marcos da "
+"Silva Sampaio.\n"
+"                "
+msgstr ""
+"\n"
+"                Este aplicativo web é parte de um estudo combinatorial e "
+"estatístico mais amplo sobre os pedais da harpa orquestral,\n"
+"                desenvolvido por Ricardo Bordini, Jamary Oliveira e Marcos "
+"da Silva Sampaio.\n"
+"                "
+
+#: templates/about.html:66
+msgid "This page is under"
+msgstr "Esta página está sob"
+
+#: templates/about.html:66
+msgid "MIT license"
+msgstr "licença MIT"
+
+#: templates/base.html:61
 msgid "All settings"
 msgstr "Todas as disposições"
 
-#: templates/base.html:59 templates/filter_index.html:5
+#: templates/base.html:62 templates/filter_index.html:5
+#: templates/filter_index.html.py:9
 msgid "Get by index"
 msgstr "Obter por índice"
 
-#: templates/base.html:60 templates/filter_prime_form.html:5
+#: templates/base.html:63 templates/filter_prime_form.html:5
+#: templates/filter_prime_form.html.py:9
 msgid "Get by prime form"
 msgstr "Obter por forma prima"
 
-#: templates/base.html:61 templates/filter_accidents.html:5
+#: templates/base.html:64 templates/filter_accidents.html:5
+#: templates/filter_accidents.html.py:9
 msgid "Get by accidents"
 msgstr "Obter por acidentes"
 
-#: templates/base.html:62
+#: templates/base.html:65
 msgid "Get TXT file"
 msgstr "Obter arquivo TXT"
 
-#: templates/base.html:63 templates/statistics.html:7
-#: templates/statistics.html.py:11
+#: templates/base.html:66 templates/dashboard.html:30
+#: templates/statistics.html:7 templates/statistics.html.py:11
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: templates/filter_accidents.html:10
+#: templates/dashboard.html:12
+msgid "Pedal settings"
+msgstr "Disposição de pedais"
+
+#: templates/dashboard.html:13
+msgid ""
+"\n"
+"            The orchestral harp has 7 pedals, one for each pitch class. Each "
+"pedal has three possible positions: flat, natural or sharp.\n"
+"            We call each permutation of these 7 pedals in the three "
+"positions <b>pedal settings</b>.\n"
+"            There are 2187 possible pedal settings in the harp. We create a "
+"harp pedal settings index.\n"
+"        "
+msgstr ""
+"\n"
+"            A harpa orquestral tem 7 pedais, um para cada classe de altura. "
+"Cada pedal tem três posições possíveis: bemol, natural ou sustenido.\n"
+"            Nós chamamos cada permutação desses 7 pedais nas três posições "
+"de <b>disposições de pedais</b>.\n"
+"            Existem 2187 disposições de pedais possíveis na harpa. Nós "
+"criamos um índice para as disposições de pedais da harpa.\n"
+"        "
+
+#: templates/dashboard.html:19
+msgid "Queries"
+msgstr "Consultas"
+
+#: templates/dashboard.html:20
+msgid ""
+"\n"
+"            This app provides a full list with all pedal 2187 settings, a "
+"table to download, and four ways to query pedal settings:\n"
+"        "
+msgstr ""
+"\n"
+"            Este aplicativo fornece uma lista completa das 2187 disposições "
+"de pedais, uma tabela para download, e quatro formas de consulta de "
+"disposições de pedais:\n"
+"        "
+
+#: templates/dashboard.html:24
+msgid "by index"
+msgstr "por índice"
+
+#: templates/dashboard.html:25
+msgid "by the resulting pitch set class prime form"
+msgstr "pela forma prima da classe de alturas resultante"
+
+#: templates/dashboard.html:26
+msgid "by the pitch accidents"
+msgstr "pelos acidentes"
+
+#: templates/dashboard.html:28
+msgid "These queries are available in the sidebar."
+msgstr "Essas consultas estão disponíveis na guia lateral."
+
+#: templates/dashboard.html:31
+msgid ""
+"\n"
+"            There are some statistics available, with sonority central "
+"tendency, chord type distribution, etc.\n"
+"        "
+msgstr ""
+"\n"
+"            Há alguns estudos estatístico disponíveis, com o estudo de "
+"tendência central de sonoridade, distribuição de tipos de acordes, etc.\n"
+"        "
+
+#: templates/filter_accidents.html:11
 msgid "Set the pedals settings:"
 msgstr "Defina as posições dos pedais:"
 
-#: templates/filter_accidents.html:16 templates/filter_index.html:17
-#: templates/filter_prime_form.html:17
+#: templates/filter_accidents.html:17 templates/filter_index.html:18
+#: templates/filter_prime_form.html:18
 msgid "Submit"
 msgstr "Enviar"
 
-#: templates/filter_index.html:15
+#: templates/filter_index.html:16
 msgid "Insert an index number between 1 and 2187..."
 msgstr "Insira um número de índice entre 1 e 2187..."
 
-#: templates/filter_prime_form.html:15
+#: templates/filter_prime_form.html:16
 msgid "Insert a pcset prime form such as 02468A..."
 msgstr ""
 "Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
 
-#: templates/index.html:6
-msgid "Home"
-msgstr "Página Principal"
+#: templates/index.html:50
+msgid ""
+"\n"
+"                Harp Pedals is an application that returns the Harp's pedals "
+"settings and statistics.\n"
+"                "
+msgstr ""
+"\n"
+"                Harp Pedals é uma aplicação que retorna as disposições de "
+"pedais da Harpa e estatísticas.\n"
+"                "
 
-#: templates/index.html:10
-msgid "This application returns the Harp's pedals settings."
-msgstr "Este aplicativo retorna as disposições de pedais da harpa."
+#: templates/index.html:54
+msgid "Enter"
+msgstr "Entre"
 
-#: templates/index.html:11
+#: templates/index.html:60
 msgid "Developed by"
 msgstr "Desenvolvido por "
 
-#: templates/index.html:12
+#: templates/index.html:61
 msgid "and"
 msgstr "e"
-
-#: templates/index.html:13
-msgid "Under"
-msgstr "Sob"
-
-#: templates/index.html:13
-msgid "MIT license"
-msgstr "licença MIT"
 
 #: templates/show_settings.html:11
 msgid "pedals settings"
@@ -362,6 +478,21 @@ msgstr "Tendência central de quantidade de intervalos"
 #: templates/statistics.html:150
 msgid "Distance from the mean (normalized by standard deviation)"
 msgstr "Distância da média (normalizada por desvio padrão)"
+
+#~ msgid "^all/"
+#~ msgstr "^todas/"
+
+#~ msgid "^index$"
+#~ msgstr "^indice$"
+
+#~ msgid "^prime$"
+#~ msgstr "^formaprima$"
+
+#~ msgid "This application returns the Harp's pedals settings."
+#~ msgstr "Este aplicativo retorna as disposições de pedais da harpa."
+
+#~ msgid "Under"
+#~ msgstr "Sob"
 
 #~ msgid "Pedal settings by type of chords (tetrachord, pentachord, etc)"
 #~ msgstr ""
