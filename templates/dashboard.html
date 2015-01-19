@@ -7,10 +7,30 @@
 {% endblock %}
 
 {% block body %}
-        <h1>{% trans "Dashboard" %}</h1>
+    <h1>{% trans "Dashboard" %}</h1>
+    <hr>
+        <h2>{% trans "Pedal settings" %}</h2>
+        <p>{% blocktrans %}
+            The orchestral harp has 7 pedals, one for each pitch class. Each pedal has three possible positions: flat, natural or sharp.
+            We call each permutation of these 7 pedals in the three positions <b>pedal settings</b>.
+            There are 2187 possible pedal settings in the harp. We create a harp pedal settings index.
+        {% endblocktrans %}</p>
 
-<p>{% blocktrans %}This application returns the Harp's pedals settings.{% endblocktrans %}</p>
-<p>{% trans "Developed by" %} <a href="http://marcos.sampaio.me" target="_blank">Marcos da Silva Sampaio</a>
-    {% trans "and" %} <a href="http://musica.ufma.br/bordini/" target="_blank">Ricardo Mazzini Bordini</a>.</p>
-<p>{% trans "Under" %} <a href="{% static "LICENSE.txt" %}">{% trans "MIT license" %}</a>, 2014</p>
+        <h2>{% trans "Queries" %}</h2>
+        <p>{% blocktrans %}
+            This app provides a full list with all pedal 2187 settings, a table to download, and four ways to query pedal settings:
+        {% endblocktrans %}</p>
+        <ul>
+            <li>{% trans "by index" %}</li>
+            <li>{% trans "by the resulting pitch set class prime form" %}</li>
+            <li>{% trans "by the pitch accidents" %}</li>
+        </ul>
+        <p>{% trans "These queries are available in the sidebar." %}</p>
+
+        <h2>{% trans "Statistics" %}</h2>
+        <p>{% blocktrans %}
+            There are some statistics available, with sonority central tendency, chord type distribution, etc.
+        {% endblocktrans %}</p>
+
+
 {% endblock %}

@@ -30,9 +30,14 @@ def error404(request):
 def error500(request):
     return render(request, "500.html")
 
-
 def home(request):
     return render(request, "index.html")
+
+def dashboard(request):
+    return render(request, "dashboard.html")
+
+def about(request):
+    return render(request, "about.html")
 
 
 def show_settings_by_index(request, pedal_index):
