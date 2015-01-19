@@ -142,15 +142,14 @@ def save_midi_files(df):
 
 # images
 def make_lily_code(int_tup):
-    dic = {
-        'b': 'v',
-        'n': '-',
-        '#': '^',
-        }
+    def aux(ind):
+        return ['^', '-', 'v'][ind + 1]
 
     pre = '\paper {\n\ttagline= ##f\n}\n\markup \harp-pedal #'
-    left = ''.join(map(str, [int_tup[1], int_tup[0], int_tup[6]]))
-    right = ''.join(map(str, int_tup[2:-1]))
+    left_tup = (int_tup[1], int_tup[0], int_tup[6])
+    right_tup = int_tup[2:-1]
+    left = ''.join(map(aux, left_tup))
+    right = ''.join(map(aux, right_tup))
     post = '"{}|{}"'.format(left, right)
     return pre + post
 
