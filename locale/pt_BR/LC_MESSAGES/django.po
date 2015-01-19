@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-19 15:22-0300\n"
-"PO-Revision-Date: 2015-01-19 15:22-0300\n"
+"POT-Creation-Date: 2015-01-19 15:45-0300\n"
+"PO-Revision-Date: 2015-01-19 15:45-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -264,20 +264,20 @@ msgstr ""
 "tendência central de sonoridade, distribuição de tipos de acordes, etc.\n"
 "        "
 
-#: templates/filter_accidents.html:11
+#: templates/filter_accidents.html:12
 msgid "Set the pedals settings:"
 msgstr "Defina as posições dos pedais:"
 
-#: templates/filter_accidents.html:17 templates/filter_index.html:18
-#: templates/filter_prime_form.html:18
+#: templates/filter_accidents.html:18 templates/filter_index.html:19
+#: templates/filter_prime_form.html:19
 msgid "Submit"
 msgstr "Enviar"
 
-#: templates/filter_index.html:16
+#: templates/filter_index.html:17
 msgid "Insert an index number between 1 and 2187..."
 msgstr "Insira um número de índice entre 1 e 2187..."
 
-#: templates/filter_prime_form.html:16
+#: templates/filter_prime_form.html:17
 msgid "Insert a pcset prime form such as 02468A..."
 msgstr ""
 "Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
@@ -306,35 +306,39 @@ msgstr "Desenvolvido por "
 msgid "and"
 msgstr "e"
 
-#: templates/show_settings.html:11
+#: templates/show_settings.html:10
+msgid "All pedal settings"
+msgstr "Todas as disposições de pedais"
+
+#: templates/show_settings.html:14
 msgid "pedals settings"
 msgstr "disposições de pedais"
 
-#: templates/show_settings.html:17
+#: templates/show_settings.html:20
 msgid "Index"
 msgstr "Índice"
 
-#: templates/show_settings.html:18
+#: templates/show_settings.html:21
 msgid "Notes"
 msgstr "Notas"
 
-#: templates/show_settings.html:19
+#: templates/show_settings.html:22
 msgid "PC Set"
 msgstr "Conjunto de classe de notas"
 
-#: templates/show_settings.html:20
+#: templates/show_settings.html:23
 msgid "Prime Form"
 msgstr "Forma prima"
 
-#: templates/show_settings.html:21
+#: templates/show_settings.html:24
 msgid "Forte Class"
 msgstr "Classe de Forte"
 
-#: templates/show_settings.html:22
+#: templates/show_settings.html:25
 msgid "Pedals Settings"
 msgstr "Disposição de pedais"
 
-#: templates/show_settings.html:23
+#: templates/show_settings.html:26
 msgid "MIDI file"
 msgstr "Arquivo MIDI"
 
