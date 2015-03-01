@@ -3,8 +3,8 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
 def validate_number(value):
-    if value not in map(str, range(1, 2188)):
-        raise ValidationError(_(u'%s is not a number between 1 and 2187') % value)
+    if value not in map(str, range(0, 2222222)):
+        raise ValidationError(_(u'%s is not a number in base 3 between 0 and 2222222') % value)
 
 
 def validate_prime(seq):
@@ -20,7 +20,7 @@ def validate_prime(seq):
 class IndexForm(forms.Form):
     settings_index = forms.CharField(label=_('Settings index'),
                                          max_length=4,
-                                         help_text=_('Insert an index number between 1 and 2187'),
+                                         help_text=_('Insert an index number in base 3 between 0 and 2222222, such as 20102'),
                                          validators=[validate_number])
 
 class PrimeForm(forms.Form):

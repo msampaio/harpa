@@ -48,13 +48,17 @@ def add_int(a, b):
     return (a + b) % 12
 
 
+def base_n(num, b, numerals="0123456789abcdefghijklmnopqrstuvwxyz"):
+    return ((num == 0) and "0" ) or ( base_n(num // b, b).lstrip("0") + numerals[num % b])
+
+
 def make_dataframe():
     pc_classes = [0, 2, 4, 5, 7, 9, 11]
     notes = list('CDEFGAB')
     accidents = [0, 1, 2]
     all_combinations = itertools.product(accidents, repeat=7)
     r = []
-    index_counter = 1
+    index_counter = 0
 
     for combination_seq in all_combinations:
         music21_notes = []
@@ -69,7 +73,8 @@ def make_dataframe():
         prime = chord.primeForm
         forte = chord.forteClassTnI
         interval_vector = chord.intervalVector
-        row = [index_counter, ' '.join(harp_notes), pretty_print(pc_set), pretty_print(prime), forte, combination_seq]
+        base_3 = int(base_n(index_counter, 3))
+        row = [base_3, ' '.join(harp_notes), pretty_print(pc_set), pretty_print(prime), forte, combination_seq]
         for iv in interval_vector:
             row.append(iv)
         r.append(row)
@@ -144,7 +149,7 @@ def save_midi_files(df):
 # images
 def make_lily_code(int_tup):
     def aux(ind):
-        return ['^', '-', 'v'][ind + 1]
+        return ['^', '-', 'v'][ind]
 
     pre = '\paper {\n\ttagline= ##f\n}\n\markup \harp-pedal #'
     left_tup = (int_tup[1], int_tup[0], int_tup[6])

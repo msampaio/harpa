@@ -148,6 +148,7 @@ def download_all_settings(request):
     buff = BytesIO()
 
     df = df[COLUMNS]
+    df.index = df['Index']
     del df['Index']
 
     zip_archive = zipfile.ZipFile(buff, mode='w')
