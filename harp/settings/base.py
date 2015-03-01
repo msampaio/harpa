@@ -23,7 +23,13 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-DATABASES = {}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': join(DJANGO_ROOT, 'db.sqlite3'),
+    }
+}
 
 TIME_ZONE = 'America/Bahia'
 LANGUAGE_CODE = 'en-us'
