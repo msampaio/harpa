@@ -31,7 +31,7 @@ class PrimeForm(forms.Form):
                                         validators=[validate_prime])
 
 class AccidentsForm(forms.Form):
-    choices = ((-1, 'b'), (0, 'n'), (1, '#'))
+    choices = ((0, 'b'), (1, 'n'), (2, '#'))
     c = forms.ChoiceField(widget=forms.RadioSelect(attrs={'class': 'form-inline'}), choices=choices)
     d = forms.ChoiceField(widget=forms.RadioSelect(attrs={'class': 'form-inline'}), choices=choices)
     e = forms.ChoiceField(widget=forms.RadioSelect(attrs={'class': 'form-inline'}), choices=choices)

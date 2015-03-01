@@ -49,33 +49,34 @@ def add_int(a, b):
 
 
 def make_dataframe():
-    base = [0, 2, 4, 5, 7, 9, 11]
+    pc_classes = [0, 2, 4, 5, 7, 9, 11]
     notes = list('CDEFGAB')
-    accidents = [-1, 0, 1]
-    p = itertools.product(accidents, repeat=7)
+    accidents = [0, 1, 2]
+    all_combinations = itertools.product(accidents, repeat=7)
     r = []
     index_counter = 1
 
-    for seq in p:
+    for combination_seq in all_combinations:
         music21_notes = []
         harp_notes = []
-        pcset = [(acc + pc) % 12 for acc, pc in zip(seq, base)]
+        pc_set = [(acc + pc - 1) % 12 for acc, pc in zip(combination_seq, pc_classes)]
 
-        for note, accident in zip(notes, seq):
-            music21_notes.append(note + ['-', '', '#'][accident + 1])
-            harp_notes.append(note + list('bn#')[accident + 1])
+        for note, accident in zip(notes, combination_seq):
+            music21_notes.append(note + ['-', '', '#'][accident])
+            harp_notes.append(note + list('bn#')[accident])
 
         chord = music21.chord.Chord(music21_notes)
         prime = chord.primeForm
         forte = chord.forteClassTnI
         interval_vector = chord.intervalVector
-        row = [index_counter, ' '.join(harp_notes), pretty_print(pcset), pretty_print(prime), forte, seq]
+        row = [index_counter, ' '.join(harp_notes), pretty_print(pc_set), pretty_print(prime), forte, combination_seq]
         for iv in interval_vector:
             row.append(iv)
         r.append(row)
         index_counter += 1
 
     columns = ['Index', 'Notes', 'PC Set', 'Prime Form', 'Forte class', 'Accidents']
+
     for i in range(1, 7):
         columns.append(str(i))
 
