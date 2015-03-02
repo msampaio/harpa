@@ -27,13 +27,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for row in df.values %}
+                {% for index, row in df.iterrows %}
                 <tr>
+                    <td>{{ index }}</td>
                     {% for cell in row %}
                     <td>{{ cell }}</td>
                     {% endfor %}
-                    <td><img src="{{ STATIC_URL }}img/{{ row.0 }}.png"></td>
-                    <td><a href="{{ STATIC_URL }}midi/{{ row.0 }}.mid">{{ row.0 }}.mid</a></td>
+                    <td><img src="{{ STATIC_URL }}img/{{ index }}.png"></td>
+                    <td><a href="{{ STATIC_URL }}midi/{{ index }}.mid">{{ index }}.mid</a></td>
                 </tr>
                 {% endfor %}
                 </tbody>

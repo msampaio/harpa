@@ -59,6 +59,7 @@ def make_dataframe():
     all_combinations = itertools.product(accidents, repeat=7)
     r = []
     index_counter = 0
+    index = []
 
     for combination_seq in all_combinations:
         music21_notes = []
@@ -74,19 +75,22 @@ def make_dataframe():
         forte = chord.forteClassTnI
         interval_vector = chord.intervalVector
         base_3 = int(base_n(index_counter, 3))
-        row = [base_3, ' '.join(harp_notes), pretty_print(pc_set), pretty_print(prime), forte, combination_seq]
+        index.append(base_3)
+        row = [' '.join(harp_notes), pretty_print(pc_set), pretty_print(prime), forte, combination_seq]
         for iv in interval_vector:
             row.append(iv)
         r.append(row)
         index_counter += 1
 
-    columns = ['Index', 'Notes', 'PC Set', 'Prime Form', 'Forte class', 'Accidents']
+    columns = ['Notes', 'PC Set', 'Prime Form', 'Forte class', 'Accidents']
 
     for i in range(1, 7):
         columns.append(str(i))
 
     df = pandas.DataFrame(r, columns=columns)
-    df.index = list(range(1, len(df) + 1))
+    df.index = index
+    df.index.name = 'Index'
+
     return df
 
 

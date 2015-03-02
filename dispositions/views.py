@@ -13,7 +13,7 @@ import core
 
 # Create your views here.
 
-COLUMNS = ['Index', 'Notes', 'PC Set', 'Prime Form', 'Forte class']
+COLUMNS = ['Notes', 'PC Set', 'Prime Form', 'Forte class']
 
 def get_language_url():
     # ugly javascript localization
@@ -43,7 +43,8 @@ def about(request):
 def show_settings_by_index(request, pedal_index):
     df = core.load_csv()
 
-    df = df[df['Index'] == int(pedal_index)]
+    series = df.loc[int(pedal_index)]
+    df = pandas.DataFrame([series])
 
     df = df[COLUMNS]
 
@@ -132,7 +133,8 @@ def get_by_accidents(request):
         if form.is_valid():
             accidents = tuple([int(form.cleaned_data[c]) for c in list('cdefgab')])
             df = core.load_csv()
-            index = str(df[df['Accidents'] == str(accidents)].iloc[0]['Index'])
+            disposition = df[df['Accidents'] == str(accidents)]
+            index = disposition.index.values[0]
             return HttpResponseRedirect(reverse('dispositions.views.show_settings_by_index', args={index,}))
 
     else:
@@ -148,8 +150,6 @@ def download_all_settings(request):
     buff = BytesIO()
 
     df = df[COLUMNS]
-    df.index = df['Index']
-    del df['Index']
 
     zip_archive = zipfile.ZipFile(buff, mode='w')
     zip_archive.writestr('harp_settings.txt', df.to_string())
