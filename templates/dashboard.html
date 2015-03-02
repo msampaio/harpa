@@ -13,7 +13,8 @@
         <p>{% blocktrans %}
             The orchestral harp has 7 pedals, one for each pitch class. Each pedal has three possible positions: flat, natural or sharp.
             We call each permutation of these 7 pedals in the three positions <b>pedal settings</b>.
-            There are 2187 possible pedal settings in the harp. We create a harp pedal settings index.
+            There are 2187 possible pedal settings in the harp. We create a harp pedal settings index in a base 3 numeric system:
+            0, 1, 2, 10, 1, 12, 20, 21, 22, 100, 101, 102, etc.
         {% endblocktrans %}</p>
 
         <h2>{% trans "Queries" %}</h2>
