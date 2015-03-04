@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-02 11:19-0300\n"
-"PO-Revision-Date: 2015-03-02 11:20-0300\n"
+"POT-Creation-Date: 2015-03-04 14:49-0300\n"
+"PO-Revision-Date: 2015-03-04 14:50-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -44,6 +44,396 @@ msgstr "Forma prima da disposição"
 msgid "Insert a pcset prime form such as 02468A"
 msgstr ""
 "Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
+
+#: dispositions/templates/404.html:5 dispositions/templates/404.html.py:9
+#: dispositions/templates/500.html:5 dispositions/templates/500.html.py:9
+msgid "Error"
+msgstr "Erro"
+
+#: dispositions/templates/404.html:9
+msgid "Page not found."
+msgstr "Página não encontrada."
+
+#: dispositions/templates/500.html:9
+msgid "Internal Server Error"
+msgstr "Erro Interno do Servidor"
+
+#: dispositions/templates/_top_nav.html:2
+#: dispositions/templates/dashboard.html:6
+msgid "Home"
+msgstr "Página Principal"
+
+#: dispositions/templates/_top_nav.html:3
+#: dispositions/templates/dashboard.html:10
+msgid "Dashboard"
+msgstr "Painel"
+
+#: dispositions/templates/_top_nav.html:4 dispositions/templates/about.html:59
+msgid "About"
+msgstr "Sobre"
+
+#: dispositions/templates/about.html:9 dispositions/templates/base.html:9
+#: dispositions/templates/index.html:9
+msgid "Harp | "
+msgstr "Harpa |"
+
+#: dispositions/templates/about.html:47 dispositions/templates/base.html:47
+msgid "Harp"
+msgstr "Harpa"
+
+#: dispositions/templates/about.html:61
+msgid ""
+"\n"
+"                This Webapp is part of a broader combinatorial and statistic "
+"study about the orchestral harp pedals,\n"
+"                developed by Ricardo Bordini, Jamary Oliveira and Marcos da "
+"Silva Sampaio.\n"
+"                "
+msgstr ""
+"\n"
+"                Este aplicativo web é parte de um estudo combinatorial e "
+"estatístico mais amplo sobre os pedais da harpa orquestral,\n"
+"                desenvolvido por Ricardo Bordini, Jamary Oliveira e Marcos "
+"da Silva Sampaio.\n"
+"                "
+
+#: dispositions/templates/about.html:66
+msgid "This page is under"
+msgstr "Esta página está sob"
+
+#: dispositions/templates/about.html:66
+msgid "MIT license"
+msgstr "licença MIT"
+
+#: dispositions/templates/base.html:61
+msgid "All settings"
+msgstr "Todas as disposições"
+
+#: dispositions/templates/base.html:62
+#: dispositions/templates/filter_index.html:5
+#: dispositions/templates/filter_index.html:9
+msgid "Get by index"
+msgstr "Obter por índice"
+
+#: dispositions/templates/base.html:63
+#: dispositions/templates/filter_prime_form.html:5
+#: dispositions/templates/filter_prime_form.html:9
+msgid "Get by prime form"
+msgstr "Obter por forma prima"
+
+#: dispositions/templates/base.html:64
+#: dispositions/templates/filter_accidents.html:5
+#: dispositions/templates/filter_accidents.html:9
+msgid "Get by accidents"
+msgstr "Obter por acidentes"
+
+#: dispositions/templates/base.html:65
+msgid "Get TXT file"
+msgstr "Obter arquivo TXT"
+
+#: dispositions/templates/base.html:66
+#: dispositions/templates/dashboard.html:31
+#: dispositions/templates/statistics.html:7
+#: dispositions/templates/statistics.html:11
+msgid "Statistics"
+msgstr "Estatísticas"
+
+#: dispositions/templates/dashboard.html:12
+msgid "Pedal settings"
+msgstr "Disposição de pedais"
+
+#: dispositions/templates/dashboard.html:13
+msgid ""
+"\n"
+"            The orchestral harp has 7 pedals, one for each pitch class. Each "
+"pedal has three possible positions: flat, natural or sharp.\n"
+"            We call each permutation of these 7 pedals in the three "
+"positions <b>pedal settings</b>.\n"
+"            There are 2187 possible pedal settings in the harp. We create a "
+"harp pedal settings index in a base 3 numeric system:\n"
+"            0, 1, 2, 10, 11, 12, 20, 21, 22, 100, 101, 102, etc.\n"
+"        "
+msgstr ""
+"\n"
+"            A harpa orquestral tem 7 pedais, um para cada classe de altura. "
+"Cada pedal tem três posições possíveis: bemol, natural ou sustenido.\n"
+"            Nós chamamos cada permutação desses 7 pedais nas três posições "
+"de <b>disposições de pedais</b>.\n"
+"            Existem 2187 disposições de pedais possíveis na harpa. Nós "
+"criamos um índice para as disposições de pedais da harpa em um sistema "
+"numérico de base 3:\n"
+"\t     0, 1, 2, 10, 11, 12, 20, 21, 22, 100, 101, 102, etc.\n"
+"        "
+
+#: dispositions/templates/dashboard.html:20
+msgid "Queries"
+msgstr "Consultas"
+
+#: dispositions/templates/dashboard.html:21
+msgid ""
+"\n"
+"            This app provides a full list with all pedal 2187 settings, a "
+"table to download, and four ways to query pedal settings:\n"
+"        "
+msgstr ""
+"\n"
+"            Este aplicativo fornece uma lista completa das 2187 disposições "
+"de pedais, uma tabela para download, e quatro formas de consulta de "
+"disposições de pedais:\n"
+"        "
+
+#: dispositions/templates/dashboard.html:25
+msgid "by index"
+msgstr "por índice"
+
+#: dispositions/templates/dashboard.html:26
+msgid "by the resulting pitch set class prime form"
+msgstr "pela forma prima da classe de alturas resultante"
+
+#: dispositions/templates/dashboard.html:27
+msgid "by the pitch accidents"
+msgstr "pelos acidentes"
+
+#: dispositions/templates/dashboard.html:29
+msgid "These queries are available in the sidebar."
+msgstr "Essas consultas estão disponíveis na guia lateral."
+
+#: dispositions/templates/dashboard.html:32
+msgid ""
+"\n"
+"            There are some statistics available, with sonority central "
+"tendency, chord type distribution, etc.\n"
+"        "
+msgstr ""
+"\n"
+"            Há alguns estudos estatístico disponíveis, com o estudo de "
+"tendência central de sonoridade, distribuição de tipos de acordes, etc.\n"
+"        "
+
+#: dispositions/templates/filter_accidents.html:12
+msgid "Set the pedals settings:"
+msgstr "Defina as posições dos pedais:"
+
+#: dispositions/templates/filter_accidents.html:18
+#: dispositions/templates/filter_index.html:19
+#: dispositions/templates/filter_prime_form.html:19
+msgid "Submit"
+msgstr "Enviar"
+
+#: dispositions/templates/filter_index.html:17
+msgid "Insert an index number in base 3 between 0 and 2222222..."
+msgstr "Insira um índice numérico em base 3 entre 0 e 2222222..."
+
+#: dispositions/templates/filter_prime_form.html:17
+msgid "Insert a pcset prime form such as 02468A..."
+msgstr ""
+"Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
+
+#: dispositions/templates/index.html:50
+msgid ""
+"\n"
+"                Harp Pedals is an application that returns the Harp's pedals "
+"settings and statistics.\n"
+"                "
+msgstr ""
+"\n"
+"                Harp Pedals é uma aplicação que retorna as disposições de "
+"pedais da Harpa e estatísticas.\n"
+"                "
+
+#: dispositions/templates/index.html:54
+msgid "Enter"
+msgstr "Entre"
+
+#: dispositions/templates/index.html:60
+msgid "Developed by"
+msgstr "Desenvolvido por "
+
+#: dispositions/templates/index.html:61
+msgid "and"
+msgstr "e"
+
+#: dispositions/templates/show_settings.html:11
+msgid "All pedal settings"
+msgstr "Todas as disposições de pedais"
+
+#: dispositions/templates/show_settings.html:15
+msgid "pedals settings"
+msgstr "disposições de pedais"
+
+#: dispositions/templates/show_settings.html:21
+msgid "Index"
+msgstr "Índice"
+
+#: dispositions/templates/show_settings.html:22
+msgid "Notes (radial)"
+msgstr "Notas (radial)"
+
+#: dispositions/templates/show_settings.html:23
+msgid "Notes (scalar)"
+msgstr "Notas (escalar)"
+
+#: dispositions/templates/show_settings.html:24
+msgid "PC Set"
+msgstr "Conjunto de classe de notas"
+
+#: dispositions/templates/show_settings.html:25
+msgid "Prime Form"
+msgstr "Forma prima"
+
+#: dispositions/templates/show_settings.html:26
+msgid "Forte Class"
+msgstr "Classe de Forte"
+
+#: dispositions/templates/show_settings.html:27
+msgid "Pedals Settings"
+msgstr "Disposição de pedais"
+
+#: dispositions/templates/show_settings.html:28
+msgid "MIDI file"
+msgstr "Arquivo MIDI"
+
+#: dispositions/templates/statistics.html:14
+msgid "Pedal settings by type of chord"
+msgstr "Disposições de pedais por tipo de acorde"
+
+#: dispositions/templates/statistics.html:16
+msgid ""
+"\n"
+"        Each pedal setting can have enarmonies such as C# and Db.\n"
+"        A pedal setting without enarmonies will result in a heptachord, with "
+"one\n"
+"        enarmony will resul in a hexachord and so on.\n"
+"        "
+msgstr ""
+"\n"
+"Cada disposição de pedais pode ter enarmonias tais como C# e Db.\n"
+"Uma disposição de pedais sem enarmonias resultará em um heptacorde, com uma\n"
+"enarmonia, resultará em um hexacorde, e assim por diante.\n"
+"        "
+
+#: dispositions/templates/statistics.html:22
+msgid ""
+"\n"
+"        The table and pie chart below contain the number of pedal settings "
+"by chord type (tetrachord, pentacord, etc.).\n"
+"        "
+msgstr ""
+"\n"
+"A tabela e o gráfico de torta abaixo contêm o número de disposições de "
+"pedais por tipo de acorde (tetracorde, pentacorde, etc.).\n"
+"        "
+
+#: dispositions/templates/statistics.html:32
+msgid "Chord type"
+msgstr "Tipo de acorde"
+
+#. Translators: This chord is used in context of 4-chord, 5-chord, etc.
+#: dispositions/templates/statistics.html:42
+msgid "chord"
+msgstr "corde"
+
+#: dispositions/templates/statistics.html:54
+msgid "Pedal settings by prime form"
+msgstr "Disposições de pedais por forma prima"
+
+#: dispositions/templates/statistics.html:56
+msgid ""
+"\n"
+"        Each pedal setting results in a specific pitch class set, belonged "
+"to a pitch set class, represented by a prime form.\n"
+"        Some pitch set classes can be obtained from multiple pedal settings, "
+"in a \"one to many\" relation type.\n"
+"        "
+msgstr ""
+"\n"
+"Cada disposição de pedais resulta em um conjunto de classe de notas "
+"específico, pertencente a uma classe de conjunto de notas, representada por "
+"uma forma prima.\n"
+"Algumas classes de conjunto de notas podem ser obtidas a partir de múltiplas "
+"disposições de pedais, em um tipo de relação \"um para muitos\".\n"
+"        "
+
+#: dispositions/templates/statistics.html:61
+msgid ""
+"\n"
+"        The histogram below contains the distribution of the pedal settings "
+"around the pitch set classes.\n"
+"        Each square represents a pitch set class, each column represents a "
+"range of pedal settings.\n"
+"        For instance, the first column contains all the set classes that can "
+"be obtained from 1 to 10 pedal settings.\n"
+"        "
+msgstr ""
+"\n"
+"O histograma abaixo contém a distribuição das disposições de pedais em torno "
+"de classes de conjuntos de notas.\n"
+"Cada quadro representa uma classe de conjunto de notas, cada coluna "
+"representa uma faixa de número de disposições de pedais.\n"
+"Por exemplo, a primeira coluna contém todas as classes de conjuntos de notas "
+"que podem ser obtidas de 1 a 10 disposições de pedais.\n"
+"        "
+
+#: dispositions/templates/statistics.html:70
+msgid "Interval-class vector summation"
+msgstr "Soma de vetor classe-intervalar"
+
+#: dispositions/templates/statistics.html:72
+msgid ""
+"\n"
+"        Each pedal setting has a Interval-class vector, related to its pitch "
+"set class.\n"
+"        "
+msgstr ""
+"\n"
+"Cada disposição de pedais tem um vetor classe-intervalar, relacionado à sua "
+"classe de conjunto de notas.\n"
+"        "
+
+#: dispositions/templates/statistics.html:76
+msgid ""
+"\n"
+"        The table below contains the sum of the all pedal settings' the "
+"Interval-class vectors.\n"
+"        The bar chart below contains the central tendency study, around "
+"intervals mean.\n"
+"        Its Y axis contains the variation from the mean normalized by "
+"standard deviation.\n"
+"        "
+msgstr ""
+"\n"
+"A tabela abaixo contém a soma dos vetores classe-intervalares de todas as "
+"disposições de pedais.\n"
+"O gráfico de barras abaixo contém o estudo de tendência central, em torno da "
+"média de intervalos.\n"
+"Seu eixo Y contém a variação a partir da média, normalizada pelo desvio "
+"padrão.\n"
+"        "
+
+#: dispositions/templates/statistics.html:88
+#: dispositions/templates/statistics.html:153
+msgid "Interval (semitones)"
+msgstr "Intervalo (semitons)"
+
+#: dispositions/templates/statistics.html:89
+msgid "Sum"
+msgstr "Soma"
+
+#: dispositions/templates/statistics.html:122
+msgid "Pedal settings by chord type"
+msgstr "Disposições de pedais por tipo de acorde"
+
+#: dispositions/templates/statistics.html:135
+msgid "Pedal settings grouped by Prime Form - Histogram"
+msgstr "Disposições dos pedais agrupadas pela forma prima - Histograma"
+
+#: dispositions/templates/statistics.html:147
+msgid "Intervals amount central tendency"
+msgstr "Tendência central de quantidade de intervalos"
+
+#: dispositions/templates/statistics.html:150
+msgid "Distance from the mean (normalized by standard deviation)"
+msgstr "Distância da média (normalizada por desvio padrão)"
 
 #: dispositions/views.py:170 dispositions/views.py:174
 #: dispositions/views.py:192
@@ -110,381 +500,8 @@ msgstr "^painel/acidentes/(?P<accidents>\\w+)/$"
 msgid "^dashboard/statistics/$"
 msgstr "^painel/estatisticas/$"
 
-#: templates/404.html:5 templates/404.html.py:9 templates/500.html:5
-#: templates/500.html.py:9
-msgid "Error"
-msgstr "Erro"
-
-#: templates/404.html:9
-msgid "Page not found."
-msgstr "Página não encontrada."
-
-#: templates/500.html:9
-msgid "Internal Server Error"
-msgstr "Erro Interno do Servidor"
-
-#: templates/_top_nav.html:2 templates/dashboard.html:6
-msgid "Home"
-msgstr "Página Principal"
-
-#: templates/_top_nav.html:3 templates/dashboard.html:10
-msgid "Dashboard"
-msgstr "Painel"
-
-#: templates/_top_nav.html:4 templates/about.html:59
-msgid "About"
-msgstr "Sobre"
-
-#: templates/about.html:9 templates/base.html:9 templates/index.html:9
-msgid "Harp | "
-msgstr "Harpa |"
-
-#: templates/about.html:47 templates/base.html:47
-msgid "Harp"
-msgstr "Harpa"
-
-#: templates/about.html:61
-msgid ""
-"\n"
-"                This Webapp is part of a broader combinatorial and statistic "
-"study about the orchestral harp pedals,\n"
-"                developed by Ricardo Bordini, Jamary Oliveira and Marcos da "
-"Silva Sampaio.\n"
-"                "
-msgstr ""
-"\n"
-"                Este aplicativo web é parte de um estudo combinatorial e "
-"estatístico mais amplo sobre os pedais da harpa orquestral,\n"
-"                desenvolvido por Ricardo Bordini, Jamary Oliveira e Marcos "
-"da Silva Sampaio.\n"
-"                "
-
-#: templates/about.html:66
-msgid "This page is under"
-msgstr "Esta página está sob"
-
-#: templates/about.html:66
-msgid "MIT license"
-msgstr "licença MIT"
-
-#: templates/base.html:61
-msgid "All settings"
-msgstr "Todas as disposições"
-
-#: templates/base.html:62 templates/filter_index.html:5
-#: templates/filter_index.html.py:9
-msgid "Get by index"
-msgstr "Obter por índice"
-
-#: templates/base.html:63 templates/filter_prime_form.html:5
-#: templates/filter_prime_form.html.py:9
-msgid "Get by prime form"
-msgstr "Obter por forma prima"
-
-#: templates/base.html:64 templates/filter_accidents.html:5
-#: templates/filter_accidents.html.py:9
-msgid "Get by accidents"
-msgstr "Obter por acidentes"
-
-#: templates/base.html:65
-msgid "Get TXT file"
-msgstr "Obter arquivo TXT"
-
-#: templates/base.html:66 templates/dashboard.html:31
-#: templates/statistics.html:7 templates/statistics.html.py:11
-msgid "Statistics"
-msgstr "Estatísticas"
-
-#: templates/dashboard.html:12
-msgid "Pedal settings"
-msgstr "Disposição de pedais"
-
-#: templates/dashboard.html:13
-msgid ""
-"\n"
-"            The orchestral harp has 7 pedals, one for each pitch class. Each "
-"pedal has three possible positions: flat, natural or sharp.\n"
-"            We call each permutation of these 7 pedals in the three "
-"positions <b>pedal settings</b>.\n"
-"            There are 2187 possible pedal settings in the harp. We create a "
-"harp pedal settings index in a base 3 numeric system:\n"
-"            0, 1, 2, 10, 11, 12, 20, 21, 22, 100, 101, 102, etc.\n"
-"        "
-msgstr ""
-"\n"
-"            A harpa orquestral tem 7 pedais, um para cada classe de altura. "
-"Cada pedal tem três posições possíveis: bemol, natural ou sustenido.\n"
-"            Nós chamamos cada permutação desses 7 pedais nas três posições "
-"de <b>disposições de pedais</b>.\n"
-"            Existem 2187 disposições de pedais possíveis na harpa. Nós "
-"criamos um índice para as disposições de pedais da harpa em um sistema "
-"numérico de base 3:\n"
-"\t     0, 1, 2, 10, 11, 12, 20, 21, 22, 100, 101, 102, etc.\n"
-"        "
-
-#: templates/dashboard.html:20
-msgid "Queries"
-msgstr "Consultas"
-
-#: templates/dashboard.html:21
-msgid ""
-"\n"
-"            This app provides a full list with all pedal 2187 settings, a "
-"table to download, and four ways to query pedal settings:\n"
-"        "
-msgstr ""
-"\n"
-"            Este aplicativo fornece uma lista completa das 2187 disposições "
-"de pedais, uma tabela para download, e quatro formas de consulta de "
-"disposições de pedais:\n"
-"        "
-
-#: templates/dashboard.html:25
-msgid "by index"
-msgstr "por índice"
-
-#: templates/dashboard.html:26
-msgid "by the resulting pitch set class prime form"
-msgstr "pela forma prima da classe de alturas resultante"
-
-#: templates/dashboard.html:27
-msgid "by the pitch accidents"
-msgstr "pelos acidentes"
-
-#: templates/dashboard.html:29
-msgid "These queries are available in the sidebar."
-msgstr "Essas consultas estão disponíveis na guia lateral."
-
-#: templates/dashboard.html:32
-msgid ""
-"\n"
-"            There are some statistics available, with sonority central "
-"tendency, chord type distribution, etc.\n"
-"        "
-msgstr ""
-"\n"
-"            Há alguns estudos estatístico disponíveis, com o estudo de "
-"tendência central de sonoridade, distribuição de tipos de acordes, etc.\n"
-"        "
-
-#: templates/filter_accidents.html:12
-msgid "Set the pedals settings:"
-msgstr "Defina as posições dos pedais:"
-
-#: templates/filter_accidents.html:18 templates/filter_index.html:19
-#: templates/filter_prime_form.html:19
-msgid "Submit"
-msgstr "Enviar"
-
-#: templates/filter_index.html:17
-msgid "Insert an index number in base 3 between 0 and 2222222..."
-msgstr "Insira um índice numérico em base 3 entre 0 e 2222222..."
-
-#: templates/filter_prime_form.html:17
-msgid "Insert a pcset prime form such as 02468A..."
-msgstr ""
-"Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
-
-#: templates/index.html:50
-msgid ""
-"\n"
-"                Harp Pedals is an application that returns the Harp's pedals "
-"settings and statistics.\n"
-"                "
-msgstr ""
-"\n"
-"                Harp Pedals é uma aplicação que retorna as disposições de "
-"pedais da Harpa e estatísticas.\n"
-"                "
-
-#: templates/index.html:54
-msgid "Enter"
-msgstr "Entre"
-
-#: templates/index.html:60
-msgid "Developed by"
-msgstr "Desenvolvido por "
-
-#: templates/index.html:61
-msgid "and"
-msgstr "e"
-
-#: templates/show_settings.html:10
-msgid "All pedal settings"
-msgstr "Todas as disposições de pedais"
-
-#: templates/show_settings.html:14
-msgid "pedals settings"
-msgstr "disposições de pedais"
-
-#: templates/show_settings.html:20
-msgid "Index"
-msgstr "Índice"
-
-#: templates/show_settings.html:21
-msgid "Notes"
-msgstr "Notas"
-
-#: templates/show_settings.html:22
-msgid "PC Set"
-msgstr "Conjunto de classe de notas"
-
-#: templates/show_settings.html:23
-msgid "Prime Form"
-msgstr "Forma prima"
-
-#: templates/show_settings.html:24
-msgid "Forte Class"
-msgstr "Classe de Forte"
-
-#: templates/show_settings.html:25
-msgid "Pedals Settings"
-msgstr "Disposição de pedais"
-
-#: templates/show_settings.html:26
-msgid "MIDI file"
-msgstr "Arquivo MIDI"
-
-#: templates/statistics.html:14
-msgid "Pedal settings by type of chord"
-msgstr "Disposições de pedais por tipo de acorde"
-
-#: templates/statistics.html:16
-msgid ""
-"\n"
-"        Each pedal setting can have enarmonies such as C# and Db.\n"
-"        A pedal setting without enarmonies will result in a heptachord, with "
-"one\n"
-"        enarmony will resul in a hexachord and so on.\n"
-"        "
-msgstr ""
-"\n"
-"Cada disposição de pedais pode ter enarmonias tais como C# e Db.\n"
-"Uma disposição de pedais sem enarmonias resultará em um heptacorde, com uma\n"
-"enarmonia, resultará em um hexacorde, e assim por diante.\n"
-"        "
-
-#: templates/statistics.html:22
-msgid ""
-"\n"
-"        The table and pie chart below contain the number of pedal settings "
-"by chord type (tetrachord, pentacord, etc.).\n"
-"        "
-msgstr ""
-"\n"
-"A tabela e o gráfico de torta abaixo contêm o número de disposições de "
-"pedais por tipo de acorde (tetracorde, pentacorde, etc.).\n"
-"        "
-
-#: templates/statistics.html:32
-msgid "Chord type"
-msgstr "Tipo de acorde"
-
-#. Translators: This chord is used in context of 4-chord, 5-chord, etc.
-#: templates/statistics.html:42
-msgid "chord"
-msgstr "corde"
-
-#: templates/statistics.html:54
-msgid "Pedal settings by prime form"
-msgstr "Disposições de pedais por forma prima"
-
-#: templates/statistics.html:56
-msgid ""
-"\n"
-"        Each pedal setting results in a specific pitch class set, belonged "
-"to a pitch set class, represented by a prime form.\n"
-"        Some pitch set classes can be obtained from multiple pedal settings, "
-"in a \"one to many\" relation type.\n"
-"        "
-msgstr ""
-"\n"
-"Cada disposição de pedais resulta em um conjunto de classe de notas "
-"específico, pertencente a uma classe de conjunto de notas, representada por "
-"uma forma prima.\n"
-"Algumas classes de conjunto de notas podem ser obtidas a partir de múltiplas "
-"disposições de pedais, em um tipo de relação \"um para muitos\".\n"
-"        "
-
-#: templates/statistics.html:61
-msgid ""
-"\n"
-"        The histogram below contains the distribution of the pedal settings "
-"around the pitch set classes.\n"
-"        Each square represents a pitch set class, each column represents a "
-"range of pedal settings.\n"
-"        For instance, the first column contains all the set classes that can "
-"be obtained from 1 to 10 pedal settings.\n"
-"        "
-msgstr ""
-"\n"
-"O histograma abaixo contém a distribuição das disposições de pedais em torno "
-"de classes de conjuntos de notas.\n"
-"Cada quadro representa uma classe de conjunto de notas, cada coluna "
-"representa uma faixa de número de disposições de pedais.\n"
-"Por exemplo, a primeira coluna contém todas as classes de conjuntos de notas "
-"que podem ser obtidas de 1 a 10 disposições de pedais.\n"
-"        "
-
-#: templates/statistics.html:70
-msgid "Interval-class vector summation"
-msgstr "Soma de vetor classe-intervalar"
-
-#: templates/statistics.html:72
-msgid ""
-"\n"
-"        Each pedal setting has a Interval-class vector, related to its pitch "
-"set class.\n"
-"        "
-msgstr ""
-"\n"
-"Cada disposição de pedais tem um vetor classe-intervalar, relacionado à sua "
-"classe de conjunto de notas.\n"
-"        "
-
-#: templates/statistics.html:76
-msgid ""
-"\n"
-"        The table below contains the sum of the all pedal settings' the "
-"Interval-class vectors.\n"
-"        The bar chart below contains the central tendency study, around "
-"intervals mean.\n"
-"        Its Y axis contains the variation from the mean normalized by "
-"standard deviation.\n"
-"        "
-msgstr ""
-"\n"
-"A tabela abaixo contém a soma dos vetores classe-intervalares de todas as "
-"disposições de pedais.\n"
-"O gráfico de barras abaixo contém o estudo de tendência central, em torno da "
-"média de intervalos.\n"
-"Seu eixo Y contém a variação a partir da média, normalizada pelo desvio "
-"padrão.\n"
-"        "
-
-#: templates/statistics.html:88 templates/statistics.html.py:153
-msgid "Interval (semitones)"
-msgstr "Intervalo (semitons)"
-
-#: templates/statistics.html:89
-msgid "Sum"
-msgstr "Soma"
-
-#: templates/statistics.html:122
-msgid "Pedal settings by chord type"
-msgstr "Disposições de pedais por tipo de acorde"
-
-#: templates/statistics.html:135
-msgid "Pedal settings grouped by Prime Form - Histogram"
-msgstr "Disposições dos pedais agrupadas pela forma prima - Histograma"
-
-#: templates/statistics.html:147
-msgid "Intervals amount central tendency"
-msgstr "Tendência central de quantidade de intervalos"
-
-#: templates/statistics.html:150
-msgid "Distance from the mean (normalized by standard deviation)"
-msgstr "Distância da média (normalizada por desvio padrão)"
+#~ msgid "Notes"
+#~ msgstr "Notas"
 
 #~ msgid "^all/"
 #~ msgstr "^todas/"

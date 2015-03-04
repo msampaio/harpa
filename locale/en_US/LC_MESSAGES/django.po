@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-02 11:19-0300\n"
+"POT-Creation-Date: 2015-03-04 14:49-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,6 +41,330 @@ msgstr ""
 
 #: dispositions/forms.py:30
 msgid "Insert a pcset prime form such as 02468A"
+msgstr ""
+
+#: dispositions/templates/404.html:5 dispositions/templates/404.html.py:9
+#: dispositions/templates/500.html:5 dispositions/templates/500.html.py:9
+msgid "Error"
+msgstr ""
+
+#: dispositions/templates/404.html:9
+msgid "Page not found."
+msgstr ""
+
+#: dispositions/templates/500.html:9
+msgid "Internal Server Error"
+msgstr ""
+
+#: dispositions/templates/_top_nav.html:2
+#: dispositions/templates/dashboard.html:6
+msgid "Home"
+msgstr ""
+
+#: dispositions/templates/_top_nav.html:3
+#: dispositions/templates/dashboard.html:10
+msgid "Dashboard"
+msgstr ""
+
+#: dispositions/templates/_top_nav.html:4 dispositions/templates/about.html:59
+msgid "About"
+msgstr ""
+
+#: dispositions/templates/about.html:9 dispositions/templates/base.html:9
+#: dispositions/templates/index.html:9
+msgid "Harp | "
+msgstr ""
+
+#: dispositions/templates/about.html:47 dispositions/templates/base.html:47
+msgid "Harp"
+msgstr ""
+
+#: dispositions/templates/about.html:61
+msgid ""
+"\n"
+"                This Webapp is part of a broader combinatorial and statistic "
+"study about the orchestral harp pedals,\n"
+"                developed by Ricardo Bordini, Jamary Oliveira and Marcos da "
+"Silva Sampaio.\n"
+"                "
+msgstr ""
+
+#: dispositions/templates/about.html:66
+msgid "This page is under"
+msgstr ""
+
+#: dispositions/templates/about.html:66
+msgid "MIT license"
+msgstr ""
+
+#: dispositions/templates/base.html:61
+msgid "All settings"
+msgstr ""
+
+#: dispositions/templates/base.html:62
+#: dispositions/templates/filter_index.html:5
+#: dispositions/templates/filter_index.html:9
+msgid "Get by index"
+msgstr ""
+
+#: dispositions/templates/base.html:63
+#: dispositions/templates/filter_prime_form.html:5
+#: dispositions/templates/filter_prime_form.html:9
+msgid "Get by prime form"
+msgstr ""
+
+#: dispositions/templates/base.html:64
+#: dispositions/templates/filter_accidents.html:5
+#: dispositions/templates/filter_accidents.html:9
+msgid "Get by accidents"
+msgstr ""
+
+#: dispositions/templates/base.html:65
+msgid "Get TXT file"
+msgstr ""
+
+#: dispositions/templates/base.html:66
+#: dispositions/templates/dashboard.html:31
+#: dispositions/templates/statistics.html:7
+#: dispositions/templates/statistics.html:11
+msgid "Statistics"
+msgstr ""
+
+#: dispositions/templates/dashboard.html:12
+msgid "Pedal settings"
+msgstr ""
+
+#: dispositions/templates/dashboard.html:13
+msgid ""
+"\n"
+"            The orchestral harp has 7 pedals, one for each pitch class. Each "
+"pedal has three possible positions: flat, natural or sharp.\n"
+"            We call each permutation of these 7 pedals in the three "
+"positions <b>pedal settings</b>.\n"
+"            There are 2187 possible pedal settings in the harp. We create a "
+"harp pedal settings index in a base 3 numeric system:\n"
+"            0, 1, 2, 10, 11, 12, 20, 21, 22, 100, 101, 102, etc.\n"
+"        "
+msgstr ""
+
+#: dispositions/templates/dashboard.html:20
+msgid "Queries"
+msgstr ""
+
+#: dispositions/templates/dashboard.html:21
+msgid ""
+"\n"
+"            This app provides a full list with all pedal 2187 settings, a "
+"table to download, and four ways to query pedal settings:\n"
+"        "
+msgstr ""
+
+#: dispositions/templates/dashboard.html:25
+msgid "by index"
+msgstr ""
+
+#: dispositions/templates/dashboard.html:26
+msgid "by the resulting pitch set class prime form"
+msgstr ""
+
+#: dispositions/templates/dashboard.html:27
+msgid "by the pitch accidents"
+msgstr ""
+
+#: dispositions/templates/dashboard.html:29
+msgid "These queries are available in the sidebar."
+msgstr ""
+
+#: dispositions/templates/dashboard.html:32
+msgid ""
+"\n"
+"            There are some statistics available, with sonority central "
+"tendency, chord type distribution, etc.\n"
+"        "
+msgstr ""
+
+#: dispositions/templates/filter_accidents.html:12
+msgid "Set the pedals settings:"
+msgstr ""
+
+#: dispositions/templates/filter_accidents.html:18
+#: dispositions/templates/filter_index.html:19
+#: dispositions/templates/filter_prime_form.html:19
+msgid "Submit"
+msgstr ""
+
+#: dispositions/templates/filter_index.html:17
+msgid "Insert an index number in base 3 between 0 and 2222222..."
+msgstr ""
+
+#: dispositions/templates/filter_prime_form.html:17
+msgid "Insert a pcset prime form such as 02468A..."
+msgstr ""
+
+#: dispositions/templates/index.html:50
+msgid ""
+"\n"
+"                Harp Pedals is an application that returns the Harp's pedals "
+"settings and statistics.\n"
+"                "
+msgstr ""
+
+#: dispositions/templates/index.html:54
+msgid "Enter"
+msgstr ""
+
+#: dispositions/templates/index.html:60
+msgid "Developed by"
+msgstr ""
+
+#: dispositions/templates/index.html:61
+msgid "and"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:11
+msgid "All pedal settings"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:15
+msgid "pedals settings"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:21
+msgid "Index"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:22
+msgid "Notes (radial)"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:23
+msgid "Notes (scalar)"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:24
+msgid "PC Set"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:25
+msgid "Prime Form"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:26
+msgid "Forte Class"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:27
+msgid "Pedals Settings"
+msgstr ""
+
+#: dispositions/templates/show_settings.html:28
+msgid "MIDI file"
+msgstr ""
+
+#: dispositions/templates/statistics.html:14
+msgid "Pedal settings by type of chord"
+msgstr ""
+
+#: dispositions/templates/statistics.html:16
+msgid ""
+"\n"
+"        Each pedal setting can have enarmonies such as C# and Db.\n"
+"        A pedal setting without enarmonies will result in a heptachord, with "
+"one\n"
+"        enarmony will resul in a hexachord and so on.\n"
+"        "
+msgstr ""
+
+#: dispositions/templates/statistics.html:22
+msgid ""
+"\n"
+"        The table and pie chart below contain the number of pedal settings "
+"by chord type (tetrachord, pentacord, etc.).\n"
+"        "
+msgstr ""
+
+#: dispositions/templates/statistics.html:32
+msgid "Chord type"
+msgstr ""
+
+#. Translators: This chord is used in context of 4-chord, 5-chord, etc.
+#: dispositions/templates/statistics.html:42
+msgid "chord"
+msgstr ""
+
+#: dispositions/templates/statistics.html:54
+msgid "Pedal settings by prime form"
+msgstr ""
+
+#: dispositions/templates/statistics.html:56
+msgid ""
+"\n"
+"        Each pedal setting results in a specific pitch class set, belonged "
+"to a pitch set class, represented by a prime form.\n"
+"        Some pitch set classes can be obtained from multiple pedal settings, "
+"in a \"one to many\" relation type.\n"
+"        "
+msgstr ""
+
+#: dispositions/templates/statistics.html:61
+msgid ""
+"\n"
+"        The histogram below contains the distribution of the pedal settings "
+"around the pitch set classes.\n"
+"        Each square represents a pitch set class, each column represents a "
+"range of pedal settings.\n"
+"        For instance, the first column contains all the set classes that can "
+"be obtained from 1 to 10 pedal settings.\n"
+"        "
+msgstr ""
+
+#: dispositions/templates/statistics.html:70
+msgid "Interval-class vector summation"
+msgstr ""
+
+#: dispositions/templates/statistics.html:72
+msgid ""
+"\n"
+"        Each pedal setting has a Interval-class vector, related to its pitch "
+"set class.\n"
+"        "
+msgstr ""
+
+#: dispositions/templates/statistics.html:76
+msgid ""
+"\n"
+"        The table below contains the sum of the all pedal settings' the "
+"Interval-class vectors.\n"
+"        The bar chart below contains the central tendency study, around "
+"intervals mean.\n"
+"        Its Y axis contains the variation from the mean normalized by "
+"standard deviation.\n"
+"        "
+msgstr ""
+
+#: dispositions/templates/statistics.html:88
+#: dispositions/templates/statistics.html:153
+msgid "Interval (semitones)"
+msgstr ""
+
+#: dispositions/templates/statistics.html:89
+msgid "Sum"
+msgstr ""
+
+#: dispositions/templates/statistics.html:122
+msgid "Pedal settings by chord type"
+msgstr ""
+
+#: dispositions/templates/statistics.html:135
+msgid "Pedal settings grouped by Prime Form - Histogram"
+msgstr ""
+
+#: dispositions/templates/statistics.html:147
+msgid "Intervals amount central tendency"
+msgstr ""
+
+#: dispositions/templates/statistics.html:150
+msgid "Distance from the mean (normalized by standard deviation)"
 msgstr ""
 
 #: dispositions/views.py:170 dispositions/views.py:174
@@ -106,314 +430,4 @@ msgstr ""
 
 #: harp/urls.py:26
 msgid "^dashboard/statistics/$"
-msgstr ""
-
-#: templates/404.html:5 templates/404.html.py:9 templates/500.html:5
-#: templates/500.html.py:9
-msgid "Error"
-msgstr ""
-
-#: templates/404.html:9
-msgid "Page not found."
-msgstr ""
-
-#: templates/500.html:9
-msgid "Internal Server Error"
-msgstr ""
-
-#: templates/_top_nav.html:2 templates/dashboard.html:6
-msgid "Home"
-msgstr ""
-
-#: templates/_top_nav.html:3 templates/dashboard.html:10
-msgid "Dashboard"
-msgstr ""
-
-#: templates/_top_nav.html:4 templates/about.html:59
-msgid "About"
-msgstr ""
-
-#: templates/about.html:9 templates/base.html:9 templates/index.html:9
-msgid "Harp | "
-msgstr ""
-
-#: templates/about.html:47 templates/base.html:47
-msgid "Harp"
-msgstr ""
-
-#: templates/about.html:61
-msgid ""
-"\n"
-"                This Webapp is part of a broader combinatorial and statistic "
-"study about the orchestral harp pedals,\n"
-"                developed by Ricardo Bordini, Jamary Oliveira and Marcos da "
-"Silva Sampaio.\n"
-"                "
-msgstr ""
-
-#: templates/about.html:66
-msgid "This page is under"
-msgstr ""
-
-#: templates/about.html:66
-msgid "MIT license"
-msgstr ""
-
-#: templates/base.html:61
-msgid "All settings"
-msgstr ""
-
-#: templates/base.html:62 templates/filter_index.html:5
-#: templates/filter_index.html.py:9
-msgid "Get by index"
-msgstr ""
-
-#: templates/base.html:63 templates/filter_prime_form.html:5
-#: templates/filter_prime_form.html.py:9
-msgid "Get by prime form"
-msgstr ""
-
-#: templates/base.html:64 templates/filter_accidents.html:5
-#: templates/filter_accidents.html.py:9
-msgid "Get by accidents"
-msgstr ""
-
-#: templates/base.html:65
-msgid "Get TXT file"
-msgstr ""
-
-#: templates/base.html:66 templates/dashboard.html:31
-#: templates/statistics.html:7 templates/statistics.html.py:11
-msgid "Statistics"
-msgstr ""
-
-#: templates/dashboard.html:12
-msgid "Pedal settings"
-msgstr ""
-
-#: templates/dashboard.html:13
-msgid ""
-"\n"
-"            The orchestral harp has 7 pedals, one for each pitch class. Each "
-"pedal has three possible positions: flat, natural or sharp.\n"
-"            We call each permutation of these 7 pedals in the three "
-"positions <b>pedal settings</b>.\n"
-"            There are 2187 possible pedal settings in the harp. We create a "
-"harp pedal settings index in a base 3 numeric system:\n"
-"            0, 1, 2, 10, 11, 12, 20, 21, 22, 100, 101, 102, etc.\n"
-"        "
-msgstr ""
-
-#: templates/dashboard.html:20
-msgid "Queries"
-msgstr ""
-
-#: templates/dashboard.html:21
-msgid ""
-"\n"
-"            This app provides a full list with all pedal 2187 settings, a "
-"table to download, and four ways to query pedal settings:\n"
-"        "
-msgstr ""
-
-#: templates/dashboard.html:25
-msgid "by index"
-msgstr ""
-
-#: templates/dashboard.html:26
-msgid "by the resulting pitch set class prime form"
-msgstr ""
-
-#: templates/dashboard.html:27
-msgid "by the pitch accidents"
-msgstr ""
-
-#: templates/dashboard.html:29
-msgid "These queries are available in the sidebar."
-msgstr ""
-
-#: templates/dashboard.html:32
-msgid ""
-"\n"
-"            There are some statistics available, with sonority central "
-"tendency, chord type distribution, etc.\n"
-"        "
-msgstr ""
-
-#: templates/filter_accidents.html:12
-msgid "Set the pedals settings:"
-msgstr ""
-
-#: templates/filter_accidents.html:18 templates/filter_index.html:19
-#: templates/filter_prime_form.html:19
-msgid "Submit"
-msgstr ""
-
-#: templates/filter_index.html:17
-msgid "Insert an index number in base 3 between 0 and 2222222..."
-msgstr ""
-
-#: templates/filter_prime_form.html:17
-msgid "Insert a pcset prime form such as 02468A..."
-msgstr ""
-
-#: templates/index.html:50
-msgid ""
-"\n"
-"                Harp Pedals is an application that returns the Harp's pedals "
-"settings and statistics.\n"
-"                "
-msgstr ""
-
-#: templates/index.html:54
-msgid "Enter"
-msgstr ""
-
-#: templates/index.html:60
-msgid "Developed by"
-msgstr ""
-
-#: templates/index.html:61
-msgid "and"
-msgstr ""
-
-#: templates/show_settings.html:10
-msgid "All pedal settings"
-msgstr ""
-
-#: templates/show_settings.html:14
-msgid "pedals settings"
-msgstr ""
-
-#: templates/show_settings.html:20
-msgid "Index"
-msgstr ""
-
-#: templates/show_settings.html:21
-msgid "Notes"
-msgstr ""
-
-#: templates/show_settings.html:22
-msgid "PC Set"
-msgstr ""
-
-#: templates/show_settings.html:23
-msgid "Prime Form"
-msgstr ""
-
-#: templates/show_settings.html:24
-msgid "Forte Class"
-msgstr ""
-
-#: templates/show_settings.html:25
-msgid "Pedals Settings"
-msgstr ""
-
-#: templates/show_settings.html:26
-msgid "MIDI file"
-msgstr ""
-
-#: templates/statistics.html:14
-msgid "Pedal settings by type of chord"
-msgstr ""
-
-#: templates/statistics.html:16
-msgid ""
-"\n"
-"        Each pedal setting can have enarmonies such as C# and Db.\n"
-"        A pedal setting without enarmonies will result in a heptachord, with "
-"one\n"
-"        enarmony will resul in a hexachord and so on.\n"
-"        "
-msgstr ""
-
-#: templates/statistics.html:22
-msgid ""
-"\n"
-"        The table and pie chart below contain the number of pedal settings "
-"by chord type (tetrachord, pentacord, etc.).\n"
-"        "
-msgstr ""
-
-#: templates/statistics.html:32
-msgid "Chord type"
-msgstr ""
-
-#. Translators: This chord is used in context of 4-chord, 5-chord, etc.
-#: templates/statistics.html:42
-msgid "chord"
-msgstr ""
-
-#: templates/statistics.html:54
-msgid "Pedal settings by prime form"
-msgstr ""
-
-#: templates/statistics.html:56
-msgid ""
-"\n"
-"        Each pedal setting results in a specific pitch class set, belonged "
-"to a pitch set class, represented by a prime form.\n"
-"        Some pitch set classes can be obtained from multiple pedal settings, "
-"in a \"one to many\" relation type.\n"
-"        "
-msgstr ""
-
-#: templates/statistics.html:61
-msgid ""
-"\n"
-"        The histogram below contains the distribution of the pedal settings "
-"around the pitch set classes.\n"
-"        Each square represents a pitch set class, each column represents a "
-"range of pedal settings.\n"
-"        For instance, the first column contains all the set classes that can "
-"be obtained from 1 to 10 pedal settings.\n"
-"        "
-msgstr ""
-
-#: templates/statistics.html:70
-msgid "Interval-class vector summation"
-msgstr ""
-
-#: templates/statistics.html:72
-msgid ""
-"\n"
-"        Each pedal setting has a Interval-class vector, related to its pitch "
-"set class.\n"
-"        "
-msgstr ""
-
-#: templates/statistics.html:76
-msgid ""
-"\n"
-"        The table below contains the sum of the all pedal settings' the "
-"Interval-class vectors.\n"
-"        The bar chart below contains the central tendency study, around "
-"intervals mean.\n"
-"        Its Y axis contains the variation from the mean normalized by "
-"standard deviation.\n"
-"        "
-msgstr ""
-
-#: templates/statistics.html:88 templates/statistics.html.py:153
-msgid "Interval (semitones)"
-msgstr ""
-
-#: templates/statistics.html:89
-msgid "Sum"
-msgstr ""
-
-#: templates/statistics.html:122
-msgid "Pedal settings by chord type"
-msgstr ""
-
-#: templates/statistics.html:135
-msgid "Pedal settings grouped by Prime Form - Histogram"
-msgstr ""
-
-#: templates/statistics.html:147
-msgid "Intervals amount central tendency"
-msgstr ""
-
-#: templates/statistics.html:150
-msgid "Distance from the mean (normalized by standard deviation)"
 msgstr ""
