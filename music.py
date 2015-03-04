@@ -53,8 +53,10 @@ def base_n(num, b, numerals="0123456789abcdefghijklmnopqrstuvwxyz"):
 
 
 def make_dataframe():
-    pc_classes = [0, 2, 4, 5, 7, 9, 11]
-    notes = list('CDEFGAB')
+    pc_classes = [2, 0, 11, 4, 5, 7, 9]
+    notes = list('DCBEFGA')
+    scalar = list('CDEFGAB')
+
     accidents = [0, 1, 2]
     all_combinations = itertools.product(accidents, repeat=7)
     r = []
@@ -70,19 +72,30 @@ def make_dataframe():
             music21_notes.append(note + ['-', '', '#'][accident])
             harp_notes.append(note + list('bn#')[accident])
 
+        scalar_notes = []
+
+        aux_dic = {}
+        for note in harp_notes:
+            aux_dic.update({note[0]: note})
+
+        for k in scalar:
+            scalar_notes.append(aux_dic[k])
+
         chord = music21.chord.Chord(music21_notes)
         prime = chord.primeForm
         forte = chord.forteClassTnI
         interval_vector = chord.intervalVector
         base_3 = int(base_n(index_counter, 3))
         index.append(base_3)
-        row = [' '.join(harp_notes), pretty_print(pc_set), pretty_print(prime), forte, combination_seq]
+        row = [' '.join(harp_notes), ' '.join(scalar_notes), pretty_print(pc_set), pretty_print(prime), forte, combination_seq]
+
         for iv in interval_vector:
             row.append(iv)
+
         r.append(row)
         index_counter += 1
 
-    columns = ['Notes', 'PC Set', 'Prime Form', 'Forte class', 'Accidents']
+    columns = ['Notes (radial)', 'Notes (scalar)', 'PC Set', 'Prime Form', 'Forte class', 'Accidents']
 
     for i in range(1, 7):
         columns.append(str(i))
@@ -99,7 +112,7 @@ def save_to_csv(filename='harp.csv'):
 
 
 # midi
-def make_midi(pc_set=[0,2,4,5,7,9,11], filename='example'):
+def make_midi(pc_set=[0,2,3,4,5,7,9,11], filename='example'):
     def aux(track, current_tick, current_note):
         track.append(midi.NoteOnEvent(tick=current_tick, velocity=127, pitch=current_note))
         track.append(midi.NoteOffEvent(tick=current_tick, pitch=current_note))
@@ -141,23 +154,31 @@ def make_midi(pc_set=[0,2,4,5,7,9,11], filename='example'):
     midi.write_midifile(filename + '.mid', pattern)
 
 
+def _save_one_midi_file(ind, pcset):
+    # receive pcset in radial order
+    print('saving {}'.format(ind))
+    parsed = parse_pcset(pcset)
+    ordered = [parsed[int(i)] for i in list(str(1034562))]
+    make_midi(ordered, os.path.join('static', 'midi', str(ind)))
+
+
 def save_midi_files(df):
     series = df['PC Set']
-    i = 1
-    for pcset in series:
-        print('saving {}'.format(i))
-        make_midi(parse_pcset(pcset), os.path.join('static', 'midi', str(i)))
-        i += 1
+    for i, pcset in series.iteritems():
+        _save_one_midi_file(i, pcset)
 
 
 # images
 def make_lily_code(int_tup):
+    # receive int_tup in radial order
     def aux(ind):
         return ['^', '-', 'v'][ind]
 
     pre = '\paper {\n\ttagline= ##f\n}\n\markup \harp-pedal #'
-    left_tup = (int_tup[1], int_tup[0], int_tup[6])
-    right_tup = int_tup[2:-1]
+
+    left_tup = int_tup[:3]
+    right_tup = int_tup[3:]
+
     left = ''.join(map(aux, left_tup))
     right = ''.join(map(aux, right_tup))
     post = '"{}|{}"'.format(left, right)
