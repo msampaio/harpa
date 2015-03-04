@@ -13,7 +13,7 @@ import core
 
 # Create your views here.
 
-COLUMNS = ['Notes', 'PC Set', 'Prime Form', 'Forte class']
+COLUMNS = ['Notes (radial)', 'Notes (scalar)', 'PC Set', 'Prime Form', 'Forte class']
 
 def get_language_url():
     # ugly javascript localization
@@ -131,7 +131,7 @@ def get_by_accidents(request):
     if request.method == 'POST':
         form = AccidentsForm(request.POST)
         if form.is_valid():
-            accidents = tuple([int(form.cleaned_data[c]) for c in list('cdefgab')])
+            accidents = tuple([int(form.cleaned_data[c]) for c in list('dcbefga')])
             df = core.load_csv()
             disposition = df[df['Accidents'] == str(accidents)]
             index = disposition.index.values[0]

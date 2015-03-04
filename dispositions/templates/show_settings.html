@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load staticfiles %}
+{% load dispositions_extras %}
 
 {% block title %}
     {{ title }}
@@ -18,7 +19,8 @@
                 <thead>
                 <tr>
                     <th>{% trans "Index" %}</th>
-                    <th>{% trans "Notes" %}</th>
+                    <th>{% trans "Notes (radial)" %}</th>
+                    <th>{% trans "Notes (scalar)" %}</th>
                     <th>{% trans "PC Set" %}</th>
                     <th>{% trans "Prime Form" %}</th>
                     <th>{% trans "Forte Class" %}</th>
@@ -29,7 +31,7 @@
                 <tbody>
                 {% for index, row in df.iterrows %}
                 <tr>
-                    <td>{{ index }}</td>
+                    <td>{{ index|spaced_format }}</td>
                     {% for cell in row %}
                     <td>{{ cell }}</td>
                     {% endfor %}
