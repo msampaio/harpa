@@ -10,6 +10,7 @@ from django.utils.translation import get_language
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 import core
+from dispositions.templatetags.dispositions_extras import spaced_format
 
 # Create your views here.
 
@@ -151,6 +152,9 @@ def download_all_settings(request):
 
     df = df[COLUMNS]
 
+    df.index = [spaced_format(i) for i in df.index]
+    df.index.name = 'Index'
+
     zip_archive = zipfile.ZipFile(buff, mode='w')
     zip_archive.writestr('harp_settings.txt', df.to_string())
     zip_archive.close()
@@ -158,6 +162,7 @@ def download_all_settings(request):
     response = HttpResponse(buff.getvalue(), content_type="application/x-zip-compressed")
     response['Content-Disposition'] = 'attachment; filename=harp_settings.zip'
     return response
+
 
 def show_statistics(request):
     df = core.load_csv()
