@@ -19,8 +19,8 @@
                 <thead>
                 <tr>
                     <th>{% trans "Index" %}</th>
-                    <th>{% trans "Notes (radial)" %}</th>
                     <th>{% trans "Notes (scalar)" %}</th>
+                    <th>{% trans "Notes (radial)" %}</th>
                     <th>{% trans "PC Set" %}</th>
                     <th>{% trans "Prime Form" %}</th>
                     <th>{% trans "Forte Class" %}</th>
@@ -31,7 +31,11 @@
                 <tbody>
                 {% for index, row in df.iterrows %}
                 <tr>
-                    <td>{{ index|spaced_format }}</td>
+                    {% if radial %}
+                    <td>{{ index|radial_format }}</td>
+                    {% else %}
+                    <td>{{ index|scalar_format }}</td>
+                    {% endif %}
                     {% for cell in row %}
                     <td>{{ cell }}</td>
                     {% endfor %}

@@ -1,7 +1,6 @@
 from io import BytesIO
 import zipfile
 import pandas
-from collections import Counter
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
@@ -10,11 +9,13 @@ from django.utils.translation import get_language
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 import core
-from dispositions.templatetags.dispositions_extras import spaced_format
+from dispositions.templatetags.dispositions_extras import radial_format
 
 # Create your views here.
 
-COLUMNS = ['Notes (radial)', 'Notes (scalar)', 'PC Set', 'Prime Form', 'Forte class']
+COLUMNS = ['Notes (scalar)', 'Notes (radial)', 'PC Set', 'Prime Form', 'Forte class']
+RADIAL = False
+
 
 def get_language_url():
     # ugly javascript localization
@@ -31,11 +32,14 @@ def error404(request):
 def error500(request):
     return render(request, "500.html")
 
+
 def home(request):
     return render(request, "index.html")
 
+
 def dashboard(request):
     return render(request, "dashboard.html")
+
 
 def about(request):
     return render(request, "about.html")
@@ -53,6 +57,7 @@ def show_settings_by_index(request, pedal_index):
         'title': 'Settings index {}'.format(pedal_index),
         'df': df,
         'language_url': get_language_url(),
+        'radial': RADIAL,
     }
     return render(request, "show_settings.html", args)
 
@@ -69,6 +74,7 @@ def show_settings_by_prime(request, pedal_prime):
         'settings': len(df),
         'df': df,
         'language_url': get_language_url(),
+        'radial': RADIAL,
     }
     return render(request, "show_settings.html", args)
 
@@ -85,12 +91,12 @@ def show_settings_by_accidents(request, accidents):
         'settings': len(df),
         'df': df,
         'language_url': get_language_url(),
+        'radial': RADIAL,
     }
     return render(request, "show_settings.html", args)
 
 
 def show_all_settings(request):
-
     df = core.load_csv()
 
     df = df[COLUMNS]
@@ -100,7 +106,8 @@ def show_all_settings(request):
         'settings': len(df),
         'df': df,
         'language_url': get_language_url(),
-        }
+        'radial': RADIAL,
+    }
     return render(request, 'show_settings.html', args)
 
 
@@ -152,7 +159,7 @@ def download_all_settings(request):
 
     df = df[COLUMNS]
 
-    df.index = [spaced_format(i) for i in df.index]
+    df.index = [radial_format(i) for i in df.index]
     df.index.name = 'Index'
 
     zip_archive = zipfile.ZipFile(buff, mode='w')
@@ -185,7 +192,7 @@ def show_statistics(request):
     pf_histogram_data.insert(0, [_('Forte class'), _('Number of pedal settings')])
 
     # interval vector
-    iv_string_list = [str(i) for i in range(1,7)]
+    iv_string_list = [str(i) for i in range(1, 7)]
     iv_columns = COLUMNS[:]
     iv_columns.extend(iv_string_list)
 
@@ -203,6 +210,5 @@ def show_statistics(request):
         'interval_vector_data': iv_sum_series,
         'interval_vector_line_data': iv_sum_distribution_series,
     }
-
 
     return render(request, 'statistics.html', args)

@@ -4,6 +4,8 @@ import music21
 import pandas
 import itertools
 import os
+# usar music21 midi
+# http://web.mit.edu/music21/doc/moduleReference/moduleMidi.html
 import midi
 import subprocess
 import argparse
@@ -52,56 +54,74 @@ def base_n(num, b, numerals="0123456789abcdefghijklmnopqrstuvwxyz"):
     return ((num == 0) and "0" ) or ( base_n(num // b, b).lstrip("0") + numerals[num % b])
 
 
-def make_dataframe():
-    pc_classes = [2, 0, 11, 4, 5, 7, 9]
-    notes = list('DCBEFGA')
-    scalar = list('CDEFGAB')
+def convert_radial_scalar(seq, to_scalar=False):
+    if to_scalar:
+        ord = [1, 0, 3, 4, 5, 6, 2]
+    else:
+        ord = [1, 0, 6, 2, 3, 4, 5]
+    return [seq[i] for i in ord]
 
+
+def make_dataframe(radial=False):
+    radial_order = [2, 0, 11, 4, 5, 7, 9]
+    radial_notes = list('DCBEFGA')
+    scalar_order = sorted(radial_order)
+    scalar_notes = list('CDEFGAB')
+
+    if radial:
+        notes_order = radial_order
+        main_notes = radial_notes
+        main_title = "Notes (radial)"
+        secondary_title = "Notes (scalar)"
+    else:
+        notes_order = scalar_order
+        main_notes = scalar_notes
+        main_title = "Notes (scalar)"
+        secondary_title = "Notes (radial)"
+
+    repeat = 7
     accidents = [0, 1, 2]
-    all_combinations = itertools.product(accidents, repeat=7)
-    r = []
-    index_counter = 0
-    index = []
+    accidents_size = len(accidents)
+    harp_settings = itertools.product(accidents, repeat=repeat)
 
-    for combination_seq in all_combinations:
+    settings_index_counter = 0
+    settings_index_list = []
+
+    rows = []
+
+    for hs in harp_settings:
+        settings_index = base_n(settings_index_counter, accidents_size)
+        settings_index_list.append(int(settings_index))
+
+        pitches = []
         music21_notes = []
-        harp_notes = []
-        pc_set = [(acc + pc - 1) % 12 for acc, pc in zip(combination_seq, pc_classes)]
+        main_display = []
 
-        for note, accident in zip(notes, combination_seq):
-            music21_notes.append(note + ['-', '', '#'][accident])
-            harp_notes.append(note + list('bn#')[accident])
+        for pitch, main_note, accident in zip(notes_order, main_notes, hs):
+            pitches.append(((pitch - 1) + accident) % 12)
+            music21_notes.append(main_note + ['-', '', '#'][accident])
+            main_display.append(main_note + ['b', 'n', '#'][accident])
 
-        scalar_notes = []
-
-        aux_dic = {}
-        for note in harp_notes:
-            aux_dic.update({note[0]: note})
-
-        for k in scalar:
-            scalar_notes.append(aux_dic[k])
+        secondary_display = convert_radial_scalar(main_display, radial)
 
         chord = music21.chord.Chord(music21_notes)
         prime = chord.primeForm
         forte = chord.forteClassTnI
         interval_vector = chord.intervalVector
-        base_3 = int(base_n(index_counter, 3))
-        index.append(base_3)
-        row = [' '.join(harp_notes), ' '.join(scalar_notes), pretty_print(pc_set), pretty_print(prime), forte, combination_seq]
 
+        row = [' '.join(main_display), ' '.join(secondary_display), pretty_print(pitches), pretty_print(prime), forte, hs]
         for iv in interval_vector:
             row.append(iv)
+        rows.append(row)
 
-        r.append(row)
-        index_counter += 1
+        settings_index_counter += 1
 
-    columns = ['Notes (radial)', 'Notes (scalar)', 'PC Set', 'Prime Form', 'Forte class', 'Accidents']
-
+    columns = [main_title, secondary_title, 'PC Set', 'Prime Form', 'Forte class', 'Accidents']
     for i in range(1, 7):
         columns.append(str(i))
 
-    df = pandas.DataFrame(r, columns=columns)
-    df.index = index
+    df = pandas.DataFrame(rows, columns=columns)
+    df.index = settings_index_list
     df.index.name = 'Index'
 
     return df
