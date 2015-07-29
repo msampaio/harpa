@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-04 14:49-0300\n"
+"POT-Creation-Date: 2015-07-29 19:24-0300\n"
 "PO-Revision-Date: 2015-03-04 14:50-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
@@ -131,8 +131,7 @@ msgstr "Obter por acidentes"
 msgid "Get TXT file"
 msgstr "Obter arquivo TXT"
 
-#: dispositions/templates/base.html:66
-#: dispositions/templates/dashboard.html:31
+#: dispositions/templates/base.html:66 dispositions/templates/dashboard.html:31
 #: dispositions/templates/statistics.html:7
 #: dispositions/templates/statistics.html:11
 msgid "Statistics"
@@ -266,12 +265,12 @@ msgid "Index"
 msgstr "Índice"
 
 #: dispositions/templates/show_settings.html:22
-msgid "Notes (radial)"
-msgstr "Notas (radial)"
-
-#: dispositions/templates/show_settings.html:23
 msgid "Notes (scalar)"
 msgstr "Notas (escalar)"
+
+#: dispositions/templates/show_settings.html:23
+msgid "Notes (radial)"
+msgstr "Notas (radial)"
 
 #: dispositions/templates/show_settings.html:24
 msgid "PC Set"
@@ -435,28 +434,28 @@ msgstr "Tendência central de quantidade de intervalos"
 msgid "Distance from the mean (normalized by standard deviation)"
 msgstr "Distância da média (normalizada por desvio padrão)"
 
-#: dispositions/views.py:170 dispositions/views.py:174
-#: dispositions/views.py:192
+#: dispositions/views.py:182 dispositions/views.py:186
+#: dispositions/views.py:204
 msgid "Amount"
 msgstr "Quantidade"
 
-#: dispositions/views.py:170
+#: dispositions/views.py:182
 msgid "Proportion"
 msgstr "Proporção"
 
-#: dispositions/views.py:171
+#: dispositions/views.py:183
 msgid "Number of Pitch Classes"
 msgstr "Número de classes de altura"
 
-#: dispositions/views.py:180
+#: dispositions/views.py:192
 msgid "Forte class"
 msgstr "Classe de Forte"
 
-#: dispositions/views.py:180
+#: dispositions/views.py:192
 msgid "Number of pedal settings"
 msgstr "Número de disposições de pedais"
 
-#: dispositions/views.py:192
+#: dispositions/views.py:204
 msgid "Interval"
 msgstr "Intervalo"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-04 14:49-0300\n"
+"POT-Creation-Date: 2015-07-29 19:24-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,8 +123,7 @@ msgstr ""
 msgid "Get TXT file"
 msgstr ""
 
-#: dispositions/templates/base.html:66
-#: dispositions/templates/dashboard.html:31
+#: dispositions/templates/base.html:66 dispositions/templates/dashboard.html:31
 #: dispositions/templates/statistics.html:7
 #: dispositions/templates/statistics.html:11
 msgid "Statistics"
@@ -234,11 +233,11 @@ msgid "Index"
 msgstr ""
 
 #: dispositions/templates/show_settings.html:22
-msgid "Notes (radial)"
+msgid "Notes (scalar)"
 msgstr ""
 
 #: dispositions/templates/show_settings.html:23
-msgid "Notes (scalar)"
+msgid "Notes (radial)"
 msgstr ""
 
 #: dispositions/templates/show_settings.html:24
@@ -367,28 +366,28 @@ msgstr ""
 msgid "Distance from the mean (normalized by standard deviation)"
 msgstr ""
 
-#: dispositions/views.py:170 dispositions/views.py:174
-#: dispositions/views.py:192
+#: dispositions/views.py:182 dispositions/views.py:186
+#: dispositions/views.py:204
 msgid "Amount"
 msgstr ""
 
-#: dispositions/views.py:170
+#: dispositions/views.py:182
 msgid "Proportion"
 msgstr ""
 
-#: dispositions/views.py:171
+#: dispositions/views.py:183
 msgid "Number of Pitch Classes"
 msgstr ""
 
-#: dispositions/views.py:180
+#: dispositions/views.py:192
 msgid "Forte class"
 msgstr ""
 
-#: dispositions/views.py:180
+#: dispositions/views.py:192
 msgid "Number of pedal settings"
 msgstr ""
 
-#: dispositions/views.py:192
+#: dispositions/views.py:204
 msgid "Interval"
 msgstr ""
 
