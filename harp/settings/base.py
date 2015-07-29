@@ -102,7 +102,7 @@ DJANGO_APPS = (
 )
 
 LOCAL_APPS = (
-    'dispositions',
+    'pedal_settings',
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS

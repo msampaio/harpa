@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from dispositions import views
+from pedal_settings import views
 from django.utils.translation import ugettext_lazy as _
 
 

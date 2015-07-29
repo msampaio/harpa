@@ -1,15 +1,18 @@
 from io import BytesIO
 import zipfile
+
 import pandas
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
-from dispositions.forms import IndexForm, PrimeForm, AccidentsForm
 from django.utils.translation import get_language
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
-import core
-from dispositions.templatetags.dispositions_extras import radial_format
+
+from pedal_settings.forms import IndexForm, PrimeForm, AccidentsForm
+from lib import core
+from pedal_settings.templatetags.dispositions_extras import radial_format
+
 
 # Create your views here.
 
@@ -116,7 +119,7 @@ def get_by_index(request):
         form = IndexForm(request.POST)
         if form.is_valid():
             ind = form.cleaned_data['settings_index']
-            return HttpResponseRedirect(reverse('dispositions.views.show_settings_by_index', args={ind,}))
+            return HttpResponseRedirect(reverse('pedal_settings.views.show_settings_by_index', args={ind,}))
 
     else:
         form = IndexForm()
@@ -128,7 +131,7 @@ def get_by_prime(request):
         form = PrimeForm(request.POST)
         if form.is_valid():
             prime = form.cleaned_data['settings_prime']
-            return HttpResponseRedirect(reverse('dispositions.views.show_settings_by_prime', args={prime,}))
+            return HttpResponseRedirect(reverse('pedal_settings.views.show_settings_by_prime', args={prime,}))
 
     else:
         form = PrimeForm()
@@ -147,7 +150,7 @@ def get_by_accidents(request):
             df = core.load_csv()
             disposition = df[df['Accidents'] == str(accidents)]
             index = disposition.index.values[0]
-            return HttpResponseRedirect(reverse('dispositions.views.show_settings_by_index', args={index,}))
+            return HttpResponseRedirect(reverse('pedal_settings.views.show_settings_by_index', args={index,}))
 
     else:
         init_dic = {}
@@ -167,11 +170,11 @@ def download_all_settings(request):
     df.index.name = 'Index'
 
     zip_archive = zipfile.ZipFile(buff, mode='w')
-    zip_archive.writestr('harp_settings.txt', df.to_string())
+    zip_archive.writestr('pedal_settings.txt', df.to_string())
     zip_archive.close()
 
     response = HttpResponse(buff.getvalue(), content_type="application/x-zip-compressed")
-    response['Content-Disposition'] = 'attachment; filename=harp_settings.zip'
+    response['Content-Disposition'] = 'attachment; filename=pedal_settings.zip'
     return response
 
 
