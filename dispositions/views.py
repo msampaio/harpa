@@ -136,10 +136,14 @@ def get_by_prime(request):
 
 
 def get_by_accidents(request):
+    if RADIAL:
+        notes = list('dcbefga')
+    else:
+        notes = list('cdefgab')
     if request.method == 'POST':
         form = AccidentsForm(request.POST)
         if form.is_valid():
-            accidents = tuple([int(form.cleaned_data[c]) for c in list('dcbefga')])
+            accidents = tuple([int(form.cleaned_data[c]) for c in notes])
             df = core.load_csv()
             disposition = df[df['Accidents'] == str(accidents)]
             index = disposition.index.values[0]
