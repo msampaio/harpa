@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-29 19:58-0300\n"
-"PO-Revision-Date: 2015-07-29 20:00-0300\n"
+"POT-Creation-Date: 2015-07-29 20:05-0300\n"
+"PO-Revision-Date: 2015-07-29 20:07-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -372,7 +372,7 @@ msgstr "Tipo de acorde"
 #. Translators: This chord is used in context of 4-chord, 5-chord, etc.
 #: pedal_settings/templates/statistics.html:42
 msgid "chord"
-msgstr "corde"
+msgstr "acorde"
 
 #: pedal_settings/templates/statistics.html:54
 msgid "Pedal settings by PC set"
@@ -465,7 +465,15 @@ msgstr "Disposições de pedais por tipo de acorde"
 
 #: pedal_settings/templates/statistics.html:135
 msgid "Pedal settings distribution"
-msgstr "Disposição de pedais"
+msgstr "Distribuição de disposições de pedais"
+
+#: pedal_settings/templates/statistics.html:137
+msgid "PC-sets (amount)"
+msgstr "Conjuntos de classes de notas (quantidade)"
+
+#: pedal_settings/templates/statistics.html:140
+msgid "Pedal settings amount (range)"
+msgstr "Quantidade de disposições de pedais (faixa)"
 
 #: pedal_settings/templates/statistics.html:153
 msgid "Intervals amount central tendency"
