@@ -51,11 +51,11 @@
     </div>
 
     <hr>
-    <h3>{% trans "Pedal settings by prime form" %}</h3>
+    <h3>{% trans "Pedal settings by PC set" %}</h3>
     <hr>
     <p>{% blocktrans %}
-        Each pedal setting results in a specific pitch class set, belonged to a pitch set class, represented by a prime form.
-        Some pitch set classes can be obtained from multiple pedal settings, in a "one to many" relation type.
+        Each pedal setting results in a specific pitch class set, represented by a prime form.
+        Some pitch-class sets can be obtained from multiple pedal settings, in a "one to many" relation type.
         {% endblocktrans %}
     </p>
     <p>{% blocktrans %}
@@ -132,7 +132,13 @@
                 var data = google.visualization.arrayToDataTable({{ pf_histogram_data | safe }});
 
                 var options = {
-                  title: '{% trans "Pedal settings grouped by Prime Form - Histogram" %}',
+                  title: '{% trans "Pedal settings distribution" %}',
+                    vAxis: {
+                        title: 'PC-sets (amount)',
+                    },
+                    hAxis: {
+                        title: 'Pedal settings amount (range)',
+                    },
                   legend: { position: 'none' },
                 }
 
