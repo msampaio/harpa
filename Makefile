@@ -32,3 +32,6 @@ internationalization:
 
 restart-server:
 	../apache2/bin/restart
+
+notebook:
+	ipython notebooks

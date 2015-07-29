@@ -1,5 +1,10 @@
+music21
 ipython
 django
 pandas
 django-bootstrap-themes
 dealer
+pyzmq
+jinja2
+tornado
+jsonschema
