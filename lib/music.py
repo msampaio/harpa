@@ -4,6 +4,7 @@ import music21
 import pandas
 import itertools
 import os
+import pcsets
 # usar music21 midi
 # http://web.mit.edu/music21/doc/moduleReference/moduleMidi.html
 import midi
@@ -106,7 +107,11 @@ def make_dataframe(radial=False):
 
         chord = music21.chord.Chord(music21_notes)
         prime = chord.primeForm
-        forte = chord.forteClassTnI
+        if tuple(prime) in pcsets.transition.keys():
+            forte, prime = pcsets.transition[tuple(prime)]
+            prime = list(prime)
+        else:
+            forte = chord.forteClassTnI
         interval_vector = chord.intervalVector
 
         row = [' '.join(main_display), ' '.join(secondary_display), pretty_print(pitches), pretty_print(prime), forte, hs]
