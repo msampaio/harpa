@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Harp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-29 20:05-0300\n"
-"PO-Revision-Date: 2015-07-29 20:07-0300\n"
+"POT-Creation-Date: 2015-07-30 12:15-0300\n"
+"PO-Revision-Date: 2015-07-30 12:16-0300\n"
 "Last-Translator: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language-Team: Marcos da Silva Sampaio <marcos@sampaio.me>\n"
 "Language: pt_BR\n"
@@ -58,29 +58,37 @@ msgstr "^painel/acidentes/(?P<accidents>\\w+)/$"
 msgid "^dashboard/statistics/$"
 msgstr "^painel/estatisticas/$"
 
-#: pedal_settings/forms.py:7
+#: pedal_settings/forms.py:8
 #, python-format
 msgid "%s is not a number in base 3 between 0 and 2222222"
 msgstr "%s não é um número em base 3 entre 0 e 2222222"
 
-#: pedal_settings/forms.py:17
+#: pedal_settings/forms.py:18
 #, python-format
 msgid "%s is not in prime form format"
 msgstr "%s não está no formato de forma prima"
 
-#: pedal_settings/forms.py:21
+#: pedal_settings/forms.py:22
 msgid "Settings index"
 msgstr "Índice de disposição"
 
-#: pedal_settings/forms.py:23
+#: pedal_settings/forms.py:24
 msgid "Insert an index number in base 3 between 0 and 2222222, such as 20102"
 msgstr "Insira um índice numérico em base 3 entre 0 e 2222222, como 20102"
 
-#: pedal_settings/forms.py:27
+#: pedal_settings/forms.py:28
+msgid "Only 0-2 are allowed."
+msgstr "Apenas números inteiros entre 0 e 2 são permitidos."
+
+#: pedal_settings/forms.py:29
+msgid "Invalid Number"
+msgstr "Número inválido"
+
+#: pedal_settings/forms.py:36
 msgid "Settings Prime Form"
 msgstr "Forma prima da disposição"
 
-#: pedal_settings/forms.py:30
+#: pedal_settings/forms.py:39
 msgid "Insert a pcset prime form such as 02468A"
 msgstr ""
 "Insira uma forma prima de conjunto de classes de notas, tal como 02468A"
@@ -545,9 +553,6 @@ msgstr "Intervalo"
 
 #~ msgid "Disposition Prime Form"
 #~ msgstr "Forma prima da disposição"
-
-#~ msgid "Number"
-#~ msgstr "Número"
 
 #~ msgid "Code"
 #~ msgstr "Código"

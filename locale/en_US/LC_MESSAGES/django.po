@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-29 20:05-0300\n"
+"POT-Creation-Date: 2015-07-30 12:15-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,29 +57,37 @@ msgstr ""
 msgid "^dashboard/statistics/$"
 msgstr ""
 
-#: pedal_settings/forms.py:7
+#: pedal_settings/forms.py:8
 #, python-format
 msgid "%s is not a number in base 3 between 0 and 2222222"
 msgstr ""
 
-#: pedal_settings/forms.py:17
+#: pedal_settings/forms.py:18
 #, python-format
 msgid "%s is not in prime form format"
 msgstr ""
 
-#: pedal_settings/forms.py:21
+#: pedal_settings/forms.py:22
 msgid "Settings index"
 msgstr ""
 
-#: pedal_settings/forms.py:23
+#: pedal_settings/forms.py:24
 msgid "Insert an index number in base 3 between 0 and 2222222, such as 20102"
 msgstr ""
 
-#: pedal_settings/forms.py:27
+#: pedal_settings/forms.py:28
+msgid "Only 0-2 are allowed."
+msgstr ""
+
+#: pedal_settings/forms.py:29
+msgid "Invalid Number"
+msgstr ""
+
+#: pedal_settings/forms.py:36
 msgid "Settings Prime Form"
 msgstr ""
 
-#: pedal_settings/forms.py:30
+#: pedal_settings/forms.py:39
 msgid "Insert a pcset prime form such as 02468A"
 msgstr ""
 
