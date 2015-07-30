@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator
 from django.utils.translation import ugettext_lazy as _
 
 def validate_number(value):
@@ -19,9 +20,17 @@ def validate_prime(seq):
 
 class IndexForm(forms.Form):
     settings_index = forms.CharField(label=_('Settings index'),
-                                         max_length=4,
-                                         help_text=_('Insert an index number in base 3 between 0 and 2222222, such as 20102'),
-                                         validators=[validate_number])
+                                     max_length=7,
+                                     help_text=_('Insert an index number in base 3 between 0 and 2222222, such as 20102'),
+                                     validators=[
+                                         RegexValidator(
+                                             r'^[012]*$',
+                                             _(u'Only 0-2 are allowed.'),
+                                             _(u'Invalid Number')
+                                         ),
+                                         validate_number,
+                                     ])
+
 
 class PrimeForm(forms.Form):
     settings_prime = forms.CharField(label=_('Settings Prime Form'),
