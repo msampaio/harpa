@@ -11,7 +11,7 @@ from django.utils.translation import ugettext as _
 
 from pedal_settings.forms import IndexForm, PrimeForm, AccidentsForm
 from lib import core
-from pedal_settings.templatetags.dispositions_extras import radial_format
+from pedal_settings.templatetags.dispositions_extras import radial_format, scalar_format
 
 
 # Create your views here.
@@ -166,7 +166,7 @@ def download_all_settings(request):
 
     df = df[COLUMNS]
 
-    df.index = [radial_format(i) for i in df.index]
+    df.index = [scalar_format(i) for i in df.index]
     df.index.name = 'Index'
 
     zip_archive = zipfile.ZipFile(buff, mode='w')
