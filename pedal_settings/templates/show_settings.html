@@ -36,17 +36,32 @@
                     {% else %}
                     <td>{{ index|scalar_format }}</td>
                     {% endif %}
-                    {% for cell in row %}
-                    <td>{{ cell }}</td>
-                    {% endfor %}
-                    <td><img src="{{ STATIC_URL }}img/{{ index }}.png"></td>
+                    <td>{% dict_get row 'Notes (scalar)' %}</td>
+                    <td>{% dict_get row 'Notes (radial)' %}</td>
+                    <td>{% dict_get row 'PC Set' %}</td>
+                    <td>{% dict_get row 'Prime Form' %}</td>
+                    <td>{% dict_get row 'Forte class' %}</td>
+                    <td>
+                        <svg width="80" height="24">
+                            <line x1="0" y1="12" x2="80" y2="12" style="stroke:rgb(0,0,0);stroke-width:1"/>
+                            <line x1="35" y1="0" x2="35" y2="24" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+                            <rect x="5" y="{% get_accident row.Accidents 'd' 7 %}" width="4" height="10" />
+                            <rect x="15" y="{% get_accident row.Accidents 'c' 7 %}" width="4" height="10" />
+                            <rect x="25" y="{% get_accident row.Accidents 'b' 7 %}" width="4" height="10" />
+
+                            <rect x="40" y="{% get_accident row.Accidents 'e' 7 %}" width="4" height="10" />
+                            <rect x="50" y="{% get_accident row.Accidents 'f' 7 %}" width="4" height="10" />
+                            <rect x="60" y="{% get_accident row.Accidents 'g' 7 %}" width="4" height="10" />
+                            <rect x="70" y="{% get_accident row.Accidents 'a' 7 %}" width="4" height="10" />
+                        </svg>
+                    </td>
                     <td><a href="{{ STATIC_URL }}midi/{{ index }}.mid">{{ index }}.mid</a></td>
                 </tr>
                 {% endfor %}
                 </tbody>
             </table>
         </div>
-
 {% endblock %}
 
 {% block javascript %}

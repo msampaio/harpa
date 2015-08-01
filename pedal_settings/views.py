@@ -54,8 +54,6 @@ def show_settings_by_index(request, pedal_index):
     series = df.loc[int(pedal_index)]
     df = pandas.DataFrame([series])
 
-    df = df[COLUMNS]
-
     args = {
         'title': 'Settings index {}'.format(pedal_index),
         'df': df,
@@ -69,8 +67,6 @@ def show_settings_by_prime(request, pedal_prime):
     df = core.load_csv()
 
     df = df[df['Prime Form'] == pedal_prime]
-
-    df = df[COLUMNS]
 
     args = {
         'title': 'Settings with PC Prime Form {}'.format(pedal_prime),
@@ -87,8 +83,6 @@ def show_settings_by_accidents(request, accidents):
 
     df = df[df['Accidents'] == accidents]
 
-    df = df[COLUMNS]
-
     args = {
         'title': 'Settings with PC Prime Form {}'.format(accidents),
         'settings': len(df),
@@ -101,8 +95,6 @@ def show_settings_by_accidents(request, accidents):
 
 def show_all_settings(request):
     df = core.load_csv()
-
-    df = df[COLUMNS]
 
     args = {
         'title': 'All settings',
@@ -119,7 +111,7 @@ def get_by_index(request):
         form = IndexForm(request.POST)
         if form.is_valid():
             ind = form.cleaned_data['settings_index']
-            return HttpResponseRedirect(reverse('pedal_settings.views.show_settings_by_index', args={ind,}))
+            return HttpResponseRedirect(reverse('pedal_settings.views.show_settings_by_index', args={ind, }))
 
     else:
         form = IndexForm()
@@ -131,7 +123,7 @@ def get_by_prime(request):
         form = PrimeForm(request.POST)
         if form.is_valid():
             prime = form.cleaned_data['settings_prime']
-            return HttpResponseRedirect(reverse('pedal_settings.views.show_settings_by_prime', args={prime,}))
+            return HttpResponseRedirect(reverse('pedal_settings.views.show_settings_by_prime', args={prime, }))
 
     else:
         form = PrimeForm()
@@ -150,7 +142,7 @@ def get_by_accidents(request):
             df = core.load_csv()
             disposition = df[df['Accidents'] == str(accidents)]
             index = disposition.index.values[0]
-            return HttpResponseRedirect(reverse('pedal_settings.views.show_settings_by_index', args={index,}))
+            return HttpResponseRedirect(reverse('pedal_settings.views.show_settings_by_index', args={index, }))
 
     else:
         init_dic = {}
